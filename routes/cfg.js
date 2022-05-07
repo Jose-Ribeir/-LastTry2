@@ -26,6 +26,7 @@ const getCfgBySoftwareId = (request, response) => {
 }
 
 
+
 const createCfg = (request, response) => {
     const cfg = request.body
     client.query('INSERT INTO cfg (cfg_name) VALUES ($1)', [cfg.cfg_name.toString()], (error, results) => {
