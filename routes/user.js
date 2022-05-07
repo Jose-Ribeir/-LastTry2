@@ -10,7 +10,7 @@
 //
 // module.exports = router;
 
-const client = require('../../untitled3/models/connection.js')
+const client = require('/models/connection')
 const express = require('express');
 const {log} = require("debug");
 const {md5} = require("pg/lib/utils");
