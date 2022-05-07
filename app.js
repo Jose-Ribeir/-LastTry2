@@ -44,6 +44,7 @@ app.put('/users/:id', users.updateUser)
 app.delete('/users/:id', users.deleteUser)
 
 
+
 //cfg
 app.get('/cfg', cfg.getCfg)
 app.get('/cfg/:id', cfg.getCfgById)
