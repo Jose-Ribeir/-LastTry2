@@ -93,7 +93,7 @@ const updateUser = (request, response) => {
 
   client.query(
       'UPDATE person SET person_name = $1, person_adress = $2, person_bio = $3, person_country = $4, person_postal_code = $5, person_region = $6, person_surname =$7  WHERE person_id = $8',
-      [users.person_name.toString(), users.person_adress.toString(), users.person_bio.toString(), users.person_country.toString(), users.person_postal_code.toString(), users.person_surname.toString(), users.person_name.toString(),id],
+      [users.person_name.toString(), users.person_adress.toString(), users.person_bio.toString(), users.person_country.toString(), users.person_postal_code.toString(), users.person_region.toString(), users.person_surname.toString(),id],
       (error, results) => {
         if (error) {
           throw error
