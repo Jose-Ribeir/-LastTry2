@@ -67,6 +67,7 @@ const passwordChange = (request, response) => {
         if (error) {
           throw error
         }
+        else
         response.status(200).json("Password changed")
       }
   )
