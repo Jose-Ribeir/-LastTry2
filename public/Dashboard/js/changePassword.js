@@ -1,7 +1,7 @@
 async function changePass1() {
     alert(""+document.getElementById('newpass2').value === document.getElementById('newpass1').value)
     if (document.getElementById('newpass2').value === document.getElementById('newpass1').value){
-        let data = {"person_id": "1",
+        let data = {"person_id": 1,
             "person_password": document.getElementById('oldpass').value,
             "person_passwordnew":  document.getElementById('newpass1').value};
 
