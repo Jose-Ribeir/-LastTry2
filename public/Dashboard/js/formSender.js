@@ -43,6 +43,7 @@ async function changePass() {
         "person_password": document.getElementById('oldpass').value,
         "person_passwordnew":  document.getElementById('newpass1').value};
 
+
     try {
 
         //get json here
