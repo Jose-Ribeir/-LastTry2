@@ -60,10 +60,10 @@ async function changePass() {
 
     } catch (err) {
         console.log(err);
-        if (err.responseJSON) {
-            alert(""+err.responseJSON.msg);
+        if (err) {
+            alert(""+err);
         } else {
-            alert("Was not able to add product") ;
+            alert("Wrong password") ;
         }
     }
     }
