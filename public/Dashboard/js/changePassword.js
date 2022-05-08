@@ -12,7 +12,7 @@ async function changePass1() {
             //get json here
             let newProduct = await $.ajax({
                 url: "https://cfg-api-ultimate.herokuapp.com/changepass",
-                method: "put",
+                method: "PUT",
                 data: JSON.stringify(data),
                 contentType: "application/json",
                 dataType: "json"
