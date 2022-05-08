@@ -56,6 +56,22 @@ const getLogin = (request, response) => {
   })
 }
 
+
+const passwordChange = (request, response) => {
+  const users = request.body
+
+  client.query(
+      'UPDATE person SET person_password = $1 WHERE person_id = $2 and person_password = $3',
+      [users.person_passwordnew, users.person_id, users.person_password ],
+      (error, results) => {
+        if (error) {
+          throw error
+        }
+        response.status(200).send(`User modified with ID: ${id}`)
+      }
+  )
+}
+
 const createUser = (request, response) => {
   const users = request.body
 
@@ -100,5 +116,6 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
-  getLogin
+  getLogin,
+  passwordChange
 }
