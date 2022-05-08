@@ -62,7 +62,7 @@ const passwordChange = (request, response) => {
 
   client.query(
       'UPDATE person SET person_password = $1 WHERE person_id = $2 and person_password = $3',
-      [users.person_passwordnew, users.person_id, users.person_password ],
+      [users.person_passwordnew, users.person_id,md5(users.person_password.toString()) ],
       (error, results) => {
         if (error) {
           throw error
