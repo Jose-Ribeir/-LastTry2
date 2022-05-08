@@ -64,7 +64,7 @@ const passwordChange = (request, response) => {
       'UPDATE person SET person_password = $1 WHERE person_id = $2 and person_password = $3',
       [md5(users.person_passwordnew.toString()), users.person_id, md5(users.person_password.toString()) ],
       (error) => {
-        if (error,results) {
+        if (error) {
           throw error
         }
         response.status(200).json("Password changed")
