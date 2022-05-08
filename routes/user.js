@@ -67,7 +67,7 @@ const passwordChange = (request, response) => {
         if (error) {
           throw error
         }
-        response.status(200).json(results.rows[0])
+        response.status(200).json("Password changed")
       }
   )
 }
