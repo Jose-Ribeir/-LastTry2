@@ -103,6 +103,7 @@ const updateUser = (request, response) => {
   )
 }
 
+
 const deleteUser = (request, response) => {
   const id = parseInt(request.params.id)
 
