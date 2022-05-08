@@ -61,14 +61,16 @@ const passwordChange = (request, response) => {
   const users = request.body
 
   client.query(
-      'UPDATE person SET person_password = $1 WHERE person_id = $2 and person_password = $3',
+      'UPDATE person SET person_password = $1 WHERE person_id = $2 and person_password = $3 returning *',
       [md5(users.person_passwordnew.toString()), users.person_id, md5(users.person_password.toString()) ],
-      (error) => {
+      (error,results) => {
         if (error) {
           throw error
         }
+        if (results.rows.length > 0)
+          response.status(200).send("Password changed")
         else
-        response.status(200).json("Password changed")
+          response.status(404).send("User not found")
       }
   )
 }
