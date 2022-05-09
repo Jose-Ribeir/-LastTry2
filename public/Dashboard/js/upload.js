@@ -35,52 +35,45 @@ $('.image-upload-wrap').bind('dragleave', function () {
     $('.image-upload-wrap').removeClass('image-dropping');
 });
 
-function dropDown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
 
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        txtValue = a[i].textContent || a[i].innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
-        }
+async function getData(){
+    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
+    //
+    //
+    // const response = await fetch(targetUrl)
+    // const data = await response.json()
+    // console.log(data)
+    // return data
+
+
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users/'+id
+
+    const response = await fetch(
+        targetUrl)
+    const data = await response.json()
+    return data
+
+}
+let gameorsoftware=0
+function iconChange(){
+
+    gameorsoftware=1
+    let a =document.getElementById("ButonisGame")
+    let b =document.getElementById("button")
+    if(gameorsoftware === 0){
+        gameorsoftware++
+        a.remove();
+        document.getElementById("img").remove()
+        b.innerHTML="<img id='img' src=\"images/icon/logo.png\" height=\"75\" width=\"75\"/>"
+
     }
-}
 
-
-function uploadfile() {
-    var http = require('http');
-    var formidable = require('formidable');
-    var fs = require('fs');
-
-    http.createServer(function (req, res) {
-        if (req.url == '/fileupload') {
-            var form = new formidable.IncomingForm();
-            form.parse(req, function (err, fields, files) {
-                var oldpath = files.filetoupload.filepath;
-                var newpath = 'Cfg/' + files.filetoupload.originalFilename;
-                fs.rename(oldpath, newpath, function (err) {
-                    if (err) throw err;
-                    res.write('File uploaded and moved!');
-                    res.end();
-                });
-            });
-        } else {
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            res.write('<form action="fileupload" method="post" enctype="multipart/form-data">');
-            res.write('<input type="file" name="filetoupload"><br>');
-            res.write('<input type="submit">');
-            res.write('</form>');
-            return res.end();
-        }
-    }).listen(8080);
+    if(gameorsoftware === 1){
+        gameorsoftware--
+        a.remove();
+        document.getElementById("img").remove()
+        b.innerHTML="<img id='img'src=\"images/icon/logogaming.png\" height=\"75\" width=\"75\"/>"
+    }
 
 }

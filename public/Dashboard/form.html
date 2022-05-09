@@ -31,7 +31,13 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
 
@@ -324,7 +330,7 @@
                                         <div  class="row">
                                             <div class="col-md-3 border-right">
                                                 <h4 class="text-left">Upload de config</h4>
-<!--                                               <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>-->
+                                               <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
                                                 <div class="auto">
                                                 <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
                                                 </div>
@@ -340,15 +346,30 @@
                                                         <div class="col-md-12"><label class="labels">Tecla Ação</label><textarea type="text" class="form-control" rows="6" ></textarea></div> <br>
 
                                                     </div>
-                                                    <div class="row mt-3">
-                                                        <div class="dropdown">
-                                                            <script class="jsbin" src="js/upload.js"></script>
-                                                            <div id="myDropdown" class="dropdown-content">
-                                                                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                                                                <a href="#about">About</a>
-                                                            </div>
+                                                    <label> </label>
+                                                    <button type="button" id="ButonisGame" onclick="iconChange()" class="btn btn-secondary">Software</button>
+                                                    <a class="logo" id="button">
+                                                        <img id="img" src="images/icon/logo.png" height="75" width="75" />
+                                                    </a>
+
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            <form class="col-md-4">
+                                                                <label>Chose your app</label>
+                                                                <select class="form-control select2">
+                                                                    <option>Select</option>
+                                                                    <option>Car</option>
+                                                                    <option>Bike</option>
+                                                                    <option>Scooter</option>
+                                                                    <option>Cycle</option>
+                                                                    <option>Horse</option>
+                                                                </select>
+                                                            </form>
                                                         </div>
                                                     </div>
+                                                    <script>
+                                                        $('.select2').select2();
+                                                    </script>
                                                     <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
                                                 </div>
                                             </div>
@@ -419,6 +440,7 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+
 
 </body>
 
