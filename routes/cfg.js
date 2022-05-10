@@ -29,7 +29,7 @@ const getCfgBySoftwareId = (request, response) => {
 
 const createCfg = (request, response) => {
     const cfg = request.body
-    client.query('INSERT INTO cfg (cfg_name) VALUES ($1)', [cfg.cfg_name.toString()], (error, results) => {
+    client.query('INSERT INTO cfg (cfg_name,cfg_cfg,cfg_date,cfg_description,cfg_key_action,cfg_person_id,cfg_software_id) VALUES ($1,$2,$3,$4,$5,$6,$7)', [cfg.cfg_name.toString(),cfg.cfg_cfg.toString(),cfg.cfg_date.toString(),cfg.cfg_description.toString(),cfg.cfg_key_action.toString(),cfg.cfg_person_id.toString(),cfg.cfg_software_id.toString()], (error, results) => {
         if (error) {
             throw error
         }
