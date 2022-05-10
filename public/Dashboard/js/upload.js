@@ -1,40 +1,9 @@
 
-//
-// function readURL(input) {
-//     if (input.files && input.files[0]) {
-//
-//         var reader = new FileReader();
-//
-//         reader.onload = function(e) {
-//             $('.image-upload-wrap').hide();
-//
-//             $('.file-upload-image').attr('src', e.target.result);
-//             $('.file-upload-content').show();
-//
-//             $('.image-title').html(input.files[0].name);
-//         };
-//
-//         reader.readAsDataURL(input.files[0]);
-//
-//     } else {
-//         removeUpload();
-//     }
-// }
-//
-// function removeUpload() {
-//     $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-//     $('.file-upload-content').hide();
-//     $('.image-upload-wrap').show();
-// }
-// $('.image-upload-wrap').bind('dragover', function () {
-//     $('.image-upload-wrap').addClass('image-dropping');
-// });
-// $('.image-upload-wrap').bind('dragleave', function () {
-//     $('.image-upload-wrap').removeClass('image-dropping');
-// });
+var loginId
+var software1="da"
+var json
 
 
-let software1="da"
 async function getData(id){
 
     if (id===1){
@@ -63,12 +32,12 @@ async function getData(id){
     return data
 
 }
-let clean
+var clean
 
 
 async function fillDropdown() {
     let field = document.getElementById("dropDown")
-    let json = await getData(gameorsoftware)
+    json = await getData(gameorsoftware)
     clean=json.length
         field.innerHTML = '<option>Select</option>'
 
@@ -80,7 +49,7 @@ async function fillDropdown() {
 
 
 
-let gameorsoftware=1
+var gameorsoftware=1
 async function iconChange() {
     let a = document.getElementById("ButonisGame")
     let b = document.getElementById("button")
@@ -97,9 +66,55 @@ async function iconChange() {
     }
     await fillDropdown()
 }
+
+async function uploadCFG() {
+    const d = new Date();
+    let field = document.getElementById("dropDown")
+    let softwareId
+    for (let i = 0; i < json.length; i++) {
+        if (json[i].software_name === field.value)
+        {
+            softwareId=json[i].software_id
+        }
+
+    }
+
+    let data = {"cfg_name":  document.getElementById('name').value,
+       // "cfg_cfg":  document.getElementById('inputPostalCode').value,
+        "cfg_software_id":  softwareId,
+        "cfg_person_id":  loginId,
+        "cfg_date":  d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()	,
+        "cfg_key_action":  document.getElementById('keyaction').value,
+        "cfg_description":  document.getElementById('description').value};
+    console.log("[addProducts] data = " + JSON.stringify(data));
+    try {
+
+        //get json here
+        let newProduct = await $.ajax({
+            url: "https://cfg-api-ultimate.herokuapp.com/software",
+            method: "post",
+            data: JSON.stringify(data),
+            contentType: "application/json",
+            dataType: "json"
+        });
+        alert(JSON.stringify(newProduct))
+        await window.refresh()
+        //
+        // window.location.href='../../Dashboard/table.html'
+
+    } catch (err) {
+        console.log(err);
+        if (err.responseJSON) {
+            alert(""+err.responseJSON.msg);
+        } else {
+            alert("Was not able to add product") ;
+        }
+    }
+}
+
+
+
 window.onload = async function() {
-
+    loginId = sessionStorage.getItem("user_id")
     await fillDropdown()
-
-
 }
