@@ -91,7 +91,7 @@ async function uploadCFG() {
 
         //get json here
         let newProduct = await $.ajax({
-            url: "https://cfg-api-ultimate.herokuapp.com/software",
+            url: "https://cfg-api-ultimate.herokuapp.com/cfg",
             method: "post",
             data: JSON.stringify(data),
             contentType: "application/json",
