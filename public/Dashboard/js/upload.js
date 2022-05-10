@@ -70,45 +70,47 @@ async function iconChange() {
 async function uploadCFG() {
     const d = new Date();
     let field = document.getElementById("dropDown")
-    let softwareId
     for (let i = 0; i < json.length; i++) {
         if (json[i].software_name === field.value)
         {
-            softwareId=json[i].software_id
+
+            let data = {"cfg_name":  document.getElementById('name').value,
+                // "cfg_cfg":  document.getElementById('inputPostalCode').value,
+                "cfg_software_id":  json[i].software_id,
+                "cfg_person_id":  loginId,
+                "cfg_date":  d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()	,
+                "cfg_key_action":  document.getElementById('keyaction').value,
+                "cfg_description":  document.getElementById('description').value};
+            console.log("[addProducts] data = " + JSON.stringify(data));
+            try {
+
+                //get json here
+                let newProduct = await $.ajax({
+                    url: "https://cfg-api-ultimate.herokuapp.com/cfg",
+                    method: "post",
+                    data: JSON.stringify(data),
+                    contentType: "application/json",
+                    dataType: "json"
+                });
+                //
+
+
+            } catch (err) {
+                console.log(err);
+                if (err.responseJSON) {
+                    alert(""+err.responseJSON.msg);
+                } else {
+                    alert("cfg saved") ;
+                    window.location.href='../../Dashboard/form.html'
+                }
+            }
+        }
+        else{
+            alert("Select a Game or Software")
         }
 
     }
 
-    let data = {"cfg_name":  document.getElementById('name').value,
-       // "cfg_cfg":  document.getElementById('inputPostalCode').value,
-        "cfg_software_id":  softwareId,
-        "cfg_person_id":  loginId,
-        "cfg_date":  d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()	,
-        "cfg_key_action":  document.getElementById('keyaction').value,
-        "cfg_description":  document.getElementById('description').value};
-    console.log("[addProducts] data = " + JSON.stringify(data));
-    try {
-
-        //get json here
-        let newProduct = await $.ajax({
-            url: "https://cfg-api-ultimate.herokuapp.com/cfg",
-            method: "post",
-            data: JSON.stringify(data),
-            contentType: "application/json",
-            dataType: "json"
-        });
-        //
-
-
-    } catch (err) {
-        console.log(err);
-        if (err.responseJSON) {
-            alert(""+err.responseJSON.msg);
-        } else {
-            alert("cfg saved") ;
-            window.location.href='../../Dashboard/form.html'
-        }
-    }
 }
 
 
