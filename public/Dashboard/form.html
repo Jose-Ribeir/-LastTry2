@@ -332,7 +332,7 @@
                                                 <h4 class="text-left">Upload de config</h4>
                                                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
                                                 <div class="auto">
-                                                <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                                                <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control" placeholder="Enter your config name" value=""></div>
                                                 </div>
                                             </div>
                                             <div class="col-md-5 border-right">
@@ -346,23 +346,20 @@
                                                         <div class="col-md-12"><label class="labels">Tecla Ação</label><textarea type="text" class="form-control" rows="6" ></textarea></div> <br>
 
                                                     </div>
-                                                    <label> </label>
-                                                    <button type="button" id="ButonisGame" onclick="iconChange()" class="btn btn-secondary">Software</button>
-                                                    <a class="logo" id="button">
-                                                        <img id="img" src="images/icon/logo.png" height="75" width="75" />
-                                                    </a>
+                                                    <label> A sua config e para um jogo ou um programa</label>
+                                                    <div id="divbutton"><button type="button" id="ButonisGame" onclick="iconChange()" class="btn btn-secondary">Software</button>
+                                                        <a class="logo" id="button">
+                                                            <img id="img" src="images/icon/logo.png" height="75" width="75" />
+                                                        </a>
+                                                    </div>
+
 
                                                     <div class="container">
                                                         <div class="row">
                                                             <form class="col-md-4">
                                                                 <label>Chose your app</label>
-                                                                <select class="form-control select2">
+                                                                <select id="dropDown" class="form-control select2">
                                                                     <option>Select</option>
-                                                                    <option>Car</option>
-                                                                    <option>Bike</option>
-                                                                    <option>Scooter</option>
-                                                                    <option>Cycle</option>
-                                                                    <option>Horse</option>
                                                                 </select>
                                                             </form>
                                                         </div>
@@ -436,7 +433,7 @@
     <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
     <script src="vendor/select2/select2.min.js"></script>
-    <script src="js/upload.js"></script>
+    <script src="js/upload.js" type="application/javascript"></script>
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
