@@ -98,9 +98,8 @@ async function uploadCFG() {
             dataType: "json"
         });
         alert(JSON.stringify(newProduct))
-        await window.refresh()
         //
-        // window.location.href='../../Dashboard/table.html'
+         window.location.href='../../Dashboard/form.html'
 
     } catch (err) {
         console.log(err);
