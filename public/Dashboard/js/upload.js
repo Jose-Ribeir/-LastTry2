@@ -97,16 +97,16 @@ async function uploadCFG() {
             contentType: "application/json",
             dataType: "json"
         });
-        alert(JSON.stringify(newProduct))
         //
-         window.location.href='../../Dashboard/form.html'
+
 
     } catch (err) {
         console.log(err);
         if (err.responseJSON) {
             alert(""+err.responseJSON.msg);
         } else {
-            alert("Was not able to add product") ;
+            alert("cfg saved") ;
+            window.location.href='../../Dashboard/form.html'
         }
     }
 }
