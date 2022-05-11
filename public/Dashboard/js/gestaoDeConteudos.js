@@ -13,7 +13,7 @@ async function getData(){
         targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
 
     const response = await fetch(
-        proxyUrl + targetUrl)
+         targetUrl)
     const data = await response.json()
     return data
 
@@ -32,7 +32,7 @@ async function refresh(id){
     const json = await getData()
 
     $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/https://cfg-api-ultimate.herokuapp.com/users/"+json[id].person_id,
+        url: "https://cfg-api-ultimate.herokuapp.com/users/"+json[id].person_id,
         type: "Delete",
         dataType: 'json',
         success: function(response) {
@@ -63,7 +63,7 @@ async function table(){
         cell2.innerHTML = "" + json[i].person_name
         cell3.innerHTML = ""+ json[i].person_email
         cell4.innerHTML = "" + json[i].person_bio
-        cell5.innerHTML +="<td class=\"text-right\"><button type=\"button\" id='"+i+"' onClick=\"delet(this.id)\" href='index.html' class=\"btn btn-danger\">Delete</button></td>"
+        cell5.innerHTML +='<td class=\"text-right\"><button type=\"button\" id="'+i+'" onClick="delet(this.id)" href="index.html" class=\"btn btn-danger\">Delete</button></td>'
 
     }
 }
