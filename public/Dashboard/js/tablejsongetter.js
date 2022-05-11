@@ -44,9 +44,9 @@ async function refresh(id){
     // await table()
 }
 
-function myDeleteFunction() {
-    document.getElementById("myTable").deleteRow(0);
-}
+// function myDeleteFunction() {
+//     document.getElementById("myTable").deleteRow(0);
+// }
 
 async function table(){
     const json = await getData()
@@ -69,8 +69,5 @@ async function table(){
 }
 
 window.onload = async function() {
-
     await table()
-
-
 }

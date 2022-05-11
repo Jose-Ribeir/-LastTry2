@@ -5,7 +5,6 @@
     font-weight: 400;
     src: local('Ubuntu'), url(http://example.com/fonts/ubuntu.woff) format('woff');
 }
-
 /* poppins-100 - latin */
 @font-face {
   font-family: 'Poppins';

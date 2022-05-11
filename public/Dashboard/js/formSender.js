@@ -79,7 +79,6 @@ async function namemail(){
         'beforeend',
         '<span class="font-weight-bold"> '+json[0].person_name+json[0].person_surname+'</code>',
     );
-
 }
 
 window.onload = async function() {
@@ -101,8 +100,6 @@ window.onload = async function() {
 
 
 }
-
-
 
 async function changePass(){
    window.location.href="../Dashboard/changepass.html"

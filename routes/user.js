@@ -79,7 +79,7 @@ const passwordChange = (request, response) => {
 const createUser = (request, response) => {
   const users = request.body
 
-  client.query('INSERT INTO person (person_name, person_email, person_password) VALUES ($1, $2, $3)', [users.person_name.toString(), users.person_email.toString(), md5(users.person_password.toString())], (error, results) => {
+  client.query('INSERT INTO person (person_name, person_email, person_password,person_bio,person_adress) VALUES ($1, $2, $3,$4,$5)', [users.person_name.toString(), users.person_email.toString(), md5(users.person_password.toString()),users.person_bio.toString(),users.person_adress.toString()], (error, results) => {
     if (error) {
       throw error
     }

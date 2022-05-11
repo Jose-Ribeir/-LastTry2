@@ -8,7 +8,6 @@ async function getData(){
     // console.log(data)
     // return data
 
-
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
         targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg'
 
@@ -16,8 +15,6 @@ async function getData(){
         proxyUrl + targetUrl)
     const data = await response.json()
     return data
-
-
 }
 window.onload = async function() {
 
@@ -42,8 +39,6 @@ window.onload = async function() {
         cell6.innerHTML = "" + json[i].cfg_software_id
 
         cell7.innerHTML +="<td class=\"text-right\"><button type=\"button\" class=\"btn btn-danger\">Delete</button></td>"
-
-
 
     }
 }
