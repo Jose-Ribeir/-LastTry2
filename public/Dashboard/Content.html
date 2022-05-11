@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Tables</title>
+    <title>Charts</title>
     <link rel="shortcut icon" href="images/icon/logo-mini.png" />
 
     <!-- Fontfaces CSS-->
@@ -44,7 +44,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" >
+                        <a class="logo" href="index.html">
                             <img src="images/icon/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -59,33 +59,24 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="index.html">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
                                     <a href="index.html">Dashboard 1</a>
                                 </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
+                            <a href="Content.html">
                                 <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="Profile.html">
                                 <i class="fas fa-table"></i>Tables</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="cfgUpload.html">
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li>
@@ -170,16 +161,16 @@
                             <a class="js-arrow" href="index.html">
                                 <i class="fas fa-tachometer-alt"></i>Gestão de Utilizadores</a>
                         </li>
-                        <li>
-                            <a href="chart.html">
+                        <li class="active">
+                            <a href="Content.html">
                                 <i class="fas fa-chart-bar"></i>Gestão de Conteúdos</a>
                         </li>
-                        <li class="active">
-                            <a href="table.html">
+                        <li>
+                            <a href="Profile.html">
                                 <i class="fas fa-table"></i>Tables</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="cfgUpload.html">
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li>
@@ -206,8 +197,7 @@
                             </ul>
                         </li>
                         <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <a class="js-arrow" href="http://localhost:63342/Dashboard/Dashboard/index.html">
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                     <a href="button.html">Button</a>
@@ -318,43 +308,32 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-10">
-                                <h2 class="title-1 m-b-25">Gestão de perfil</h2>
+                                <h2 class="title-1 m-b-25">Conteudos</h2>
                                 <div class="table-responsive table--no-card m-b-40">
-                                    <div class="container rounded bg-white mt-5 mb-5">
-                                        <div  class="row">
-                                            <div class="col-md-3 border-right">
-                                                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span id="name"  class="font-weight-bold"></span><span id="email" class="text-black-50"></span><span> </span></div>
-                                            </div>
-                                            <div class="col-md-5 border-right">
-                                                <div class="p-3 py-5">
-                                                    <div class="d-flex justify-content-between align-items-center mb-3">
-                                                        <h4 class="text-right">Profile Settings</h4>
-                                                    </div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-md-6"><label  class="labels">Name</label><input id="inputName" type="text" class="form-control" placeholder="first name" value=""></div>
-                                                        <div class="col-md-6"><label  class="labels">Surname</label><input id="inputSurname" type="text" class="form-control" value="" placeholder="surname"></div>
-                                                    </div>
-                                                    <div class="row mt-3">
-                                                        <div class="col-md-12"><label class="labels">Address Line</label><input  id="inputAdress" type="text" class="form-control" placeholder="enter address line 1" value=""></div>
-                                                        <div class="col-md-12"><label  class="labels">Postcode</label><input id="inputPostalCode" type="text" class="form-control" placeholder="enter address line 2" value=""></div>
-                                                    </div>
-                                                    <div class="row mt-3">
-                                                        <div class="col-md-6"><label class="labels">Country</label><input id="inputCountry" type="text" class="form-control" placeholder="country" value=""></div>
-                                                        <div class="col-md-6"><label  class="labels">State/Region</label><input id="inputRegion" type="text" class="form-control" value="" placeholder="state"></div>
-                                                    </div>
-                                                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="upDate()" >Save Profile</button></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="p-3 py-5">
-                                                    <div class="col-md-12"><label class="labels">Descrição</label><textarea id="inputBio" type="text" class="form-control" rows="6" ></textarea></div> <br>
-                                                    <div class="mt-5 text-center"><button class="btn btn-danger" type="button" onclick="changePass()" >Change Password</button></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    <table id="ContentTable" class="table table-borderless table-striped table-earning">
+                                        <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Date</th>
+                                            <th >Id</th>
+                                            <th >Id</th>
+                                            <th>delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>2018-09-29 05:57</td>
+                                            <td>100398</td>
+                                            <td>iPhone X 64Gb Grey</td>
+                                            <td class="text-right">$999.00</td>
+                                            <td class="text-right">1</td>
+                                            <td class="text-right">$999.00</td>
+                                            <td class="text-right"><button type="button" class="btn btn-danger">Delete</button></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -366,11 +345,18 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- END MAIN CONTENT-->
         </div>
+        <!-- END PAGE CONTAINER-->
 
     </div>
 
@@ -392,7 +378,7 @@
     <script src="vendor/circle-progress/circle-progress.min.js"></script>
     <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="js/formSender.js"></script>
+    <script src="js/tableConteudos.js"></script>
     <script src="vendor/select2/select2.min.js">
     </script>
 
