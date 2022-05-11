@@ -13,7 +13,7 @@ async function getData(){
         targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
 
     const response = await fetch(
-        proxyUrl + targetUrl)
+         targetUrl)
     const data = await response.json()
     return data
 
@@ -32,7 +32,7 @@ async function refresh(id){
     const json = await getData()
 
     $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/https://cfg-api-ultimate.herokuapp.com/users/"+json[id].person_id,
+        url: "https://cfg-api-ultimate.herokuapp.com/users/"+json[id].person_id,
         type: "Delete",
         dataType: 'json',
         success: function(response) {
