@@ -13,7 +13,7 @@ async function add() {
 
         //get json here
         let newProduct = await $.ajax({
-            url: "https://cfg-api-ultimate.herokuapp.com/user",
+            url: "https://cfg-api-ultimate.herokuapp.com/users",
             method: "post",
             data: JSON.stringify(data),
             contentType: "application/json",
@@ -23,6 +23,7 @@ async function add() {
 
         sessionStorage.setItem("user_id",JSON.stringify(newProduct.person_id))
 
+        window.location.href='../index.html'
     } catch (err) {
         console.log(err);
         if (err.responseJSON) {
