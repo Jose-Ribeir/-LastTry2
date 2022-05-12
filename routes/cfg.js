@@ -34,7 +34,8 @@ const createCfg = (request, response) => {
     var filename
     var path = __dirname
     var size = path.indexOf("\\ro")
-    let res = path.substring(0, size)
+    let res = path.substring(0, size+1)
+    res=res+"public\\Cfg"
 
 
 
