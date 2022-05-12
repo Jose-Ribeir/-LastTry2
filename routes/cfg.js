@@ -32,12 +32,17 @@ const getCfgBySoftwareId = (request, response) => {
 const createCfg = (request, response) => {
     const cfg = request.body
     var filename
+    var path = __dirname
+    var size = path.indexOf("\\ro")
+    let res = text.substring(0, size)
+
+
 
 
     var form = new formidable.IncomingForm();
     form.parse(request, function (err, fields, files) {
         var oldpath = files.filetoupload.filepath;
-        var newpath = 'C:/Users/josep/Desktop' + files.filetoupload.originalFilename;
+        var newpath = res + files.filetoupload.originalFilename;
         filename=newpath
         fs.rename(oldpath, newpath, function (err) {
             if (err) throw err;

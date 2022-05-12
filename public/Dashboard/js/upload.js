@@ -101,7 +101,7 @@ async function uploadCFG() {
                     alert(""+err.responseJSON.msg);
                 } else {
                     alert("cfg saved") ;
-                    window.location.href='../cfgUpload.html'
+                    // window.location.href='../cfgUpload.html'
                 }
             }
         }
