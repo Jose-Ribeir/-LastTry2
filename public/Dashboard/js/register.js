@@ -1,7 +1,7 @@
 var temp;
 
 async function add() {
-    if (document.getElementById("pass").value===document.getElementById("confirmPass").value){
+    if (validatePassword()){
     let data = {
         person_email: (document.getElementById("email").value),
         person_name: (document.getElementById("username").value),
@@ -33,6 +33,20 @@ async function add() {
         }
     }
     }
-    else
-        alert("The passwords don't match")
 }
+
+var password = document.getElementById("pass")
+    , confirm_password = document.getElementById("confirmPass");
+
+function validatePassword(){
+    if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+        return false
+    } else {
+        confirm_password.setCustomValidity('');
+        return true
+    }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
