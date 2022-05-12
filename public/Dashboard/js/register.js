@@ -5,6 +5,7 @@ var temp;
 async function add(){
     await newUser()
     alert("Account created")
+    window.location.href='../index.html'
 }
 
 
