@@ -8,8 +8,7 @@ async function add() {
         person_password: (document.getElementById("pass").value)
 
     }
-    console.log("[addProducts] data = " + JSON.stringify(data));
-    console.log("data1" + JSON.stringify(data1));
+
     try {
 
         //get json here
