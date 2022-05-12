@@ -33,6 +33,7 @@ async function add() {
         }
     }
     }
+    window.location.href('../index.html')
 }
 
 
