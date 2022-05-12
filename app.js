@@ -36,7 +36,7 @@ app.use(
 const stores = require('./routes/store')
 const cfg = require('./routes/cfg')
 const software=require('./routes/software')
-const test=require('./routes/testestetestetts')
+const test=require('./routes/tests/testestetestetts')
 
 //user
 app.get('/users', users.getUsers)
