@@ -114,6 +114,11 @@ async function uploadCFG() {
 }
 
 
+function uploadcfg(){
+
+}
+
+
 
 window.onload = async function() {
     loginId = sessionStorage.getItem("user_id")
