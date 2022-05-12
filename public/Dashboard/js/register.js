@@ -42,8 +42,6 @@ async function newUser() {
         }
     }
     }
-
-
 }
 
 

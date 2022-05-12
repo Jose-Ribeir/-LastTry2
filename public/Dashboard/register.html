@@ -48,7 +48,7 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="index.html" method="post">
+                            <form id="form"  method="post" onsubmit="return add()">
                                 <div class="form-group">
                                     <label>Username</label>
                                     <input class="au-input au-input--full" id="username" type="text" name="username" placeholder="Username">
@@ -70,7 +70,7 @@
                                         <input type="checkbox" name="aggree">Agree the terms and policy
                                     </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" onclick="add()">register</button>
+                                <input class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Register</input>
                             </form>
                             <div class="register-link">
                                 <p>
