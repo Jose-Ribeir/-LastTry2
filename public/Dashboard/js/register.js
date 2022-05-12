@@ -22,8 +22,8 @@ async function add() {
         alert(JSON.stringify(newProduct))
 
         sessionStorage.setItem("user_id",JSON.stringify(newProduct.person_id))
-
-        window.location.href='../index.html'
+        //
+        // window.location.href='../index.html'
     } catch (err) {
         console.log(err);
         if (err.responseJSON) {
