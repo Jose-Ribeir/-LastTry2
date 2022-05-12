@@ -19,7 +19,7 @@ async function changePass1() {
             });
             alert(JSON.stringify(newProduct))
 
-            window.location.href='../Profile.html'
+            window.location.href='../profile.html'
 
         } catch (err) {
             console.log(err);

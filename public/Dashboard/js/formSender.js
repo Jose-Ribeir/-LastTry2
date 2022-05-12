@@ -25,7 +25,7 @@ async function upDate() {
         alert(JSON.stringify(newProduct))
 
         sessionStorage.setItem("user_id",JSON.stringify(newProduct.person_id))
-        window.location.href='../Profile.html'
+        window.location.href='../profile.html'
 
     } catch (err) {
         console.log(err);
