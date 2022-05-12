@@ -83,7 +83,6 @@ async function uploadCFG() {
                 "cfg_description":  document.getElementById('description').value};
             console.log("[addProducts] data = " + JSON.stringify(data));
             try {
-
                 //get json here
                 let newProduct = await $.ajax({
                     url: "https://cfg-api-ultimate.herokuapp.com/cfg",
