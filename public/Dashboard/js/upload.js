@@ -75,7 +75,7 @@ async function uploadCFG() {
         {
 
             let data = {"cfg_name":  document.getElementById('name').value,
-                // "cfg_cfg":  document.getElementById('inputPostalCode').value,
+                "cfg_cfg":  document.getElementById('cfgfile').value,
                 "cfg_software_id":  json[i].software_id,
                 "cfg_person_id":  loginId,
                 "cfg_date":  d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()	,
