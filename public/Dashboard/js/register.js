@@ -35,6 +35,7 @@ async function add() {
     }
 }
 
+
 var password = document.getElementById("pass")
     , confirm_password = document.getElementById("confirmPass");
 
