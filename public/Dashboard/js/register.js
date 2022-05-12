@@ -1,6 +1,15 @@
 var temp;
 
-async function add() {
+
+
+async function add(){
+    await newUser()
+    alert("Account created")
+    window.location.href='../index.html'
+}
+
+
+async function newUser() {
     if (validatePassword()){
     let data = {
         person_email: (document.getElementById("email").value),
@@ -34,7 +43,6 @@ async function add() {
     }
     }
 
-    window.location.href='../index.html'
 
 }
 
