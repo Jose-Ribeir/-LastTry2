@@ -36,6 +36,7 @@ app.use(
 const stores = require('./routes/store')
 const cfg = require('./routes/cfg')
 const software=require('./routes/software')
+const test=require('./routes/testestetestetts')
 
 //user
 app.get('/users', users.getUsers)
@@ -62,6 +63,9 @@ app.get('/stores', stores.getStores)
 app.get('/software/games',software.getGames)
 app.get('/software/apps',software.getApps)
 
+
+
+app.post('/filepost',test.postFile)
 
 
 

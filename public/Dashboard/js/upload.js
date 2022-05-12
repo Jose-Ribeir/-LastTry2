@@ -75,7 +75,7 @@ async function uploadCFG() {
         {
 
             let data = {"cfg_name":  document.getElementById('name').value,
-                // "cfg_cfg":  document.getElementById('inputPostalCode').value,
+                "cfg_cfg":  document.getElementById('cfgfile').value,
                 "cfg_software_id":  json[i].software_id,
                 "cfg_person_id":  loginId,
                 "cfg_date":  d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()	,
@@ -83,7 +83,6 @@ async function uploadCFG() {
                 "cfg_description":  document.getElementById('description').value};
             console.log("[addProducts] data = " + JSON.stringify(data));
             try {
-
                 //get json here
                 let newProduct = await $.ajax({
                     url: "https://cfg-api-ultimate.herokuapp.com/cfg",
@@ -101,7 +100,7 @@ async function uploadCFG() {
                     alert(""+err.responseJSON.msg);
                 } else {
                     alert("cfg saved") ;
-                    window.location.href='../cfgUpload.html'
+                    // window.location.href='../cfgUpload.html'
                 }
             }
         }
@@ -110,6 +109,11 @@ async function uploadCFG() {
         }
 
     }
+
+}
+
+
+function uploadcfg(){
 
 }
 
