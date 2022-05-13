@@ -43,7 +43,7 @@ app.get('/users', users.getUsers)
 app.get('/users/:id', users.getUserById)
 app.post('/users', users.createUser)
 app.post('/login', users.getLogin)
-app.post('/changepass', users.passwordChange)
+app.put('/changepass', users.passwordChange)
 app.put('/users/:id', users.updateUser)
 app.delete('/users/:id', users.deleteUser)
 
