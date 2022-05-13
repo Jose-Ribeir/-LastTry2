@@ -27,8 +27,6 @@ const getCfgBySoftwareId = (request, response) => {
     })
 }
 
-
-
 const createCfg = (request, response) => {
     const cfg = request.body
     var filename
