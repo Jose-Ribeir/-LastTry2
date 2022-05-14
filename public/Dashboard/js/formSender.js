@@ -23,7 +23,7 @@ async function getGps() {
         targetUrl)
     const data = await response.json()
     alert(""+data.results[0].geometry.location.lat +" "+ data.results[0].geometry.location.lng)
-    return data.results[0].geometry.location.lat +" "+ data.results[0].geometry.location.lng
+    return (""+data.results[0].geometry.location.lat +" "+ data.results[0].geometry.location.lng)
 }
 
 
