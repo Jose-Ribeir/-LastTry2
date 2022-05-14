@@ -38,14 +38,14 @@ async function getGps() {
 
 
 async function upDate() {
-    alert(""+getGps())
+    alert(""+await getGps())
     let data = {"person_name": document.getElementById('inputName').value,
         "person_surname":  document.getElementById('inputSurname').value,
         "person_postal_code":  document.getElementById('inputPostalCode').value,
         "person_region":  document.getElementById('inputRegion').value,
         "person_country":  document.getElementById('inputCountry').value,
         "person_adress":  document.getElementById('inputAdress').value,
-        "person_loc": ""+getGps(),
+        "person_loc": ""+await getGps(),
         "person_bio":  document.getElementById('inputBio').value};
     console.log("[addProducts] data = " + JSON.stringify(data));
     try {
