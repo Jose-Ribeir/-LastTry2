@@ -22,7 +22,6 @@ async function getGps() {
     const response = await fetch(
         targetUrl)
     const data = await response.json()
-    alert(""+data.results[0].geometry.location.lat +" "+ data.results[0].geometry.location.lng)
     return (""+data.results[0].geometry.location.lat +" "+ data.results[0].geometry.location.lng)
 }
 
@@ -38,7 +37,6 @@ async function getGps() {
 
 
 async function upDate() {
-    alert(""+await getGps())
     let data = {"person_name": document.getElementById('inputName').value,
         "person_surname":  document.getElementById('inputSurname').value,
         "person_postal_code":  document.getElementById('inputPostalCode').value,
