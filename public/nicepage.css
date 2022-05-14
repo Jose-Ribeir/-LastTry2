@@ -363,7 +363,7 @@ span.fr-img-caption.fr-view {
 /*end-commonstyles library*/@charset "UTF-8";
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: Ubuntu ,sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -15762,13 +15762,13 @@ p {
   word-break: break-all;
 }
 .u-font-arial.u-custom-font {
-  font-family: Arial, sans-serif !important;
+  font-family: Ubuntu, sans-serif !important;
 }
 .u-font-courier-new.u-custom-font {
-  font-family: 'Courier New', monospace !important;
+  font-family: 'Ubuntu', monospace !important;
 }
 .u-font-georgia.u-custom-font {
-  font-family: Georgia, serif !important;
+  font-family: Ubuntu, serif !important;
 }
 .u-font-roboto.u-custom-font {
   font-family: Ubuntu, sans-serif !important;
@@ -15777,43 +15777,43 @@ p {
   font-family: 'Ubuntu', sans-serif !important;
 }
 .u-font-lato.u-custom-font {
-  font-family: Lato, sans-serif !important;
+  font-family: Ubuntu, sans-serif !important;
 }
 .u-font-montserrat.u-custom-font {
-  font-family: Montserrat, sans-serif !important;
+  font-family: Ubuntu, sans-serif !important;
 }
 .u-font-roboto-condensed.u-custom-font {
   font-family: 'Ubuntu Condensed', sans-serif !important;
 }
 .u-font-source-sans-pro.u-custom-font {
-  font-family: 'Source Sans Pro', sans-serif !important;
+  font-family: 'Ubuntu', sans-serif !important;
 }
 .u-font-oswald.u-custom-font {
-  font-family: Oswald, sans-serif !important;
+  font-family: Ubuntu, sans-serif !important;
 }
 .u-font-raleway.u-custom-font {
-  font-family: Raleway, sans-serif !important;
+  font-family: Ubuntu, sans-serif !important;
 }
 .u-font-pt-sans.u-custom-font {
-  font-family: 'PT Sans', sans-serif !important;
+  font-family: 'Ubuntu', sans-serif !important;
 }
 .u-font-ubuntu.u-custom-font {
   font-family: Ubuntu, sans-serif !important;
 }
 .u-font-titillium-web.u-custom-font {
-  font-family: 'Titillium Web', sans-serif !important;
+  font-family: 'Ubuntu', sans-serif !important;
 }
 .u-font-merriweather.u-custom-font {
-  font-family: Merriweather, serif !important;
+  font-family: Ubuntu, serif !important;
 }
 .u-font-roboto-slab.u-custom-font {
   font-family: 'Ubuntu Slab', serif !important;
 }
 .u-font-playfair-display.u-custom-font {
-  font-family: 'Playfair Display', serif !important;
+  font-family: 'Ubuntu', serif !important;
 }
 .u-font-lobster.u-custom-font {
-  font-family: Lobster, display !important;
+  font-family: Ubuntu, display !important;
 }
 .u-rectangle {
   border-radius: 0;
