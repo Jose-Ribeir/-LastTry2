@@ -1,5 +1,38 @@
-
 let id
+
+
+
+async function getGps() {
+    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
+    //
+    //
+    // const response = await fetch(targetUrl)
+    // const data = await response.json()
+    // console.log(data)
+    // return data
+
+
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+        targetUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+
+            document.getElementById('inputCountry').value+', '+
+            document.getElementById('inputAdress').value+', '+
+            document.getElementById('inputPostalCode').value+', '+
+            '&key=AIzaSyDk31YFxoBBRi15FKVX3-9rF-Vr8vpGfSQ'
+
+    const response = await fetch(
+        targetUrl)
+    const data = await response.json()
+    return data.results[0].geometry.location.lat +" "+ data.results[0].geometry.location.lng
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -10,6 +43,7 @@ async function upDate() {
         "person_region":  document.getElementById('inputRegion').value,
         "person_country":  document.getElementById('inputCountry').value,
         "person_adress":  document.getElementById('inputAdress').value,
+        "person_loc": getGps().toString(),
         "person_bio":  document.getElementById('inputBio').value};
     console.log("[addProducts] data = " + JSON.stringify(data));
     try {
