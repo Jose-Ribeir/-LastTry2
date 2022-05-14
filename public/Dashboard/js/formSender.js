@@ -44,7 +44,7 @@ async function upDate() {
         "person_region":  document.getElementById('inputRegion').value,
         "person_country":  document.getElementById('inputCountry').value,
         "person_adress":  document.getElementById('inputAdress').value,
-        "person_loc": getGps().toString(),
+        "person_loc": getGps(),
         "person_bio":  document.getElementById('inputBio').value};
     console.log("[addProducts] data = " + JSON.stringify(data));
     try {
