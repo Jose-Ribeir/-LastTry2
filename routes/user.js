@@ -78,11 +78,8 @@ const passwordChange = (request, response) => {
 
 const createUser = (request, response) => {
   const users = request.body
-  console.log(users)
-  console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ")
 
-
-  client.query('INSERT INTO person (person_name, person_email, person_password,person_bio,person_adress,person_region,person_country,person_postal_code,person_surname,person_loc) VALUES ($1, $2, $3,$4,$5,$6,$7,$8,$9,$10) returning *', [users.person_name, users.person_email, md5(users.person_password),users.person_bio,users.person_adress,users.person_region,users.person_country,users.person_postal_code,users.person_surname,users.person_loc], (error, results) => {
+  client.query('INSERT INTO person (person_name, person_email, person_password,person_bio,person_adress,person_region,person_country,person_postal_code,person_surname) VALUES ($1, $2, $3,$4,$5,$6,$7,$8,$9) returning *', [users.person_name, users.person_email, md5(users.person_password),users.person_bio,users.person_adress,users.person_region,users.person_country,users.person_postal_code,users.person_surname], (error, results) => {
     if (error) {
       throw error
     }
@@ -95,8 +92,8 @@ const updateUser = (request, response) => {
   const users = request.body
 
   client.query(
-      'UPDATE person SET person_name = $1, person_adress = $2, person_bio = $3, person_country = $4, person_postal_code = $5, person_region = $6, person_surname =$7  WHERE person_id = $8',
-      [users.person_name.toString(), users.person_adress.toString(), users.person_bio.toString(), users.person_country.toString(), users.person_postal_code.toString(), users.person_region.toString(), users.person_surname.toString(),id],
+      'UPDATE person SET person_name = $1, person_adress = $2, person_bio = $3, person_country = $4, person_postal_code = $5, person_region = $6, person_surname =$7 , person_loc=$8 WHERE person_id = $9',
+      [users.person_name.toString(), users.person_adress.toString(), users.person_bio.toString(), users.person_country.toString(), users.person_postal_code.toString(), users.person_region.toString(), users.person_surname.toString(),users.person_loc,id],
       (error, results) => {
         if (error) {
           throw error
