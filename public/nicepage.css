@@ -15633,6 +15633,7 @@ p {
 }
 .u-align-center {
   text-align: center;
+    margin-top: 50px;
 }
 @media (min-width: 1400px) {
   .u-align-center-xxl {

@@ -14,9 +14,9 @@ async function getGps() {
 
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
         targetUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+
-            document.getElementById('inputCountry').value+', '+
             document.getElementById('inputAdress').value+', '+
-            document.getElementById('inputPostalCode').value+', '+
+            document.getElementById('inputCountry').value+', '+
+            document.getElementById('inputPostalCode').value+
             '&key=AIzaSyDk31YFxoBBRi15FKVX3-9rF-Vr8vpGfSQ'
 
     const response = await fetch(
