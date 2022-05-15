@@ -12,7 +12,7 @@ async function getData(){
         targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg'
 
     const response = await fetch(
-        proxyUrl + targetUrl)
+         targetUrl)
     const data = await response.json()
     return data
 }

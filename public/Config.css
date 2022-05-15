@@ -1,9 +1,30 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 858px;
+  min-height: 350px;
 }
 
 .u-section-1 .u-text-1 {
   margin: 69px auto 0;
+}
+
+.two-col {
+  overflow: hidden;/* Makes this div contain its floats */
+}
+
+.two-col .col1,
+.two-col .col2 {
+  width: 49%;
+}
+
+.two-col .col1 {
+  float: left;
+}
+
+.two-col .col2 {
+  float: right;
+}
+
+.two-col label {
+  display: block;
 }
 
 .u-section-1 .u-btn-1 {
@@ -26,7 +47,16 @@
   height: 228px;
   margin: 152px 271px 60px auto;
 }
-
+.button11{
+  margin-top: 150px;
+  background-color: #6f6f6f;
+  border: none;
+  color: #000000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 3px;
+}
 @media (max-width: 991px) {
   .u-section-1 .u-map-1 {
     margin-right: 150px;
