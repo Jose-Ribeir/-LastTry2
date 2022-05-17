@@ -6,6 +6,7 @@ async function getData(){
     // const data = await response.json()
     // console.log(data)
     // return data
+    alert("getdata")
     let type=queryString.substring(1,queryString.length)
 
 
