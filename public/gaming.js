@@ -24,4 +24,5 @@ async function getData(){
 window.onload = async function() {
     const queryString = window.location.search;
     console.log(queryString);
+    alert(""+queryString)
 }
