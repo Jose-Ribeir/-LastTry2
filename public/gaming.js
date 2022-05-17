@@ -21,10 +21,10 @@ async function getData(){
 
 
 
-
+var queryString
 
 window.onload = async function() {
-    const queryString = window.location.search;
+    queryString = window.location.search;
     console.log(queryString);
     alert(""+queryString)
 
