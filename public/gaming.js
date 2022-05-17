@@ -27,6 +27,7 @@ window.onload = async function() {
     alert(""+queryString)
 
     const json = await getData()
+    alert(""+json[0])
     let lista=document.getElementById("list")
     for (let i = 0; i < json.length; i++) {
         lista.innerHTML+="<div class=\"u-container-style u-list-item u-repeater-item\">\n" +
