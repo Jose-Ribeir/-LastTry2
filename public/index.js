@@ -1,11 +1,11 @@
 
 async function clickGaming() {
-    window.location.href='/Software.html?gaming'
+    window.location.href='/Gaming.html?games'
 
 }
 
 
 async function clickSoftware() {
-    window.location.href='/Software.html?software'
+    window.location.href='/Gaming.html?apps'
 
 }
