@@ -15,6 +15,7 @@ async function getData(){
     const response = await fetch(
         targetUrl)
     const data = await response.json()
+    alert(""+data[0])
     return data
 }
 
