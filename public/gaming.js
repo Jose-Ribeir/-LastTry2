@@ -9,7 +9,7 @@ async function getData(){
     alert("getdata")
     let type=queryString.substring(1,queryString.length)
 
-
+    alert("Type= "+type)
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
         targetUrl = 'https://cfg-api-ultimate.herokuapp.com/software/'+type
     const response = await fetch(
