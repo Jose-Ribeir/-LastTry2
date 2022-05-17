@@ -20,6 +20,7 @@ async function getData(){
 }
 
 async function click(a) {
+    alert("click")
     window.location.href='/Config.html?'+a
 
 }
