@@ -8,10 +8,10 @@ async function getData(){
     // return data
 
     let type=queryString.substring(1,queryString.length)
-
-
+    type=type.substring(0,type.indexOf("&"))
+    alert(type)
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users/'
+        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg/'+type
 
     const response = await fetch(
         targetUrl)
