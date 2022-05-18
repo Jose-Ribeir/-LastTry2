@@ -35,10 +35,6 @@ const createCfg = (request, response) => {
     let res = path.substring(0, size+1)
     res=res+"public\\Cfg"
 
-
-
-
-
     var form = new formidable.IncomingForm();
     form.parse(request, function (err, fields, files) {
         var oldpath = files.filetoupload.filepath;
@@ -68,16 +64,20 @@ const postFile = (req, res) => {
 
 const getCfgById = (request, response) => {
     const id = parseInt(request.params.id)
-    client.query('SELECT * FROM cfg WHERE cfg_id = $1', [id], (error, results) => {
-        if (error) {
-            throw error
-        } client.query('UPDATE cfg SET cfg_view = cfg_view + 1 WHERE cfg_id = $1',[id], (error, results) =>{
+    client.query('UPDATE cfg SET cfg_view = cfg_view + 1 WHERE cfg_id = $1 returning *',[id], (error, results) =>{
             if(error){
                 throw error
             }
             response.status(200).json(results.rows)
         })
+}
 
+const getCfgByName = (request, response) => {
+    const id = request.params.name
+    client.query('UPDATE cfg SET cfg_view = cfg_view + 1 WHERE cfg_name = $1 returning *',[id], (error, results) =>{
+        if(error){
+            throw error
+        }
         response.status(200).json(results.rows)
     })
 }
@@ -98,5 +98,6 @@ module.exports = {
     getCfgById,
     createCfg,
     deleteCfg,
-    getCfgBySoftwareId
+    getCfgBySoftwareId,
+    getCfgByName
 }
