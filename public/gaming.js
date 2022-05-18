@@ -19,10 +19,9 @@ async function getData(){
     return data
 }
 
-async function click(a) {
-    alert("click")
-    window.location.href='/Config.html?'+a
-
+function teste(a) {
+    alert(a)
+    window.location.href='Config.html?'+a
 }
 
 var queryString
