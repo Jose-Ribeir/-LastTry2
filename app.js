@@ -51,7 +51,8 @@ app.delete('/users/:id', users.deleteUser)
 
 //cfg
 app.get('/cfg', cfg.getCfg)
-app.get('/cfg/:id', cfg.getCfgById)
+app.get('/cfg/:id(\\d+)', cfg.getCfgById)
+app.get('/cfg/name/:name', cfg.getCfgByName)
 app.post('/cfg', cfg.createCfg)
 app.delete('/cfg/:id', cfg.deleteCfg)
 app.get('/cfg/software/:id', cfg.getCfgBySoftwareId)
