@@ -136,6 +136,6 @@ window.onload = async function() {
 }
 
 async function changePass(){
-   window.location.href="../Dashboard/changepass.html"
+   window.location.href="../changePass.html"
 
 }
