@@ -29,10 +29,10 @@ window.onload = async function() {
     console.log(queryString);
     const json = await getData()
 
-    document.getElementById("descri").innerText=json[0].cfg_description
-    document.getElementById("date").innerText=json[0].cfg_date
-    document.getElementById("name").innerText=json[0].cfg_name
-    document.getElementById("keyact").innerText=json[0].cfg_key_action
+    document.getElementById("descri").innerHTML=""+json[0].cfg_description
+    document.getElementById("date").innerHTML=""+json[0].cfg_date
+    document.getElementById("name").innerHTML=""+json[0].cfg_name
+    document.getElementById("keyact").innerHTML=""+json[0].cfg_key_action
     // document.getElementById("name").value=json.cfg_
     // document.getElementById("keyact").value=json.cfg_
 
