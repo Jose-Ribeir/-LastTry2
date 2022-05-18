@@ -19,9 +19,9 @@ async function getData(){
     return data
 }
 
-const queryString = window.location.search;
 
-console.log(queryString);
+
+
 
 
 
@@ -33,11 +33,13 @@ async function click(id) {
 
 }
 
-var queryString
 
-window.onload = async function() {
+
+
+
+async function batata() {
     alert("jssssss")
-    queryString = window.location.search;
+  const  queryString = window.location.search;
     console.log(queryString);
 
 
@@ -54,3 +56,15 @@ window.onload = async function() {
     }
 
 }
+
+function f() {
+    alert("asdasdasdsadsadsadasdsadsasadasdsdasdasdasdasdasdsadsadsadsadasdasdasdasdasd")
+}
+window.onload = async function() {
+    alert("gdshjkdsaobsadojdsaknvdjjalnsjkdankçsadçkdsaacas")
+
+}
+window.addEventListener("load", async function () {
+    console.log("batatata")
+    alert("asdasdasdasd")
+})
