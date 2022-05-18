@@ -9,6 +9,7 @@ async function getData(){
 
     let type=queryString.substring(1,queryString.length)
 
+
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
         targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users/'
 
