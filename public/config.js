@@ -22,7 +22,7 @@ async function getData(){
 
 
 
-
+var queryString
 
 window.onload = async function() {
     queryString = window.location.search;
