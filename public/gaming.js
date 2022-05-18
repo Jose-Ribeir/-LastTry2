@@ -20,7 +20,7 @@ async function getData(){
 
 function teste(a) {
     alert(a)
-    window.location.href='Config.html?'+a
+    window.location.href='software.html?'+a
 }
 
 var queryString
