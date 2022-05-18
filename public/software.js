@@ -36,9 +36,10 @@ async function click(id) {
 var queryString
 
 window.onload = async function() {
+    alert("jssssss")
     queryString = window.location.search;
     console.log(queryString);
-    alert("jssssss")
+
 
     const json = await getData()
     alert(""+json[0])
