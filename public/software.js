@@ -38,6 +38,7 @@ var queryString
 window.onload = async function() {
     queryString = window.location.search;
     console.log(queryString);
+    alert("jssssss")
 
     const json = await getData()
     alert(""+json[0])
