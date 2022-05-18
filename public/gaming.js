@@ -34,13 +34,12 @@ window.onload = async function() {
     alert(""+json[0])
     let lista=document.getElementById("list")
     for (let i = 0; i < json.length; i++) {
-        lista.innerHTML+="<div class=\"u-container-style u-list-item u-repeater-item\">\n" +
-            "              <div onclick='teste(this.id)' id='json[i].software_name' class=\"u-container-layout u-similar-container u-container-layout-1\">\n" +
-            "                <p class=\"u-text u-text-1\">"+json[i].software_name+"</p>\n" +
-            "                <img  class=\"u-hover-feature u-image u-image-default u-preserve-proportions u-image-1\" src=\"images/272f78_95999562a4cd4ea08798d569018146bd_mv2.png\" alt=\"\" data-image-width=\"78\" data-image-height=\"78\">\n" +
-            "              </div>\n" +
-            "            </div>"
-
+        lista.innerHTML+= `<div class=\"u-container-style u-list-item u-repeater-item\">
+                    <div onclick='teste(this.id)' id='${json[i].software_name}' class=\"u-container-layout u-similar-container u-container-layout-1\"> 
+                    <p class=\\"u-text u-text-1\\">"+json[i].software_name+"</p>
+                    <img  class=\"u-hover-feature u-image u-image-default u-preserve-proportions u-image-1\" src=\"images/272f78_95999562a4cd4ea08798d569018146bd_mv2   .png\" alt=\"\" data-image-width=\"78\" data-image-height=\"78\">
+                    </div>
+                </div>`
     }
 
 }
