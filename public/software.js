@@ -25,8 +25,20 @@ async function getData(){
 
 
 
-async function batata() {
 
+
+
+async function click(id) {
+
+
+}
+
+
+
+
+
+async function batata() {
+    alert("batata")
   const  queryString = window.location.search;
     console.log(queryString);
 
@@ -45,7 +57,15 @@ async function batata() {
 
 }
 
+function f() {
+    alert("Function f")
+}
 window.onload = async function() {
+    alert("Onloadddd")
     batata()
 
 }
+window.addEventListener("load", async function () {
+    alert("event listener")
+    batata()
+})
