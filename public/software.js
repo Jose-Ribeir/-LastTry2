@@ -18,9 +18,11 @@ async function getData(){
     const data = await response.json()
     return data
 }
-
+ var queryString
 window.onload = async function() {
-    const  queryString = window.location.search;
+    alert("onload")
+    queryString = window.location.search;
+    alert(""+queryString)
     console.log(queryString);
 
 
