@@ -30,13 +30,15 @@ async function getSoftware(a){
     // console.log(data)
     // return data
 
-
+    alert("get software")
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
         targetUrl = 'https://cfg-api-ultimate.herokuapp.com/software/'+a
 
     const response = await fetch(
         targetUrl)
     const data = await response.json()
+
+    alert("fim de get")
     return data
 }
 
