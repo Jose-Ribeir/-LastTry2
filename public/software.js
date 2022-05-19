@@ -34,7 +34,7 @@ window.onload = async function() {
     }
 
     let type=queryString.substring(1,queryString.length)
-    type=type.substring(type.indexOf("&"), type.length)
+    type=type.substring(type.indexOf("&")+1, type.length)
 
     document.getElementById("softwareName").innerHTML=''+type
 }
