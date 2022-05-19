@@ -1,5 +1,5 @@
 
-async function getData(){
+async function getcfg(){
     // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
     //
     //
@@ -28,7 +28,7 @@ var queryString
 window.onload = async function() {
     queryString = window.location.search;
     console.log(queryString);
-    const json = await getData()
+    const json = await getcfg()
 
     alert("Json getData config"+JSON.stringify(json))
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
