@@ -59,7 +59,7 @@ window.onload = async function() {
     }
     alert(""+type)
    let software= getSoftware(type)
-    alert(""+software[0])
+    alert(""+software[0].software_name)
 
     document.getElementById("software").innerHTML=' <img id="softwareImg" class="u-image u-align-center u-image-1" src="'+software[0].software_image+'" data-image-width="1000" data-image-height="1000"><h2 id="softwareName" class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1">'+software[0].software_name+'</h2>'
 }
