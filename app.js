@@ -63,6 +63,7 @@ app.get('/stores', stores.getStores)
 //software
 app.get('/software/games',software.getGames)
 app.get('/software/apps',software.getApps)
+app.get('/software/:id(\\d+)',software.getSoftwareById)
 
 
 

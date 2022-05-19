@@ -26,6 +26,16 @@ const getCfgBySoftwareId = (request, response) => {
         response.status(200).json(results.rows)
     })
 }
+const getCfgBySoftware = (request, response) => {
+    const id = parseInt(request.params.id)
+    client.query('Select * from cfg inner join software s on cfg.cfg_software_id = s.software_id where cfg_software_id = $1', [id], (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+}
+
 
 const createCfg = (request, response) => {
     const cfg = request.body
