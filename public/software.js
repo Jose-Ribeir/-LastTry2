@@ -60,9 +60,9 @@ window.onload = async function() {
         lista.innerHTML+= '<div class="u-align-left u-container-style u-layout-cell u-size-20 u-layout-cell-1"><div class="u-container-layout u-valign-top u-container-layout-1"><h4 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3">'+json[i].cfg_name+'</h4><p class="u-custom-font u-font-ubuntu u-text u-text-4">'+json[i].cfg_description+'</p></div></div>'
     }
 
-    alert(""+type)
+    alert("typeeeeee"+type)
    let software= getSoftware(type)
-    alert(""+software[0])
+    alert("software 1 json"+software[0])
 
     document.getElementById("software").innerHTML=' <img id="softwareImg" class="u-image u-align-center u-image-1" src="images/stsmall845x845-pad1000x1000f8f8f8-12.jpg" data-image-width="1000" data-image-height="1000"><h2 id="softwareName" class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1">'+software[0].software_name+'</h2>'
 
