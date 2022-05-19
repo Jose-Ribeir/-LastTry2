@@ -30,6 +30,7 @@ window.onload = async function() {
     console.log(queryString);
     const json = await getData()
 
+    alert(""+JSON.stringify(json))
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
     document.getElementById("date").innerHTML=""+json[0].cfg_date
     document.getElementById("name").innerHTML=""+json[0].cfg_name
