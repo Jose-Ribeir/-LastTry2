@@ -25,20 +25,8 @@ async function getData(){
 
 
 
-
-
-
-async function click(id) {
- 
-
-}
-
-
-
-
-
 async function batata() {
-    alert("jssssss")
+
   const  queryString = window.location.search;
     console.log(queryString);
 
@@ -57,14 +45,7 @@ async function batata() {
 
 }
 
-function f() {
-    alert("asdasdasdsadsadsadasdsadsasadasdsdasdasdasdasdasdsadsadsadsadasdasdasdasdasd")
-}
 window.onload = async function() {
-    alert("gdshjkdsaobsadojdsaknvdjjalnsjkdankçsadçkdsaacas")
+    batata()
 
 }
-window.addEventListener("load", async function () {
-    console.log("batatata")
-    alert("asdasdasdasd")
-})
