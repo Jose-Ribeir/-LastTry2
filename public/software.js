@@ -61,7 +61,7 @@ window.onload = async function() {
     }
 
     alert("typeeeeee"+type)
-   let software= getSoftware(type)
+   let software= await getSoftware(type)
     alert("software 1 json"+software[0])
 
     document.getElementById("software").innerHTML=' <img id="softwareImg" class="u-image u-align-center u-image-1" src="images/stsmall845x845-pad1000x1000f8f8f8-12.jpg" data-image-width="1000" data-image-height="1000"><h2 id="softwareName" class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1">'+software[0].software_name+'</h2>'
