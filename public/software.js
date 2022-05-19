@@ -53,13 +53,16 @@ window.onload = async function() {
 
     const json = await getCfgs(type)
     alert(""+json[0])
+
+    alert(""+type)
+    let software= getSoftware(type)
+    alert(""+software[0].software_name)
+
+    document.getElementById("software").innerHTML=' <img id="softwareImg" class="u-image u-align-center u-image-1" src="'+software[0].software_image+'" data-image-width="1000" data-image-height="1000"><h2 id="softwareName" class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1">'+software[0].software_name+'</h2>'
+
+
     let lista=document.getElementById("list")
     for (let i = 0; i < json.length; i++) {
         lista.innerHTML+= '<div class="u-align-left u-container-style u-layout-cell u-size-20 u-layout-cell-1"><div class="u-container-layout u-valign-top u-container-layout-1"><h4 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3">'+json[i].cfg_name+'</h4><p class="u-custom-font u-font-ubuntu u-text u-text-4">'+json[i].cfg_description+'</p></div></div>'
     }
-    alert(""+type)
-   let software= getSoftware(type)
-    alert(""+software[0].software_name)
-
-    document.getElementById("software").innerHTML=' <img id="softwareImg" class="u-image u-align-center u-image-1" src="'+software[0].software_image+'" data-image-width="1000" data-image-height="1000"><h2 id="softwareName" class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1">'+software[0].software_name+'</h2>'
-}
+   }
