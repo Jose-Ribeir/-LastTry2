@@ -33,9 +33,9 @@ window.onload = async function() {
     alert("Json getData config"+JSON.stringify(json))
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
     document.getElementById("date").innerHTML=""+json[0].cfg_date
-    document.getElementById("person").innerHTML=""+json[0].cfg_name
+    document.getElementById("cfgName").innerHTML=""+json[0].cfg_name
     document.getElementById("keyact").innerHTML=""+json[0].cfg_key_action
-    document.getElementById("name").innerHTML=""+json[0].person_name+" "+json[0].person_surname
+    document.getElementById("person").innerHTML=""+json[0].person_name+" "+json[0].person_surname
     document.getElementById("views").innerHTML=""+json[0].cfg_view
     document.getElementById("gameName").innerHTML=""+json[0].software_name
 
