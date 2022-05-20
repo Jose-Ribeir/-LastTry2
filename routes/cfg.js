@@ -87,6 +87,7 @@ const getCfgById = (request, response) => {
         })
 }
 
+
 const getCfgByName = (request, response) => {
     const id = request.params.name
     client.query('UPDATE cfg SET cfg_view = cfg_view + 1 WHERE cfg_name = $1 returning * ',[id], (error, results) =>{
