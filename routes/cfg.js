@@ -74,7 +74,7 @@ const postFile = (req, res) => {
 
 const getCfgById = (request, response) => {
     const id = parseInt(request.params.id)
-    client.query('UPDATE cfg SET cfg_view = cfg_view + 1 WHERE cfg_id = $1 returning *',[id], (error, results) =>{
+    client.query('UPDATE cfg SET cfg_view = cfg_view + 1 WHERE cfg_id = $1 ',[id], (error, results) =>{
             if(error){
                 throw error
             }
