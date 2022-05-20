@@ -74,13 +74,19 @@ const postFile = (req, res) => {
 
 const getCfgById = (request, response) => {
     const id = parseInt(request.params.id)
-    client.query('UPDATE cfg SET cfg_view = cfg_view + 1 WHERE cfg_id = $1 returning *',[id], (error, results) =>{
+    client.query('UPDATE cfg SET cfg_view = cfg_view + 1 WHERE cfg_id = $1 ',[id], (error, results) =>{
             if(error){
                 throw error
             }
-            response.status(200).json(results.rows)
+            client.query('SELECT * FROM cfg inner join software s on cfg.cfg_software_id = s.software_id inner join person p on cfg.cfg_person_id=p.person_id WHERE cfg_id = $1 ',[id], (error, results) =>{
+                if(error){
+                    throw error
+                }
+                response.status(200).json(results.rows)
+            })
         })
 }
+
 
 const getCfgByName = (request, response) => {
     const id = request.params.name
