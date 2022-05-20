@@ -78,7 +78,12 @@ const getCfgById = (request, response) => {
             if(error){
                 throw error
             }
-            response.status(200).json(results.rows)
+            client.query('SELECT * FROM software WHERE software_id = $1',[id], (error, results) =>{
+                if(error){
+                    throw error
+                }
+                response.status(200).json(results.rows)
+            })
         })
 }
 

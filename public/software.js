@@ -44,7 +44,7 @@ async function getSoftware(a){
 
 
 function teste(a) {
-    window.location.href='config.html?'+queryString.substring(queryString.indexOf("&")+1,queryString.length)+"&"+a
+    window.location.href='config.html?'+a
 }
 
 window.onload = async function() {
