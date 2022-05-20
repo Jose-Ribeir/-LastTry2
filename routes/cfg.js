@@ -78,7 +78,7 @@ const getCfgById = (request, response) => {
             if(error){
                 throw error
             }
-            client.query('SELECT * FROM software WHERE software_id = $1',[id], (error, results) =>{
+            client.query('SELECT * FROM cfg WHERE cfg_id = $1',[id], (error, results) =>{
                 if(error){
                     throw error
                 }
