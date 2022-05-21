@@ -50,7 +50,7 @@ async function refresh(id){
 
 async function table(){
     const json = await getData()
-    console.log(json[0])
+
     var table = document.getElementById("UsersTable");
     for (let i = 0; i < json.length; i++) {
         var row = table.insertRow(1)

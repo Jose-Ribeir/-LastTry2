@@ -1,7 +1,5 @@
 let id
 
-
-
 async function getGps() {
     // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
     //
@@ -24,14 +22,6 @@ async function getGps() {
     const data = await response.json()
     return (""+data.results[0].geometry.location.lat +" "+ data.results[0].geometry.location.lng)
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -118,10 +108,6 @@ async function namemail(){
 window.onload = async function() {
 
     id = sessionStorage.getItem("user_id")
-    alert("uma coisa sem"+id)
-    alert("olaaaaaa")
-
-
     await namemail()
     const json = await getData()
     document.getElementById("inputName").value= ""+json[0].person_name;
