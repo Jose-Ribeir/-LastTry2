@@ -38,7 +38,7 @@ window.onload = async function() {
     document.getElementById("person").innerHTML=""+json[0].person_name+" "+json[0].person_surname
     document.getElementById("views").innerHTML=""+json[0].cfg_view
     document.getElementById("gameName").innerHTML=""+json[0].software_name
-
+    document.getElementById("softwareImg").src="images/"+json[0].software_image
 
     // document.getElementById("keyact").value=json.cfg_
 
