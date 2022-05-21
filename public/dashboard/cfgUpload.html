@@ -29,6 +29,7 @@
     <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
     <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
     <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="../nicepage.css" >
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
@@ -335,41 +336,48 @@
                                                 <div class="col-md-12"><label class="labels">Name</label><input id="name" type="text" class="form-control" placeholder="Enter your config name" value=""></div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-5 border-right">
-                                                <div class="p-3 py-5">
-                                                    <form class="col-md-4">
-                                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <div class="col-md-5 u- border-right">
+                                                <div class="p-3 u py-5">
+                                                    <form>
 
-                                                    </div>
-                                                    <div class="row mt-3">
+                                                        <div class="row mt-3">
 
 
-                                                        <div class="col-md-12"><label class="labels">Tecla Ação</label><textarea id="keyaction" type="text" class="form-control" rows="6" ></textarea></div> <br>
-
-                                                    </div>
-                                                    <label> A sua config e para um jogo ou um programa</label>
-                                                    <div id="divbutton"><button type="button" id="ButonisGame" onclick="iconChange()" class="btn btn-secondary">Software</button>
-                                                        <a class="logo" id="button">
-                                                            <img id="img" src="images/icon/logo.png" height="75" width="75" />
-                                                        </a>
-                                                    </div>
-
-
-                                                    <div class="container">
-                                                        <div class="row">
-
-                                                                <label>Chose your app</label>
-                                                                <select id="dropDown" class="form-control select2">
-                                                                    <option>Select</option>
-                                                                </select>
+                                                            <div class="col-md-12"><label class="labels">Tecla Ação</label><textarea id="keyaction" type="text" class="form-control" rows="6" ></textarea></div> <br>
 
                                                         </div>
-                                                    </div>
-                                                    <script>
-                                                        $('.select2').select2();
-                                                    </script>
+                                                        <div class="text-center m-3">
+                                                            <label> A sua config e para um jogo ou um programa</label>
+                                                        </div>
+                                                        <div class="text-center m-3">
+                                                            <button type="button" id="ButonisGame" onclick="iconChange()" class="btn btn-secondary ">Software</button>
+                                                        </div>
 
-                                                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="uploadCFG()">Upload CFG</button></div>
+                                                        <div class="text-center m-3" id="divbutton">
+                                                            <a class="logo" id="button">
+                                                                <img id="img" src="images/icon/logo.png" height="150" width="150" />
+                                                            </a>
+                                                        </div>
+
+
+                                                        <div class="container">
+                                                            <div class="row">
+
+                                                                    <label>Chose your app</label>
+
+
+                                                            </div>
+                                                            <select id="dropDown" class="form-control select2">
+                                                                <option>Select</option>
+                                                            </select>
+                                                        </div>
+                                                        <script>
+                                                            $('.select2').select2();
+                                                        </script>
+
+                                                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="uploadCFG()">Upload CFG</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">

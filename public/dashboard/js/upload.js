@@ -55,12 +55,12 @@ async function iconChange() {
     let b = document.getElementById("button")
     if (gameorsoftware === 0) {
         a.innerText = "Software"
-        b.innerHTML = "<img id='img' src=\"images/icon/logo.png\" height=\"75\" width=\"75\"/>"
+        b.innerHTML = "<img id='img' src=\"images/icon/logo.png\" height=\"150\" width=\"150\"/>"
         gameorsoftware = 1
     } else {
         if (gameorsoftware === 1) {
             a.innerText = "Game"
-            b.innerHTML = "<img id='img'src=\"images/icon/logogaming.png\" height=\"75\" width=\"75\"/>"
+            b.innerHTML = "<img id='img'src=\"images/icon/logogaming.png\" height=\"150\" width=\"150\"/>"
             gameorsoftware = 0
         }
     }
