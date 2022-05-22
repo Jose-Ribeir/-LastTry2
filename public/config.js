@@ -12,7 +12,7 @@ const citymap = {
 };
 
 async function initMap(a) {
-    alert(JSON.stringify(a))
+    alert("init map var"+JSON.stringify(a))
     // console.log(json)
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 14,
