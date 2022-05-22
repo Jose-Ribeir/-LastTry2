@@ -63,7 +63,7 @@ const citymap = {
 };
 
 async function initMap() {
-    const json = await getData()
+    const json = await getcfg()
     // console.log(json)
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 14,
@@ -168,7 +168,7 @@ async function initMap() {
     // }
 
 
-    for (let i = 0; i < json.length; i++) {
+
         const cityCircle = new google.maps.Circle({
             strokeColor: "#ffb500",
             strokeOpacity: 0.8,
@@ -176,13 +176,13 @@ async function initMap() {
             fillColor: "#ffb500",
             fillOpacity: 0.35,
             map,
-            center: { lat: json[i].st_x, lng: json[i].st_y },
+            center: { lat: json[0].st_x, lng: json[0].st_y },
             // center: citymap.lisboa.center,
-            radius: Math.sqrt(json[i].st_x)*10,
+            radius: 100,
         });
 
 
-    }
+
 }
 
 async function getData(){
