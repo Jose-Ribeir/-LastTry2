@@ -5,6 +5,12 @@
 .u-section-1 .u-text-1 {
   margin: 69px auto 0;
 }
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
 
 .two-col {
   overflow: hidden;/* Makes this div contain its floats */
