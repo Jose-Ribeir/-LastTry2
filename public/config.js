@@ -63,6 +63,7 @@ const citymap = {
 };
 
 async function initMap() {
+    alert("init map mapa")
     const json = await getcfg()
     alert(""+JSON.stringify(json))
     // console.log(json)
