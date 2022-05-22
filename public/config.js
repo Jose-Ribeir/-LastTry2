@@ -13,7 +13,7 @@ const citymap = {
 
 async function initMap() {
     alert("init map mapa")
-    const json1 = await getcfg()
+    const json1 = await getcfg1()
     alert(""+JSON.stringify(json1))
     // console.log(json)
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
@@ -138,7 +138,27 @@ async function initMap() {
 
 
 
+async function getcfg1(){
+    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
+    //
+    //
+    // const response = await fetch(targetUrl)ff
+    // const data = await response.json()
+    // console.log(data)
+    // return data
+    alert("getcfg quantas vezes")
+    let type=queryString.substring(1,queryString.length)
+    type=type.substring(0,type.indexOf("&"))
 
+    alert(""+type)
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
+        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg/'+type
+    const response = await fetch(
+        targetUrl)
+    const data = await response.json()
+
+    return data
+}
 
 
 
