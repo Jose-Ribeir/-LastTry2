@@ -12,11 +12,10 @@ const citymap = {
 };
 
 async function initMap(a) {
-    alert("init map var"+a.st_x)
     // console.log(json)
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 14,
-        center: citymap.lisboa.center,
+        center: { lat: a.st_x, lng: a.st_y },
         mapTypeId: "terrain",
         styles: [
             { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
@@ -127,7 +126,7 @@ async function initMap(a) {
             map,
             center: { lat: a.st_x, lng: a.st_y },
             // center: citymap.lisboa.center,
-            radius: Math.sqrt(a.st_x)*10,
+            radius: 100,
         });
 
 
