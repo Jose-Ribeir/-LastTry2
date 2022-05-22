@@ -14,7 +14,7 @@ const citymap = {
 async function initMap(a) {
     // console.log(json)
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
-        zoom: 14,
+        zoom: 12,
         center: { lat: a.st_x, lng: a.st_y },
         mapTypeId: "terrain",
         styles: [
