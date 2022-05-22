@@ -117,7 +117,7 @@ async function initMap(a) {
     // }
 
 
-    for (let i = 0; i < a.length; i++) {
+
         const cityCircle = new google.maps.Circle({
             strokeColor: "#ffb500",
             strokeOpacity: 0.8,
@@ -131,7 +131,7 @@ async function initMap(a) {
         });
 
 
-    }
+
 }
 
 
@@ -166,7 +166,7 @@ window.onload = async function() {
     queryString = window.location.search;
     console.log(queryString);
     const json = await getcfg()
-    window.initMap = initMap(json);
+    window.initMap = initMap(json[0]);
     alert("Json getData config"+JSON.stringify(json))
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
     document.getElementById("date").innerHTML=""+json[0].cfg_date
