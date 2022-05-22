@@ -126,7 +126,7 @@ async function initMap(a) {
             map,
             center: { lat: a.st_x, lng: a.st_y },
             // center: citymap.lisboa.center,
-            radius: 1000,
+            radius: 500,
         });
 
 
