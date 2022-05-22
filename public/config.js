@@ -64,6 +64,7 @@ const citymap = {
 
 async function initMap() {
     const json = await getcfg()
+    alert(""+JSON.stringify(json))
     // console.log(json)
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 14,
