@@ -143,7 +143,6 @@ async function getcfg(){
     // const data = await response.json()
     // console.log(data)
     // return data
-    alert("getcfg quantas vezes")
     let type=queryString.substring(1,queryString.length)
     type=type.substring(0,type.indexOf("&"))
 
@@ -163,10 +162,8 @@ var queryString
 
 window.onload = async function() {
     queryString = window.location.search;
-    console.log(queryString);
     const json = await getcfg()
     window.initMap = initMap(json[0]);
-    alert("Json getData config"+JSON.stringify(json))
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
     document.getElementById("date").innerHTML=""+json[0].cfg_date
     document.getElementById("cfgName").innerHTML=""+json[0].cfg_name
