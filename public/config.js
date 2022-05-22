@@ -135,7 +135,7 @@ async function initMap() {
 
     }
 }
-window.initMap = initMap;
+
 
 
 
@@ -176,7 +176,7 @@ window.onload = async function() {
     queryString = window.location.search;
     console.log(queryString);
     const json = await getcfg()
-
+    window.initMap = initMap;
     alert("Json getData config"+JSON.stringify(json))
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
     document.getElementById("date").innerHTML=""+json[0].cfg_date
