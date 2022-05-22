@@ -78,7 +78,7 @@ const getCfgById = (request, response) => {
             if(error){
                 throw error
             }
-            client.query('SELECT * FROM cfg inner join software s on cfg.cfg_software_id = s.software_id inner join person p on cfg.cfg_person_id=p.person_id WHERE cfg_id = $1 ',[id], (error, results) =>{
+            client.query('SELECT *,st_x(person_loc),st_y(person_loc) FROM cfg inner join software s on cfg.cfg_software_id = s.software_id inner join person p on cfg.cfg_person_id=p.person_id WHERE cfg_id = $1 ',[id], (error, results) =>{
                 if(error){
                     throw error
                 }
