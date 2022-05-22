@@ -154,7 +154,7 @@ async function getcfg(){
     // const data = await response.json()
     // console.log(data)
     // return data
-
+    alert("getcfg quantas vezes")
     let type=queryString.substring(1,queryString.length)
     type=type.substring(0,type.indexOf("&"))
 
