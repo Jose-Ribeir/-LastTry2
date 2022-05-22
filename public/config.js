@@ -11,10 +11,8 @@ const citymap = {
     },
 };
 
-async function initMap() {
-    alert("init map mapa")
-    const json1 = await getcfg1()
-    alert(""+JSON.stringify(json1))
+async function initMap(a) {
+    alert(JSON.stringify(a))
     // console.log(json)
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 14,
@@ -119,7 +117,7 @@ async function initMap() {
     // }
 
 
-    for (let i = 0; i < json1.length; i++) {
+    for (let i = 0; i < a.length; i++) {
         const cityCircle = new google.maps.Circle({
             strokeColor: "#ffb500",
             strokeOpacity: 0.8,
@@ -127,42 +125,14 @@ async function initMap() {
             fillColor: "#ffb500",
             fillOpacity: 0.35,
             map,
-            center: { lat: json1[i].st_x, lng: json1[i].st_y },
+            center: { lat: a.st_x, lng: a.st_y },
             // center: citymap.lisboa.center,
-            radius: Math.sqrt(json1[i].st_x)*10,
+            radius: Math.sqrt(a.st_x)*10,
         });
 
 
     }
 }
-
-
-
-async function getcfg1(){
-    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
-    //
-    //
-    // const response = await fetch(targetUrl)ff
-    // const data = await response.json()
-    // console.log(data)
-    // return data
-    alert("getcfg quantas vezes")
-    let type=queryString.substring(1,queryString.length)
-    type=type.substring(0,type.indexOf("&"))
-
-    alert(""+type)
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg/'+13
-    const response = await fetch(
-        targetUrl)
-    const data = await response.json()
-
-    return data
-}
-
-
-
-
 
 
 
@@ -196,7 +166,7 @@ window.onload = async function() {
     queryString = window.location.search;
     console.log(queryString);
     const json = await getcfg()
-    window.initMap = initMap;
+    window.initMap = initMap(json);
     alert("Json getData config"+JSON.stringify(json))
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
     document.getElementById("date").innerHTML=""+json[0].cfg_date
