@@ -14,7 +14,7 @@ const citymap = {
 async function initMap(a) {
     // console.log(json)
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
-        zoom: 12,
+        zoom: 13,
         center: { lat: a.st_x, lng: a.st_y },
         mapTypeId: "terrain",
         styles: [
@@ -146,7 +146,6 @@ async function getcfg(){
     let type=queryString.substring(1,queryString.length)
     type=type.substring(0,type.indexOf("&"))
 
-    alert(""+type)
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
         targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg/'+type
     const response = await fetch(
