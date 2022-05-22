@@ -163,8 +163,10 @@ window.onload = async function() {
     queryString = window.location.search;
     const json = await getcfg()
     window.initMap = initMap(json[0]);
+    const d = new Date(json[0].cfg_date);
+
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
-    document.getElementById("date").innerHTML=""+Date(json[0].cfg_date).toLocaleString()
+    document.getElementById("date").innerHTML="" + d.toDateString();
     document.getElementById("cfgName").innerHTML=""+json[0].cfg_name
     document.getElementById("keyact").innerHTML=""+json[0].cfg_key_action
     document.getElementById("person").innerHTML=""+json[0].person_name+" "+json[0].person_surname
