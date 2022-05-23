@@ -77,6 +77,7 @@ app.post('/fileupload',function (req, res) {
     //Create an instance of the form object
     let form = new formidable.IncomingForm();
     let a = __dirname
+    console.log("DirName  "+a)
     a=a.substring(0,42)
     a=a+"\\public\\"
     console.log(""+a)
