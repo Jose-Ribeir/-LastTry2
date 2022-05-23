@@ -84,7 +84,7 @@ app.post('/fileupload',function (req, res) {
         let filepath = file.fileupload.filepath;
         let newpath = a
         newpath += file.fileupload.originalFilename;
-
+        console.log(""+newpath)
         //Copy the uploaded file to a custom folder
         fs.rename(filepath, newpath, function () {
             //Send a NodeJS file upload confirmation message
