@@ -70,7 +70,7 @@ app.get('/software/:id(\\d+)',software.getSoftwareById)
 
 
 
-app.post('/filepost',test.postFile)
+
 
 app.post('/fileupload',function (req, res) {
 
