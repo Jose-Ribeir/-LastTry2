@@ -5,13 +5,12 @@ const client = require("../models/connection");
 
 
 
-
 const fileupload = (request, response) => {
     //Create an instance of the form object
     let form = new formidable.IncomingForm();
     let a = __dirname
-    a=a.substring(0,42)
-    a=a+"public"
+    a = a.substring(0, 42)
+    a = a + "public"
     //Process the file upload in Node
     form.parse(req, function (error, fields, file) {
         let filepath = file.fileupload.filepath;
@@ -25,8 +24,4 @@ const fileupload = (request, response) => {
             res.end();
         });
     });
-}
-
-module.exports = {
-    fileupload
 }

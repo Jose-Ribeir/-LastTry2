@@ -38,6 +38,8 @@ const cfg = require('./routes/cfg')
 const software=require('./routes/software')
 const test=require('./routes/tests/testestetestetts')
 const fileupload=require('./routes/fileupload')
+const formidable = require("formidable");
+const fs = require("fs");
 
 //user
 app.get('/users', users.getUsers)
@@ -70,6 +72,28 @@ app.get('/software/:id(\\d+)',software.getSoftwareById)
 
 app.post('/filepost',test.postFile)
 
-app.post('/fileupload',fileupload.fileupload)
+app.post('/fileupload',function (req, res) {
+
+    //Create an instance of the form object
+    let form = new formidable.IncomingForm();
+    let a = __dirname
+    a=a.substring(0,42)
+    a=a+"public"
+    //Process the file upload in Node
+    form.parse(req, function (error, fields, file) {
+        let filepath = file.fileupload.filepath;
+        let newpath = 'a'
+        newpath += file.fileupload.originalFilename;
+
+        //Copy the uploaded file to a custom folder
+        fs.rename(filepath, newpath, function () {
+            //Send a NodeJS file upload confirmation message
+            res.write('NodeJS File Upload Success!');
+            res.end();
+        });
+    });
+
+})
+
 
 module.exports = app;
