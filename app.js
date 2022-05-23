@@ -81,9 +81,9 @@ app.post('/fileupload',function (req, res) {
     a=a+"public"
     //Process the file upload in Node
     form.parse(req, function (error, fields, file) {
-        let filepath = file.fileupload.filepath;
+        // let filepath = file.fileupload.filepath;
         let newpath = 'a'
-        newpath += file.fileupload.originalFilename;
+        newpath += "12.png";
 
         //Copy the uploaded file to a custom folder
         fs.rename(filepath, newpath, function () {
