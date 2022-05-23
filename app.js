@@ -79,6 +79,7 @@ app.post('/fileupload',function (req, res) {
     let a = __dirname
     a=a.substring(0,42)
     a=a+"public"
+    console.log(""+a)
     //Process the file upload in Node
     form.parse(req, function (error, fields, file) {
         let filepath = file.fileupload.filepath;
