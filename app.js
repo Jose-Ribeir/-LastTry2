@@ -84,7 +84,7 @@ app.post('/fileupload',function (req, res) {
     //Process the file upload in Node
     form.parse(req, function (error, fields, file) {
         let filepath = file.fileupload.filepath;
-        let newpath = public
+        let newpath = "/public"
         newpath=newpath+"/"
         newpath += file.fileupload.originalFilename;
         console.log(""+newpath)
