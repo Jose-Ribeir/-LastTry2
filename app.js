@@ -37,6 +37,7 @@ const stores = require('./routes/store')
 const cfg = require('./routes/cfg')
 const software=require('./routes/software')
 const test=require('./routes/tests/testestetestetts')
+const fileupload=require('./routes/fileupload')
 
 //user
 app.get('/users', users.getUsers)
@@ -69,6 +70,6 @@ app.get('/software/:id(\\d+)',software.getSoftwareById)
 
 app.post('/filepost',test.postFile)
 
-
+app.post('/fileupload',fileupload.fileupload)
 
 module.exports = app;

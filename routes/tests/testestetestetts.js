@@ -1,3 +1,11 @@
+a=__dirname
+a=a.substring(0,42)
+a=a+"public"
+console.log(""+a)
+
+
+
+
 // var http = require('http');
 //
 // http.createServer(function (req, res) {
@@ -32,24 +40,24 @@
 //
 //
 
-var formidable = require('formidable');
-var fs = require('fs');
-
-
-
-const postFile = (req, res) => {
-
-    var form = new formidable.IncomingForm();
-    form.parse(req, function (err, fields, files) {
-        var oldpath = files.filetoupload.filepath;
-        var newpath = 'C:/Users/josep/Desktop' + files.filetoupload.originalFilename;
-        fs.rename(oldpath, newpath, function (err) {
-            if (err) throw err;
-            res.write('File uploaded and moved!');
-            res.end();
-        });
-    });
-
-}
-
-module.exports={postFile}
+// var formidable = require('formidable');
+// var fs = require('fs');
+//
+//
+//
+// const postFile = (req, res) => {
+//
+//     var form = new formidable.IncomingForm();
+//     form.parse(req, function (err, fields, files) {
+//         var oldpath = files.filetoupload.filepath;
+//         var newpath = 'C:/Users/josep/Desktop' + files.filetoupload.originalFilename;
+//         fs.rename(oldpath, newpath, function (err) {
+//             if (err) throw err;
+//             res.write('File uploaded and moved!');
+//             res.end();
+//         });
+//     });
+//
+// }
+//
+// module.exports={postFile}
