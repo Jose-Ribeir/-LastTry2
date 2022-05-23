@@ -79,12 +79,12 @@ app.post('/fileupload',function (req, res) {
     let a = __dirname
     console.log("DirName  "+a)
     a=a.substring(0,42)
-    a=a+"\\public\\"
+    a=a+"/public/"
     console.log(""+a)
     //Process the file upload in Node
     form.parse(req, function (error, fields, file) {
         let filepath = file.fileupload.filepath;
-        let newpath = a
+        let newpath = "./public/"
         newpath += file.fileupload.originalFilename;
         console.log(""+newpath)
         //Copy the uploaded file to a custom folder
