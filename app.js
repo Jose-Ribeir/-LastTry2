@@ -90,13 +90,13 @@ app.post('/fileupload',function (req, res) {
         console.log(""+newpath)
         //Copy the uploaded file to a custom folder
         fs.rename(filepath, newpath, function (err) {
+            if (err) throw err;
 
             //Send a NodeJS file upload confirmation message
             res.write('NodeJS File Upload Success!');
 
 
             res.end();
-            if (err) throw err;
         });
 
     });
