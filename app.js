@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 const corsOpts = { origin: '*', methods: ['GET', 'POST'], allowedHeaders: ['Content-Type']};
-
+import public from './public'
 
 
 var app = express();
@@ -84,7 +84,8 @@ app.post('/fileupload',function (req, res) {
     //Process the file upload in Node
     form.parse(req, function (error, fields, file) {
         let filepath = file.fileupload.filepath;
-        let newpath = "./public/"
+        let newpath = public
+        newpath=newpath+"/"
         newpath += file.fileupload.originalFilename;
         console.log(""+newpath)
         //Copy the uploaded file to a custom folder
