@@ -73,8 +73,10 @@ window.onload = async function() {
         await table()
 
 
+        let a=sessionStorage.getItem("user_name").substring(sessionStorage.getItem("user_name").indexOf('"')+1,sessionStorage.getItem("user_name").length)
+        a=a.substring(0,a.indexOf('"')+1)
 
-        document.getElementById("name1").innerText=sessionStorage.getItem("user_name").substring(sessionStorage.getItem("user_name").indexOf('"')+1,sessionStorage.getItem("user_name").length)
+        document.getElementById("name1").innerText=a
         document.getElementById("name2").innerText=""+sessionStorage.getItem("user_name")
         document.getElementById("email").innerText=""+sessionStorage.getItem("user_email")
     }
