@@ -39,6 +39,7 @@ async function add() {
         alert(JSON.stringify(newProduct))
 
         sessionStorage.setItem("user_id",JSON.stringify(newProduct.person_id))
+        sessionStorage.setItem("user_is_admin",JSON.stringify(newProduct.person_is_admin))
         window.location.href='../dashboard/profile.html'
 
     } catch (err) {
