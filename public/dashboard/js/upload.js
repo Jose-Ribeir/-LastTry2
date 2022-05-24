@@ -1,4 +1,3 @@
-import {removehash} from "./gestaoDeContas";
 
 var loginId
 var software1="da"
@@ -114,10 +113,12 @@ async function uploadCFG() {
 }
 
 
-function uploadcfg(){
+function removehash(a){
 
+    let b=a.substring(a.indexOf('"')+1,a.length)
+    b=b.substring(0,b.indexOf('"'))
+    return b
 }
-
 
 
 window.onload = async function() {

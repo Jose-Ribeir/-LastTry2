@@ -1,5 +1,3 @@
-import {removehash} from "./gestaoDeContas";
-
 let id
 
 async function getGps() {
@@ -106,6 +104,13 @@ async function namemail(){
         'beforeend',
         '<span class="font-weight-bold"> '+json[0].person_name+json[0].person_surname+'</code>',
     );
+}
+
+function removehash(a){
+
+    let b=a.substring(a.indexOf('"')+1,a.length)
+    b=b.substring(0,b.indexOf('"'))
+    return b
 }
 
 window.onload = async function() {

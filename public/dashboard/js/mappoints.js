@@ -1,5 +1,3 @@
-import {removehash} from "./gestaoDeContas";
-
 const citymap = {
     lisboa: {
         center: { lat: 38.736946, lng: -9.142685 },
@@ -35,6 +33,13 @@ async function initMap() {
 
 window.initMap = initMap;
 
+
+function removehash(a){
+
+    let b=a.substring(a.indexOf('"')+1,a.length)
+    b=b.substring(0,b.indexOf('"'))
+    return b
+}
 
 async function getData(){
     var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/store'

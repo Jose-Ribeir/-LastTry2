@@ -1,4 +1,3 @@
-import {removehash} from "./gestaoDeContas";
 
 async function getData(){
     // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
@@ -17,6 +16,19 @@ async function getData(){
     const data = await response.json()
     return data
 }
+
+
+
+
+
+
+function removehash(a){
+
+    let b=a.substring(a.indexOf('"')+1,a.length)
+    b=b.substring(0,b.indexOf('"'))
+    return b
+}
+
 window.onload = async function() {
     if(!sessionStorage.getItem("user_is_admin")){
         window.location.href='../dashboard/profile.html'
