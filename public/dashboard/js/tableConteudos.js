@@ -1,3 +1,4 @@
+import {removehash} from "./gestaoDeContas";
 
 async function getData(){
     // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'

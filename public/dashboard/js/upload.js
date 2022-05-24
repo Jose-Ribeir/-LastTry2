@@ -1,3 +1,4 @@
+import {removehash} from "./gestaoDeContas";
 
 var loginId
 var software1="da"

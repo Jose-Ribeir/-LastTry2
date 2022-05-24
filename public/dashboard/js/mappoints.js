@@ -1,3 +1,5 @@
+import {removehash} from "./gestaoDeContas";
+
 const citymap = {
     lisboa: {
         center: { lat: 38.736946, lng: -9.142685 },

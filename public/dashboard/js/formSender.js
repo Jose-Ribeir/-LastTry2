@@ -1,3 +1,5 @@
+import {removehash} from "./gestaoDeContas";
+
 let id
 
 async function getGps() {
