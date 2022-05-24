@@ -68,6 +68,18 @@ async function table(){
     }
 }
 
+function removehash(a){
+
+    let b=a.substring(a.indexOf('"')+1,a.length)
+    b=b.substring(0,b.indexOf('"'))
+
+
+
+
+
+    return b
+}
+
 window.onload = async function() {
     if(sessionStorage.getItem("user_is_admin")==="true"){
         await table()
@@ -76,9 +88,9 @@ window.onload = async function() {
         let a=sessionStorage.getItem("user_name").substring(sessionStorage.getItem("user_name").indexOf('"')+1,sessionStorage.getItem("user_name").length)
         a=a.substring(0,a.indexOf('"'))
 
-        document.getElementById("name1").innerText=a
-        document.getElementById("name2").innerText=""+sessionStorage.getItem("user_name")
-        document.getElementById("email").innerText=""+sessionStorage.getItem("user_email")
+        document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
+        document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
+        document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
     }
     else {
         window.location.href='../dashboard/profile.html'
