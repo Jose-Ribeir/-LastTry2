@@ -74,7 +74,7 @@ window.onload = async function() {
 
 
         let a=sessionStorage.getItem("user_name").substring(sessionStorage.getItem("user_name").indexOf('"')+1,sessionStorage.getItem("user_name").length)
-        a=a.substring(0,a.indexOf('"')+1)
+        a=a.substring(0,a.indexOf('"'))
 
         document.getElementById("name1").innerText=a
         document.getElementById("name2").innerText=""+sessionStorage.getItem("user_name")
