@@ -29,7 +29,7 @@ async function uploadApp() {
                     alert(""+err.responseJSON.msg);
                 } else {
                     alert("cfg saved") ;
-                    // window.location.href='../cfgUpload.html'
+                     window.location.href='../dashboard/cfgUpload.html'
                 }
             }
 
