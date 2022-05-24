@@ -3,13 +3,13 @@ async function uploadApp() {
     let field = document.getElementById("type")
     let isgame
     if(field.innerText==="Game")
-        isgame="true"
+        isgame=true
     if(field.innerText==="Application")
-        isgame="false"
+        isgame=false
 
             let data = {"software_name":  document.getElementById('Softwarename').value,
                 // "software_image":  document.getElementById('cfgfile').value,
-                "software_is_game": isgame };
+                "software_is_game": ""+isgame };
             console.log("[addProducts] data = " + JSON.stringify(data));
             try {
                 //get json here
