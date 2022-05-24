@@ -113,13 +113,19 @@ async function uploadCFG() {
 }
 
 
-function uploadcfg(){
+function removehash(a){
 
+    let b=a.substring(a.indexOf('"')+1,a.length)
+    b=b.substring(0,b.indexOf('"'))
+    return b
 }
-
 
 
 window.onload = async function() {
     loginId = sessionStorage.getItem("user_id")
+
+    document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
     await fillDropdown()
 }

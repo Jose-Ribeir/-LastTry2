@@ -16,10 +16,27 @@ async function getData(){
     const data = await response.json()
     return data
 }
+
+
+
+
+
+
+function removehash(a){
+
+    let b=a.substring(a.indexOf('"')+1,a.length)
+    b=b.substring(0,b.indexOf('"'))
+    return b
+}
+
 window.onload = async function() {
     if(!sessionStorage.getItem("user_is_admin")){
         window.location.href='../dashboard/profile.html'
     }
+    document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
+
     const json = await getData()
     console.log(json[0])
     var table = document.getElementById("ContentTable");

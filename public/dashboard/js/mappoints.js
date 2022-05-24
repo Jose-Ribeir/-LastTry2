@@ -34,9 +34,18 @@ async function initMap() {
 window.initMap = initMap;
 
 
+function removehash(a){
+
+    let b=a.substring(a.indexOf('"')+1,a.length)
+    b=b.substring(0,b.indexOf('"'))
+    return b
+}
+
 async function getData(){
     var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/store'
-
+    document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
 
     const response = await fetch(targetUrl)
     const data = await response.json()
