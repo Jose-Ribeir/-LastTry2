@@ -3,9 +3,8 @@ $(document).ready(function() {
     console.log(user)
     document.querySelector('#test').style.color='yellow'
     const tu = document.querySelector('.hide')
-    tu.style.color='magenta'
     tu.style.display = 'none'
-    if(user) {
+    if(user==="true") {
         tu.style.display='inline'
     }
 });
