@@ -1,14 +1,17 @@
 async function uploadApp() {
     const d = new Date();
     let field = document.getElementById("type")
+    let opt1= document.getElementById("f-option")
+    let opt2 = document.getElementById("s-option")
     let isgame
-    alert(""+field.innerText)
-    if(field.innerText==="Game"){
+
+
+    if(opt1.checked){
         isgame=true
         alert("1 if")
     }
 
-    if(field.innerText==="Application"){
+    if(opt2.checked){
         isgame=false
         alert("2 if")
     }
