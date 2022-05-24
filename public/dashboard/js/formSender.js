@@ -51,12 +51,13 @@ async function upDate() {
         sessionStorage.setItem("user_id",JSON.stringify(newProduct.person_id))
         window.location.href='../profile.html'
 
-    } catch (err) {
+    }
+    catch (err) {
         console.log(err);
         if (err.responseJSON) {
             alert(""+err.responseJSON.msg);
         } else {
-            alert("Was not able to add product") ;
+            alert("Account Information updated") ;
         }
     }
 }

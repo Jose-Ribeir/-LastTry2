@@ -13,10 +13,27 @@
 const client = require('../models/connection')
 const express = require('express');
 const {log} = require("debug");
+const {md5} = require("pg/lib/utils");
 const app = express();
 
 
 client.connect();
+
+
+
+
+const createSoftware = (request, response) => {
+    const software = request.body
+
+    client.query('INSERT INTO software (software_name, software_image, software_is_game) VALUES ($1, $2, $3) returning *', [software.software_name, software.software_image, software.software_is_game], (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(201).json(results.rows[0])
+    })
+}
+
+
 
 const getGames = (request, response) => {
     client.query('SELECT * FROM software where software_is_game=true', (error, results) => {
@@ -48,4 +65,4 @@ const getSoftwareById = (request, response) => {
     })
 }
 
-module.exports={getApps,getGames,getSoftwareById}
+module.exports={getApps,getGames,getSoftwareById,createSoftware}
