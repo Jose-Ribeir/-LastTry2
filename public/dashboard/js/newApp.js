@@ -4,10 +4,12 @@ async function uploadApp() {
     let isgame
     if(field.innerText==="Game"){
         isgame=true
+        alert("1 if")
     }
 
     if(field.innerText==="Application"){
         isgame=false
+        alert("2 if")
     }
 
     alert(""+isgame)
