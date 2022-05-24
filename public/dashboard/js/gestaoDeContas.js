@@ -69,7 +69,7 @@ async function table(){
 }
 
 window.onload = async function() {
-    if(sessionStorage.getItem("user_is_admin")){
+    if(sessionStorage.getItem("user_is_admin")===true){
         await table()
 
         document.getElementById("name1").innerText=sessionStorage.getItem("user_name")
