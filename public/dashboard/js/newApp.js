@@ -8,15 +8,12 @@ async function uploadApp() {
 
     if(opt1.checked){
         isgame=true
-        alert("1 if")
     }
 
     if(opt2.checked){
         isgame=false
-        alert("2 if")
     }
 
-    alert(""+isgame)
     let data = {"software_name":  document.getElementById('Softwarename').value,
         "software_is_game": isgame
         // "software_image":  document.getElementById('cfgfile').value

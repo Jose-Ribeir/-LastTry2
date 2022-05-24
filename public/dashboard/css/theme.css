@@ -1419,6 +1419,7 @@ section {
     -moz-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    margin-left: 40%;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -1436,6 +1437,8 @@ section {
         -moz-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
+        margin-left: 40%;
+
     }
 
     .header-wrap .mess-dropdown {
