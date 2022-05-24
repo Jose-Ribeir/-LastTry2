@@ -276,7 +276,8 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="login.html" onclick={localStorage.clear()}>
+                                                <a href="login.html" onclick="logout()">
+                                                    <script> function logout(){localStorage.clear()}</script>
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>
