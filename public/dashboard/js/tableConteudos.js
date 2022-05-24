@@ -17,7 +17,9 @@ async function getData(){
     return data
 }
 window.onload = async function() {
-
+    if(!sessionStorage.getItem("user_is_admin")){
+        window.location.href='../dashboard/profile.html'
+    }
     const json = await getData()
     console.log(json[0])
     var table = document.getElementById("ContentTable");

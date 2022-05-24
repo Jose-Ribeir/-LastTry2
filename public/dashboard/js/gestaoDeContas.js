@@ -69,5 +69,8 @@ async function table(){
 }
 
 window.onload = async function() {
+    if(!sessionStorage.getItem("user_is_admin")){
+        window.location.href='../dashboard/profile.html'
+    }
     await table()
 }
