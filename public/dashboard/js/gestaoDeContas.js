@@ -72,9 +72,9 @@ window.onload = async function() {
     if(sessionStorage.getItem("user_is_admin")==="true"){
         await table()
 
-        document.getElementById("name1").innerText=sessionStorage.getItem("user_name")
-        document.getElementById("name2").innerText=sessionStorage.getItem("user_name")
-        document.getElementById("email").innerText=sessionStorage.getItem("user_email")
+        document.getElementById("name1").innerText=""+sessionStorage.getItem("user_name")
+        document.getElementById("name2").innerText=""+sessionStorage.getItem("user_name")
+        document.getElementById("email").innerText=""+sessionStorage.getItem("user_email")
     }
     else {
         window.location.href='../dashboard/profile.html'
