@@ -109,6 +109,11 @@ async function namemail(){
 window.onload = async function() {
 
     id = sessionStorage.getItem("user_id")
+    document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("email1").innerText=removehash(sessionStorage.getItem("user_email"))
+
+
     await namemail()
     const json = await getData()
     document.getElementById("inputName").value= ""+json[0].person_name;

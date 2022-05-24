@@ -121,5 +121,9 @@ function uploadcfg(){
 
 window.onload = async function() {
     loginId = sessionStorage.getItem("user_id")
+
+    document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
     await fillDropdown()
 }

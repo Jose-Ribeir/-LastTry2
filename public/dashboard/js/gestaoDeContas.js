@@ -72,11 +72,6 @@ function removehash(a){
 
     let b=a.substring(a.indexOf('"')+1,a.length)
     b=b.substring(0,b.indexOf('"'))
-
-
-
-
-
     return b
 }
 
