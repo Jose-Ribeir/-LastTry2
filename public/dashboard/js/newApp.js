@@ -1,8 +1,8 @@
 async function uploadApp() {
     const d = new Date();
-    let field = document.getElementById("inputt")
+    let field = document.getElementById("type")
     let isgame
-    alert("fo")
+    alert(""+field.innerText)
     if(field.innerText==="Game"){
         isgame=true
         alert("1 if")
