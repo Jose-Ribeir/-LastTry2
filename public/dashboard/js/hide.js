@@ -3,6 +3,7 @@ $(document).ready(function() {
     console.log(user)
 
     const tu = document.querySelector('.hide')
+    tu.style.color='magenta'
     tu.style.display = 'none'
     if(user) {
         tu.style.display='inline'
