@@ -91,7 +91,7 @@ app.post('/fileupload',function (req, res) {
         //Copy the uploaded file to a custom folder
         var mv = require('mv');
 
-        mv('source/dir', 'dest/a/b/c/dir', {mkdirp: true}, function(err) {
+        mv(filepath, newpath, {mkdirp: true}, function(err) {
             fs.rename(filepath, newpath, function (err) {
                 if (err) throw err;
 
