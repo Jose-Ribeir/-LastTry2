@@ -136,11 +136,11 @@
   transform: scale(1.1) translateX(0px) translateY(0px) !important;
 }
  .u-section-1 .u-text-1 {
-   margin:  auto 20px;
+   margin:  auto;
  }
 
  .u-section-1 .u-image-1 {
    width: 173px;
    height: 173px;
-   margin: 20px auto;
+   margin: 20px auto 20px;
  }
