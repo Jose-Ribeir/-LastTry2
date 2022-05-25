@@ -302,11 +302,12 @@
                             <div class="col-lg-10">
                                 <h2 class="title-1 m-b-25">Mapa de lojas </h2>
                                 <div class="table-responsive table--no-card m-b-40">
-                                    <div id="map"></div>
-                                    <script
-                                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWAaYbbg4yfxd4e-hOxMO-pPAYn0D4asM&callback=initMap&v=weekly"
-                                            defer
-                                    ></script>
+                                    <div class="u-align-center2 ">        <button type="button" class="button11" >Download Now</button>
+
+                                        <h3 class="m-5">Upload location</h3>
+                                        <!--The div element for the map -->
+                                        <div id="mapcfg"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -358,6 +359,11 @@
     <script src="vendor/vector-map/jquery.vmap.usa.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script src="js/mappoints.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWAaYbbg4yfxd4e-hOxMO-pPAYn0D4asM&callback=initMap&v=weekly"
+            defer
+    ></script>
 
 
 <!--     Main JS-->
