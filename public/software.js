@@ -64,7 +64,7 @@ window.onload = async function() {
    let software= await getSoftware(type)
 
 
-    document.getElementById("software").innerHTML=' <div class="text-center"><img id="softwareImg" class="u-image text-center u-align-center u-image-1" src="images/'+software[0].software_image+'" data-image-width="1000" data-image-height="1000"></div><h2 id="softwareName" class="u-custom-font u-align-center text-center m-b-30 u-font-ubuntu u-text u-text-default u-text-1 m-5">'+software[0].software_name+'</h2>'
+    document.getElementById("software").innerHTML=' <div class="text-center"><img id="softwareImg" class="u-image text-center u-align-center u-image-1" src="images/'+software[0].software_image+'" data-image-width="1000" data-image-height="1000"></div><h2 id="softwareName" class="u-custom-font u-align-center text-center m-b-20 u-font-ubuntu u-text u-text-default u-text-1 ">'+software[0].software_name+'</h2>'
 
 
 }
