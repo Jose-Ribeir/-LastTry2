@@ -132,28 +132,10 @@ async function initMap(a) {
 
 
 
-async function getstore(){
-    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
-    //
-    //
-    // const response = await fetch(targetUrl)ff
-    // const data = await response.json()
-    // console.log(data)
-    // return data
-
-
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/stores'
-    const response = await fetch(
-        targetUrl)
-    const data = await response.json()
-
-    return data
-}
 
 
 
-window.initMap = initMap;
+
 
 
 function removehash(a){
@@ -164,14 +146,24 @@ function removehash(a){
 }
 
 async function getData(){
+
     var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/store'
-    document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
-    document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
-    document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
+
 
     const response = await fetch(targetUrl)
     const data = await response.json()
     console.log(data)
     return data
 
+}
+
+window.onload = async function() {
+    queryString = window.location.search;
+    let b = getData()
+
+    window.initMap = initMap( b);
+
+    document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
 }
