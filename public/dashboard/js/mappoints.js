@@ -149,7 +149,7 @@ function removehash(a){
 
 async function getData(){
 
-    var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/store'
+    var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/stores'
 
 
     const response = await fetch(targetUrl)
@@ -161,7 +161,7 @@ async function getData(){
 
 window.onload = async function() {
     queryString = window.location.search;
-    let b = getData()
+    let b = await getData()
 
     window.initMap = initMap( b[0]);
 
