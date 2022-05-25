@@ -43572,6 +43572,7 @@ blockquote {
 .u-header .u-image-1 {
     width: 218px;
     height: 219px;
+    margin-top: -17px;
 }
 
 .u-header .u-menu-1 {
@@ -43596,7 +43597,7 @@ blockquote {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.875rem;
-    margin: 32px 138px 50px auto;
+    margin: -40px 138px 50px auto;
     padding: 6px 20px 7px;
 }
 
