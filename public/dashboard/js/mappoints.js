@@ -132,7 +132,7 @@ async function initMap() {
         alert("userrr "+JSON.stringify(user))
 
     var marker1 = new google.maps.Marker({
-        position: new google.maps.LatLng(parseFloat(user.st_x), parseFloat(user.st_y)),
+        position: new google.maps.LatLng(parseFloat(user[0].st_x), parseFloat(user[0].st_y)),
         title:b.store_name
     });
 
