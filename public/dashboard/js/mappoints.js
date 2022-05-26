@@ -12,7 +12,7 @@ const citymap = {
 
 async function initMap() {
     let b = await getStores()
-    const user = await getUserData()
+    const user = await getUserDa()
     alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
@@ -144,8 +144,7 @@ async function initMap() {
 
 
 
-async function getUserData(){
-    alert(""+sessionStorage.getItem("user_id"))
+async function getUserDa(){
     var targetUrl = linkApi+'users/'+sessionStorage.getItem("user_id")
 
     const response = await fetch(
