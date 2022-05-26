@@ -147,8 +147,8 @@ function removehash(a){
 
 async function getStores(){
 
-    var targetUrl = linkApi+'stores'
-
+    let targetUrl = linkApi+'stores'
+    alert("link   "+targetUrl)
 
     const response = await fetch(targetUrl)
     const data = await response.json()
