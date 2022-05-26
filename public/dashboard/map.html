@@ -302,10 +302,19 @@
                             <div class="col-lg-10">
                                 <h2 class="title-1 m-b-25">Mapa de lojas </h2>
                                 <div class="table-responsive table--no-card m-b-40">
-                                    <div class="u-align-center2 ">        <button type="button" class="button11" >Download Now</button>
+                                    <div class="u-align-center2 ">
 
                                         <h3 class="m-5">Upload location</h3>
                                         <!--The div element for the map -->
+                                        <div id="floating-panel">
+                                            <b>Mode of Travel: </b>
+                                            <select id="mode">
+                                                <option value="DRIVING">Driving</option>
+                                                <option value="WALKING">Walking</option>
+                                                <option value="BICYCLING">Bicycling</option>
+                                                <option value="TRANSIT">Transit</option>
+                                            </select>
+                                        </div>
                                         <div id="mapcfg"></div>
                                     </div>
                                 </div>

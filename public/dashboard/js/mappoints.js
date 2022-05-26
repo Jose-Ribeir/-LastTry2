@@ -1,3 +1,4 @@
+var user = await getUserDa()
 
 const citymap = {
     lisboa: {
@@ -12,7 +13,7 @@ const citymap = {
 
 async function initMap() {
     let b = await getStores()
-    var user = await getUserDa()
+
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
         center: { lat: 38.736946, lng: -9.142685 } ,
@@ -123,7 +124,22 @@ async function initMap() {
             position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
             title:b.store_name
         });
+        marker.addListener("click",function (){
 
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            const directionsService = new google.maps.DirectionsService();
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: { lat: 38.736946, lng: -9.142685 },
+            });
+
+           alert("marker position"+ marker.position)
+
+            directionsRenderer.setMap(map);
+            calculateAndDisplayRoute(directionsService, directionsRenderer, marker.position);
+            document.getElementById("mode").addEventListener("change", () => {
+                calculateAndDisplayRoute(directionsService, directionsRenderer, marker.position);
+            });})
         marker.setMap(map);
     }
 
@@ -144,7 +160,27 @@ async function initMap() {
 }
 
 
+async function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
 
+
+    const json = await getData()
+    const selectedMode = document.getElementById("mode").value;
+
+    directionsService
+        .route({
+
+            origin: { lat: user[0].st_x, lng: user[0].st_y },
+            destination: end,
+            // Note that Javascript allows us to access the constant
+            // using square brackets and a string value as its
+            // "property."
+            travelMode: google.maps.TravelMode[selectedMode],
+        })
+        .then((response) => {
+            directionsRenderer.setDirections(response);
+        })
+        .catch((e) => window.alert("Directions request failed due to " + status));
+}
 
 
 async function getUserDa(){
