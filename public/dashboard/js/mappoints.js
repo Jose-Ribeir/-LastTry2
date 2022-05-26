@@ -17,7 +17,7 @@ async function initMap(a) {
     alert(""+JSON.stringify(a))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
-        center: { lat: a.st_x, lng: a.st_y },
+        center: { lat: 39.89, lng: 9.8 },
         mapTypeId: "terrain",
         styles: [
             { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
@@ -126,7 +126,7 @@ async function initMap(a) {
         fillColor: "#ffb500",
         fillOpacity: 0.35,
         map,
-        center: { lat: a.st_x, lng: a.st_y },
+        center: { lat: 39.84, lng: 9.87 },
         // center: citymap.lisboa.center,
         radius: 500,
     });
