@@ -14,7 +14,7 @@ const citymap = {
 async function initMap(a) {
     // console.log(json)
 
-    alert(""+JSON.stringify(a))
+
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
         center: { lat: 39.89, lng: 9.8 },
@@ -118,18 +118,16 @@ async function initMap(a) {
     // }
 
 
+    for (let i = 0; i < a.length; i++) {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(parseFloat(a[i].st_x), parseFloat(a[i].st_y)),
+            title:a.store_name
+        });
 
-    const cityCircle = new google.maps.Circle({
-        strokeColor: "#ffb500",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: "#ffb500",
-        fillOpacity: 0.35,
-        map,
-        center: { lat: 39.84, lng: 9.87 },
-        // center: citymap.lisboa.center,
-        radius: 500,
-    });
+        marker.setMap(map);
+    }
+
+
 }
 
 
@@ -163,7 +161,7 @@ window.onload = async function() {
     queryString = window.location.search;
     let b = await getData()
 
-    window.initMap = initMap( b[0]);
+    window.initMap = initMap(b);
 
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
