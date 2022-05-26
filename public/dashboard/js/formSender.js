@@ -1,17 +1,8 @@
 let id
 
 async function getGps() {
-    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
-    //
-    //
-    // const response = await fetch(targetUrl)
-    // const data = await response.json()
-    // console.log(data)
-    // return data
 
-
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+
+    var targetUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address='+
             document.getElementById('inputAdress').value+', '+
             document.getElementById('inputCountry').value+', '+
             document.getElementById('inputPostalCode').value+
@@ -40,7 +31,7 @@ async function upDate() {
 
         //get json here
         let newProduct = await $.ajax({
-            url: "https://cfg-api-ultimate.herokuapp.com/users/"+id,
+            url: linkApi+"users/"+id,
             method: "PUT",
             data: JSON.stringify(data),
             contentType: "application/json",
@@ -69,17 +60,8 @@ async function upDate() {
 
 
 async function getData(){
-    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
-    //
-    //
-    // const response = await fetch(targetUrl)
-    // const data = await response.json()
-    // console.log(data)
-    // return data
-
-
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users/'+id
+        targetUrl = linkApi+'users/'+id
 
     const response = await fetch(
          targetUrl)
@@ -114,7 +96,6 @@ function removehash(a){
 }
 
 window.onload = async function() {
-
     id = sessionStorage.getItem("user_id")
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
@@ -130,6 +111,7 @@ window.onload = async function() {
     document.getElementById("inputSurname").value= ""+json[0].person_surname;
     document.getElementById("inputRegion").value= ""+json[0].person_region;
     document.getElementById("inputBio").value= ""+json[0].person_bio;
+
 
 
 }

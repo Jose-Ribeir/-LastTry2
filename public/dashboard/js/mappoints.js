@@ -149,7 +149,7 @@ function removehash(a){
 
 async function getData(){
 
-    var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/stores'
+    var targetUrl = linkApi+'stores'
 
 
     const response = await fetch(targetUrl)
