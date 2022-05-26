@@ -11,7 +11,7 @@ const citymap = {
 };
 
 async function initMap() {
-    let b = await getStores()
+    var b = await getStores()
     const user = await getUserDa()
     alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
