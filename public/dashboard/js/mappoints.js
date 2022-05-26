@@ -128,6 +128,7 @@ async function initMap() {
         marker.setMap(map);
     }
         let user= await getUserData()
+        alert("userrr "+JSON.stringify(user))
 
     var marker1 = new google.maps.Marker({
         position: new google.maps.LatLng(parseFloat(user.st_x), parseFloat(user.st_y)),
