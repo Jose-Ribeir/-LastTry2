@@ -148,7 +148,7 @@ async function getUserDa(){
     alert(""+sessionStorage.getItem("user_id"))
 
     var targetUrl = linkApi+'users/'+sessionStorage.getItem("user_id")
-
+    alert("url do user"+ targetUrl)
     const response = await fetch(
         targetUrl)
     const data = await response.json()
