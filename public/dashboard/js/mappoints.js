@@ -145,6 +145,8 @@ async function initMap() {
 
 
 async function getUserDa(){
+    alert(""+sessionStorage.getItem("user_id"))
+
     var targetUrl = linkApi+'users/'+sessionStorage.getItem("user_id")
 
     const response = await fetch(
