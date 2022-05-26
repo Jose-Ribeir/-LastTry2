@@ -129,7 +129,7 @@ async function initMap() {
 
 
     for (let i = 0; i < user.length; i++) {
-        alert("user " + JSON.stringify(user[i]))
+
         var marker1 = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(user[i].st_x), parseFloat(user[i].st_y)),
             icon : 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
@@ -148,10 +148,10 @@ async function initMap() {
 
 
 async function getUserDa(){
-    alert(""+sessionStorage.getItem("user_id"))
+
 
     var targetUrl = linkApi+'users/'+sessionStorage.getItem("user_id")
-    alert("url do user"+ targetUrl)
+
     const response = await fetch(
         targetUrl)
     const data = await response.json()
@@ -171,7 +171,7 @@ function removehash(a){
 async function getStores(){
 
     let targetUrl = linkApi+'stores'
-    alert("link   "+targetUrl)
+
 
     const response = await fetch(targetUrl)
     const data = await response.json()
