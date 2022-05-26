@@ -55,7 +55,7 @@ async function add() {
 }
 
     window.onload =function() {
-        sessionStorage.clear();
+    //    sessionStorage.clear();
     }
 
 
