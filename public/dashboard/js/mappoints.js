@@ -145,7 +145,7 @@ function removehash(a){
     return b
 }
 
-async function getData(){
+async function getStores(){
 
     var targetUrl = linkApi+'stores'
 
@@ -159,7 +159,7 @@ async function getData(){
 
 window.onload = async function() {
     queryString = window.location.search;
-    let b = await getData()
+    let b = await getStores()
     alert(""+JSON.stringify(b[0]))
     window.initMap = initMap(b);
 
