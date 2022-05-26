@@ -31,7 +31,7 @@ const getUsers = (request, response) => {
 const getUserById = (request, response) => {
   const id = parseInt(request.params.id)
 
-  client.query('SELECT * FROM person WHERE person_id = $1', [id], (error, results) => {
+  client.query('SELECT *,st_x(person_loc),st_y(person_loc) FROM person WHERE person_id = $1', [id], (error, results) => {
     if (error) {
       throw error
     }

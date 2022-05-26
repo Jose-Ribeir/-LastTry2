@@ -15,6 +15,8 @@
 }
 
  async function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+
+
     const json = await getData()
     const selectedMode = document.getElementById("mode").value;
 
