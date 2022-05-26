@@ -160,7 +160,7 @@ async function getData(){
 window.onload = async function() {
     queryString = window.location.search;
     let b = await getData()
-
+    alert(""+JSON.stringify(b[0]))
     window.initMap = initMap(b);
 
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
