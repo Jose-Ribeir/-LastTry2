@@ -1,5 +1,5 @@
 // Mapa do circlo
-
+let iduser
 const citymap = {
     lisboa: {
         center: { lat: 38.736946, lng: -9.142685 },
@@ -117,6 +117,8 @@ async function initMap() {
     // }
 
 
+
+
     for (let i = 0; i < b.length; i++) {
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
@@ -125,6 +127,15 @@ async function initMap() {
 
         marker.setMap(map);
     }
+        let user=getUserData()
+
+    var marker1 = new google.maps.Marker({
+        position: new google.maps.LatLng(parseFloat(user.st_x), parseFloat(user.st_y)),
+        strokeColor: "blue",
+        title:b.store_name
+    });
+
+    marker1.setMap(map);
 
 
 }
@@ -133,7 +144,15 @@ async function initMap() {
 
 
 
+async function getUserData(){
+    var targetUrl = linkApi+'users/'+iduser
 
+    const response = await fetch(
+        targetUrl)
+    const data = await response.json()
+    return data
+
+}
 
 
 
@@ -157,6 +176,7 @@ async function getStores(){
 }
 
 window.onload = async function() {
+    iduser = sessionStorage.getItem("user_id")
     queryString = window.location.search;
 
     window.initMap = initMap();
