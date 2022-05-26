@@ -16,7 +16,7 @@ async function initMap() {
     alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
-        center: { lat: 39.89, lng: 9.8 },
+        center: { lat: 38.736946, lng: -9.142685 } ,
         mapTypeId: "terrain",
         styles: [
             { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
@@ -127,7 +127,7 @@ async function initMap() {
 
         marker.setMap(map);
     }
-        let user=getUserData()
+        let user= await getUserData()
 
     var marker1 = new google.maps.Marker({
         position: new google.maps.LatLng(parseFloat(user.st_x), parseFloat(user.st_y)),
