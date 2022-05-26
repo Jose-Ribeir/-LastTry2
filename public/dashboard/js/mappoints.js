@@ -11,9 +11,7 @@ const citymap = {
     },
 };
 
-async function initMap(a) {
-    // console.log(json)
-    alert("Json "+JSON.stringify(a))
+async function initMap() {
     let b = await getStores()
     alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
@@ -119,10 +117,10 @@ async function initMap(a) {
     // }
 
 
-    for (let i = 0; i < a.length; i++) {
+    for (let i = 0; i < b.length; i++) {
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(parseFloat(a[i].st_x), parseFloat(a[i].st_y)),
-            title:a.store_name
+            position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
+            title:b.store_name
         });
 
         marker.setMap(map);
@@ -161,7 +159,7 @@ async function getStores(){
 window.onload = async function() {
     queryString = window.location.search;
 
-    window.initMap = initMap(b);
+    window.initMap = initMap();
 
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
