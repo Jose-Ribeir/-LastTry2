@@ -14,7 +14,8 @@ const citymap = {
 async function initMap(a) {
     // console.log(json)
     alert("Json "+JSON.stringify(a))
-
+    let b = await getStores()
+    alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
         center: { lat: 39.89, lng: 9.8 },
@@ -159,8 +160,7 @@ async function getStores(){
 
 window.onload = async function() {
     queryString = window.location.search;
-    let b = await getStores()
-    alert(""+JSON.stringify(b[0]))
+
     window.initMap = initMap(b);
 
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
