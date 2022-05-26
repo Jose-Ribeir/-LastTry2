@@ -133,7 +133,7 @@ async function initMap() {
 
     var marker1 = new google.maps.Marker({
         position: new google.maps.LatLng(parseFloat(user.st_x), parseFloat(user.st_y)),
-        strokeColor: "blue",
+        icon : 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
         title:b.store_name
     });
 
