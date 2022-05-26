@@ -11,8 +11,8 @@ const citymap = {
 };
 
 async function initMap() {
-    var b = await getStores()
-    const user = await getUserDa()
+    let b = await getStores()
+    var user = await getUserDa()
     alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
@@ -128,14 +128,24 @@ async function initMap() {
         marker.setMap(map);
     }
 
-        alert("userrr "+JSON.stringify(user[0].st_x))
 
-    var marker1 = new google.maps.Marker({
-        position: new google.maps.LatLng(parseFloat(user[0].st_x), parseFloat(user[0].st_y)),
-        title:"Your location"
-    });
 
-    marker1.setMap(map);
+
+
+
+
+    for (let i = 0; i < user.length; i++) {
+
+        alert("userrr "+JSON.stringify(user[i]))
+
+        var marker1 = new google.maps.Marker({
+            position: new google.maps.LatLng(parseFloat(user[i].st_x), parseFloat(user[i].st_y)),
+            title:"Your location"
+        });
+
+        marker1.setMap(map);
+    }
+
 
 
 }
