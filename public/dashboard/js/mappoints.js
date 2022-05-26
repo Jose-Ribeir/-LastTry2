@@ -1,4 +1,3 @@
-var user
 
 const citymap = {
     lisboa: {
@@ -13,6 +12,7 @@ const citymap = {
 
 async function initMap() {
     let b = await getStores()
+    var user = await getUserDa()
 
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
@@ -162,6 +162,7 @@ async function initMap() {
 
 async function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
 
+    var user1 = await getUserDa()
 
     const json = await getData()
     const selectedMode = document.getElementById("mode").value;
@@ -169,11 +170,8 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer, e
     directionsService
         .route({
 
-            origin: { lat: user[0].st_x, lng: user[0].st_y },
+            origin: { lat: user1[0].st_x, lng: user1[0].st_y },
             destination: end,
-            // Note that Javascript allows us to access the constant
-            // using square brackets and a string value as its
-            // "property."
             travelMode: google.maps.TravelMode[selectedMode],
         })
         .then((response) => {
@@ -218,7 +216,7 @@ async function getStores(){
 
 window.onload = async function() {
     queryString = window.location.search;
-    user = await getUserDa()
+
     window.initMap = initMap();
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
