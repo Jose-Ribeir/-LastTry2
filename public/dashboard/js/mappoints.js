@@ -13,7 +13,6 @@ const citymap = {
 async function initMap() {
     let b = await getStores()
     var user = await getUserDa()
-    alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
         center: { lat: 38.736946, lng: -9.142685 } ,
@@ -129,17 +128,11 @@ async function initMap() {
     }
 
 
-
-
-
-
-
     for (let i = 0; i < user.length; i++) {
-
-        alert("userrr "+JSON.stringify(user[i]))
-
+        alert("user " + JSON.stringify(user[i]))
         var marker1 = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(user[i].st_x), parseFloat(user[i].st_y)),
+            icon : 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
             title:"Your location"
         });
 
@@ -189,9 +182,7 @@ async function getStores(){
 
 window.onload = async function() {
     queryString = window.location.search;
-
     window.initMap = initMap();
-
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
