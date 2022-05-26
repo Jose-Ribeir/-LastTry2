@@ -1,4 +1,3 @@
-// Mapa do circlo
 
 const citymap = {
     lisboa: {
@@ -11,13 +10,13 @@ const citymap = {
     },
 };
 
-async function initMap(a) {
-    // console.log(json)
-
-    alert(""+JSON.stringify(a))
+async function initMap() {
+    let b = await getStores()
+    var user = await getUserDa()
+    alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
-        center: { lat: a.st_x, lng: a.st_y },
+        center: { lat: 38.736946, lng: -9.142685 } ,
         mapTypeId: "terrain",
         styles: [
             { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
@@ -119,24 +118,53 @@ async function initMap(a) {
 
 
 
-    const cityCircle = new google.maps.Circle({
-        strokeColor: "#ffb500",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: "#ffb500",
-        fillOpacity: 0.35,
-        map,
-        center: { lat: a.st_x, lng: a.st_y },
-        // center: citymap.lisboa.center,
-        radius: 500,
-    });
+
+    for (let i = 0; i < b.length; i++) {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
+            title:b.store_name
+        });
+
+        marker.setMap(map);
+    }
+
+
+
+
+
+
+
+    for (let i = 0; i < user.length; i++) {
+
+        alert("userrr "+JSON.stringify(user[i]))
+
+        var marker1 = new google.maps.Marker({
+            position: new google.maps.LatLng(parseFloat(user[i].st_x), parseFloat(user[i].st_y)),
+            title:"Your location"
+        });
+
+        marker1.setMap(map);
+    }
+
+
+
 }
 
 
 
 
 
+async function getUserDa(){
+    alert(""+sessionStorage.getItem("user_id"))
 
+    var targetUrl = linkApi+'users/'+sessionStorage.getItem("user_id")
+    alert("url do user"+ targetUrl)
+    const response = await fetch(
+        targetUrl)
+    const data = await response.json()
+    return data
+
+}
 
 
 
@@ -147,10 +175,10 @@ function removehash(a){
     return b
 }
 
-async function getData(){
+async function getStores(){
 
-    var targetUrl = linkApi+'stores'
-
+    let targetUrl = linkApi+'stores'
+    alert("link   "+targetUrl)
 
     const response = await fetch(targetUrl)
     const data = await response.json()
@@ -161,9 +189,8 @@ async function getData(){
 
 window.onload = async function() {
     queryString = window.location.search;
-    let b = await getData()
 
-    window.initMap = initMap( b[0]);
+    window.initMap = initMap();
 
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))

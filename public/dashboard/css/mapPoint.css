@@ -1,7 +1,9 @@
-#map {
-    height: 100%;
+#mapcfg {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
 }
-
 /*
  * Optional: Makes the sample page fill the window.
  */
