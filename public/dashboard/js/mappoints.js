@@ -1,5 +1,4 @@
-// Mapa do circlo
-var iduser
+
 const citymap = {
     lisboa: {
         center: { lat: 38.736946, lng: -9.142685 },
@@ -146,7 +145,8 @@ async function initMap() {
 
 
 async function getUserData(){
-    var targetUrl = linkApi+'users/'+iduser
+    alert(""+sessionStorage.getItem("user_id"))
+    var targetUrl = linkApi+'users/'+sessionStorage.getItem("user_id")
 
     const response = await fetch(
         targetUrl)
@@ -177,7 +177,6 @@ async function getStores(){
 }
 
 window.onload = async function() {
-    iduser = sessionStorage.getItem("user_id")
     queryString = window.location.search;
 
     window.initMap = initMap();
