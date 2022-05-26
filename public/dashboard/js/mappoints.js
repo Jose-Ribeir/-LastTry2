@@ -1,4 +1,4 @@
-var user = await getUserDa()
+var user
 
 const citymap = {
     lisboa: {
@@ -218,6 +218,7 @@ async function getStores(){
 
 window.onload = async function() {
     queryString = window.location.search;
+    user = await getUserDa()
     window.initMap = initMap();
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
