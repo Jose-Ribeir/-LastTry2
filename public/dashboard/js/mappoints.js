@@ -13,7 +13,7 @@ const citymap = {
 
 async function initMap() {
     let b = await getStores()
-    let user = await getUserData()
+    const user = await getUserData()
     alert(""+JSON.stringify(b[0]))
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
