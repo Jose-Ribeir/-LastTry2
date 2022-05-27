@@ -161,7 +161,8 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer, l
 
 
     const selectedMode = document.getElementById("mode").value;
-
+    alert("lat " + user1[0].st_x+"   long "+user1[0].st_y)
+    alert("lat dest "+ lat+"   long dest "+long)
     directionsService
         .route({
 
@@ -169,6 +170,7 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer, l
             destination: { lat:lat,lng:long },
             travelMode: google.maps.TravelMode[selectedMode],
         })
+
         .then((response) => {
             directionsRenderer.setDirections(response);
         })
