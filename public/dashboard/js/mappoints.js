@@ -13,7 +13,8 @@ const citymap = {
 async function initMap() {
     let b = await getStores()
     var user = await getUserDa()
-
+    const directionsRenderer = new google.maps.DirectionsRenderer();
+    const directionsService = new google.maps.DirectionsService();
     const map = new google.maps.Map(document.getElementById("mapcfg"), {
         zoom: 13,
         center: { lat: 38.736946, lng: -9.142685 } ,
@@ -125,19 +126,12 @@ async function initMap() {
             title:b[i].store_name+" "+i
         });
         marker.addListener("click",() =>{
-            const directionsRenderer = new google.maps.DirectionsRenderer();
-            const directionsService = new google.maps.DirectionsService();
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 14,
-                center: { lat: 38.736946, lng: -9.142685 },
-            });
 
            alert("marker position"+ marker.getPosition())
-
             directionsRenderer.setMap(map);
             calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition.lat(),marker.getPosition.lng());
             document.getElementById("mode").addEventListener("change", () => {
-                calculateAndDisplayRoute(directionsService, directionsRenderer, marker);
+                calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition.lat(),marker.getPosition.lng());
             });})
         marker.setMap(map);
     }
