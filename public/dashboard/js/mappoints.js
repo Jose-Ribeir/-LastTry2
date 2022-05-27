@@ -128,7 +128,6 @@ async function initMap() {
         marker.addListener("click",() =>{
             let lat =marker.getPosition().lat()
             let long= marker.getPosition().lng()
-           alert("marker position"+ lat+" l ong  "+long)
             directionsRenderer.setMap(map);
             calculateAndDisplayRoute(directionsService, directionsRenderer, lat,long);
             document.getElementById("mode").addEventListener("change", () => {
@@ -157,13 +156,9 @@ async function initMap() {
 async function calculateAndDisplayRoute(directionsService, directionsRenderer, lat,long) {
 
     var user1 = await getUserDa()
-    alert(" travel mode   "+document.getElementById("mode").value)
-    alert(" lat and long   "+user1[0].st_x+""+user1[0].st_y)
 
 
     const selectedMode = document.getElementById("mode").value;
-    alert("lat " + user1[0].st_x+"   long "+user1[0].st_y)
-    alert("lat dest "+ lat+"   long dest "+long)
     directionsService
         .route({
 
