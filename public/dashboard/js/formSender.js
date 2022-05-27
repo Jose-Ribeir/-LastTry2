@@ -86,6 +86,11 @@ async function namemail(){
         'beforeend',
         '<span class="font-weight-bold"> '+json[0].person_name+json[0].person_surname+'</code>',
     );
+
+    document.getElementById("name1").innerText=json[0].person_name+json[0].person_surname
+    document.getElementById("name2").innerText=json[0].person_name+json[0].person_surname
+    document.getElementById("email1").innerText=json[0].person_email
+
 }
 
 function removehash(a){
@@ -101,11 +106,6 @@ window.onload = async function() {
 
 
     id = sessionStorage.getItem("user_id")
-    document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
-    document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
-    document.getElementById("email1").innerText=removehash(sessionStorage.getItem("user_email"))
-    document.getElementById("name").innerText=removehash(sessionStorage.getItem("user_name"))
-    document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
 
 
     await namemail()
