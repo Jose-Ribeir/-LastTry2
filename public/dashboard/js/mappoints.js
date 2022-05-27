@@ -122,11 +122,10 @@ async function initMap() {
     for (let i = 0; i < b.length; i++) {
         let marker = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
-            title:b.store_name
+            title:b.store_name+" "+i
         });
         marker.addListener("click",() =>{
-            alert("clicked ndns dsa dsan dskaj sdamn dsan")
-
+            alert("clicked ndns dsa dsan dskaj sdamn dsan"+ marker.getTitle()+"   pos"+marker.getPosition().lat()+" adssa "+ marker.getPosition().lng())
             const directionsRenderer = new google.maps.DirectionsRenderer();
             const directionsService = new google.maps.DirectionsService();
             const map = new google.maps.Map(document.getElementById("map"), {
