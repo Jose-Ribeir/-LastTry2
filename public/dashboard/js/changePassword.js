@@ -2,7 +2,7 @@ async function changePass1() {
 
     id = sessionStorage.getItem("user_id")
 
-    alert(""+document.getElementById('newpass2').value === document.getElementById('newpass1').value)
+
     if (document.getElementById('newpass2').value === document.getElementById('newpass1').value){
         let data = {"person_id": id,
             "person_password": document.getElementById('oldpass').value,
@@ -22,14 +22,16 @@ async function changePass1() {
             });
             alert(JSON.stringify(newProduct))
 
-            window.location.href='../dashboard/profile.html'
+
 
         } catch (err) {
             console.log(err);
             if (err) {
                 alert(""+err);
-            } else {
                 alert("Wrong password") ;
+            } else {
+                alert("Passwords Changed")
+                window.location.href='../dashboard/profile.html'
             }
         }
     }
