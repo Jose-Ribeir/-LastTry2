@@ -15,7 +15,6 @@ async function newUser() {
         person_email: (document.getElementById("email").value),
         person_name: (document.getElementById("username").value),
         person_password: (document.getElementById("pass").value)
-
     }
 
     try {
