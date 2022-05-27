@@ -158,7 +158,6 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer, l
     var user1 = await getUserDa()
     alert(" travel mode   "+document.getElementById("mode").value)
     alert(" lat and long   "+user1[0].st_x+""+user1[0].st_y)
-    alert(" end  "+end)
 
 
     const selectedMode = document.getElementById("mode").value;
