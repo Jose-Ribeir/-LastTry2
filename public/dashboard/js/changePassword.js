@@ -1,9 +1,9 @@
 async function changePass1() {
 
     id = sessionStorage.getItem("user_id")
+
     let jsno = await getData(id)
 
-    alert(""+document.getElementById('newpass2').value === document.getElementById('newpass1').value)
     if (document.getElementById('newpass2').value === document.getElementById('newpass1').value){
         if (jsno.person_password === document.getElementById('newpass1').value){
 
@@ -11,9 +11,6 @@ async function changePass1() {
             let data = {"person_id": id,
                 "person_password": document.getElementById('oldpass').value,
                 "person_passwordnew":  document.getElementById('newpass1').value};
-
-
-
             try {
 
                 //get json here
