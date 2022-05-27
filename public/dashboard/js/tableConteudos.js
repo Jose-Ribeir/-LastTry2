@@ -30,6 +30,11 @@ function removehash(a){
 }
 
 window.onload = async function() {
+    if(sessionStorage.getItem("user_id")===null)
+        window.location.href="../login.html"
+
+
+
     if(!sessionStorage.getItem("user_is_admin")){
         window.location.href='../dashboard/profile.html'
     }

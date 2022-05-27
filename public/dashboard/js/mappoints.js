@@ -216,7 +216,8 @@ async function getStores(){
 
 window.onload = async function() {
     queryString = window.location.search;
-
+    if(sessionStorage.getItem("user_id")===null)
+        window.location.href="../login.html"
     window.initMap = initMap();
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))

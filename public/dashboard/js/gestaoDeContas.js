@@ -49,6 +49,12 @@ async function refresh(id){
 // }
 
 async function table(){
+    if(sessionStorage.getItem("user_id")===null)
+        window.location.href="../login.html"
+
+
+
+
     const json = await getData()
 
     var table = document.getElementById("UsersTable");

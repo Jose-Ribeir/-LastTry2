@@ -122,6 +122,10 @@ function removehash(a){
 
 
 window.onload = async function() {
+
+    if(sessionStorage.getItem("user_id")===null)
+        window.location.href="../login.html"
+
     loginId = sessionStorage.getItem("user_id")
 
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
