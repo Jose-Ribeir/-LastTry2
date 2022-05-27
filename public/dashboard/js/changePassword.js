@@ -25,10 +25,11 @@ async function changePass1() {
 
 
         } catch (err) {
-            console.log(err);
+            alert(""+err);
+            alert("Wrong password") ;
+
             if (err) {
-                alert(""+err);
-                alert("Wrong password") ;
+
             } else {
                 alert("Passwords Changed")
                 window.location.href='../dashboard/profile.html'
