@@ -127,7 +127,7 @@ async function initMap() {
         });
         marker.addListener("click",() =>{
 
-           alert("marker position"+ marker.getPosition())
+           alert("marker position"+ marker.getPosition().lat())
             directionsRenderer.setMap(map);
             calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition.lat,marker.getPosition.lng);
             document.getElementById("mode").addEventListener("change", () => {
