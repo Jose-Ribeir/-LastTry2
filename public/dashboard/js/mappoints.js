@@ -120,11 +120,11 @@ async function initMap() {
 
 
     for (let i = 0; i < b.length; i++) {
-        var marker = new google.maps.Marker({
+        let marker = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
             title:b.store_name
         });
-        marker.addListener("click",function (){
+        marker.addListener("click",() =>{
 
             const directionsRenderer = new google.maps.DirectionsRenderer();
             const directionsService = new google.maps.DirectionsService();
@@ -133,12 +133,12 @@ async function initMap() {
                 center: { lat: 38.736946, lng: -9.142685 },
             });
 
-           alert("marker position"+ marker.position)
+           alert("marker position"+ marker.getPosition())
 
             directionsRenderer.setMap(map);
-            calculateAndDisplayRoute(directionsService, directionsRenderer, marker.position);
+            calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition());
             document.getElementById("mode").addEventListener("change", () => {
-                calculateAndDisplayRoute(directionsService, directionsRenderer, marker.position);
+                calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition());
             });})
         marker.setMap(map);
     }
