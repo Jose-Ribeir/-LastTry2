@@ -22,7 +22,7 @@ async function changePass1() {
             });
             alert(JSON.stringify(newProduct))
 
-            window.location.href='../profile.html'
+            window.location.href='../dashboard/profile.html'
 
         } catch (err) {
             console.log(err);
@@ -33,6 +33,8 @@ async function changePass1() {
             }
         }
     }
-    else
+    else{
         alert("Passwords don't coincide")
+    }
+
 }
