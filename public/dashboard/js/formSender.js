@@ -51,6 +51,8 @@ async function upDate() {
             alert("Account Information updated") ;
         }
     }
+
+    window.location.reload()
 }
 
 
