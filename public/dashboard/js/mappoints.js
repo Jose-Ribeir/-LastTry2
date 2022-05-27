@@ -150,10 +150,17 @@ async function initMap() {
     for (let i = 0; i < user.length; i++) {
 
         var marker1 = new google.maps.Marker({
-            position: new google.maps.LatLng(parseFloat(user[i].st_x), parseFloat(user[i].st_y)),
-            icon : 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-            title:"Your location",
-            label:"Your location"
+            icon: {
+                url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                labelOrigin: new google.maps.Point(user[i].st_x, user[i].st_y),
+                size: new google.maps.Size(32,32),
+                anchor: new google.maps.Point(16,32)
+            },
+            label: {
+                text: "Your location",
+                color: "#e5e5e5",
+                fontWeight: "bold"
+            }
         });
 
         marker1.setMap(map);
