@@ -126,10 +126,11 @@ async function initMap() {
             title:b[i].store_name+" "+i
         });
         marker.addListener("click",() =>{
-
-           alert("marker position"+ marker.getPosition().lat())
+            let lat =marker.getPosition().lat()
+            let long= marker.getPosition().long()
+           alert("marker position"+ lat+" l ong  "+long)
             directionsRenderer.setMap(map);
-            calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition.lat,marker.getPosition.lng);
+            calculateAndDisplayRoute(directionsService, directionsRenderer, lat,long);
             document.getElementById("mode").addEventListener("change", () => {
                 calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition.lat,marker.getPosition.lng);
             });})
