@@ -95,12 +95,6 @@ async function namemail(){
 
 }
 
-function removehash(a){
-
-    let b=a.substring(a.indexOf('"')+1,a.length)
-    b=b.substring(0,b.indexOf('"'))
-    return b
-}
 
 window.onload = async function() {
     if(sessionStorage.getItem("user_id")===null)
@@ -125,6 +119,6 @@ window.onload = async function() {
 }
 
 async function changePass(){
-   window.location.href="../changePass.html"
+   window.location.href="../dashboard/changePass.html"
 
 }
