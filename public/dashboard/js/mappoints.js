@@ -127,7 +127,7 @@ async function initMap() {
         });
         marker.addListener("click",() =>{
             let lat =marker.getPosition().lat()
-            let long= marker.getPosition().long()
+            let long= marker.getPosition().lng()
            alert("marker position"+ lat+" l ong  "+long)
             directionsRenderer.setMap(map);
             calculateAndDisplayRoute(directionsService, directionsRenderer, lat,long);
