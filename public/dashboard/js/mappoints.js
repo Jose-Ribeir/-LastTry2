@@ -123,7 +123,8 @@ async function initMap() {
     for (let i = 0; i < b.length; i++) {
         let marker = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
-            title:b[i].store_name+" "+i
+            title:b[i].store_name,
+            label:b[i].store_name
         });
         marker.addListener("click",() =>{
             let lat =marker.getPosition().lat()
@@ -142,7 +143,8 @@ async function initMap() {
         var marker1 = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(user[i].st_x), parseFloat(user[i].st_y)),
             icon : 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-            title:"Your location"
+            title:"Your location",
+            label:"Your location"
         });
 
         marker1.setMap(map);
