@@ -123,12 +123,17 @@ async function initMap() {
     for (let i = 0; i < b.length; i++) {
         let marker = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
-            title:b[i].store_name,
+            icon: {
+                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                labelOrigin: new google.maps.Point(b[i].st_x, b[i].st_y),
+                size: new google.maps.Size(32,32),
+                anchor: new google.maps.Point(16,32)
+            },
             label: {
                 text: b[i].store_name,
-                color: "#4682B4",
-                fontSize: "30px"
-            },
+                color: "#e5e5e5",
+                fontWeight: "bold"
+            }
         });
         marker.addListener("click",() =>{
             let lat =marker.getPosition().lat()
