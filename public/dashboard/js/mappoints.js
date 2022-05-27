@@ -124,7 +124,11 @@ async function initMap() {
         let marker = new google.maps.Marker({
             position: new google.maps.LatLng(parseFloat(b[i].st_x), parseFloat(b[i].st_y)),
             title:b[i].store_name,
-            label:b[i].store_name
+            label: {
+                text: b[i].store_nameb[i].store_name,
+                color: "#4682B4",
+                fontSize: "30px"
+            },
         });
         marker.addListener("click",() =>{
             let lat =marker.getPosition().lat()
