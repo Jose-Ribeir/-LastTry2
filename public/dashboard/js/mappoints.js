@@ -125,7 +125,6 @@ async function initMap() {
             title:b[i].store_name+" "+i
         });
         marker.addListener("click",() =>{
-            alert("clicked ndns dsa dsan dskaj sdamn dsan"+ marker.getTitle()+"   pos"+marker.getPosition().lat()+" adssa "+ marker.getPosition().lng()+" Positionnnnn "+marker.getPosition())
             const directionsRenderer = new google.maps.DirectionsRenderer();
             const directionsService = new google.maps.DirectionsService();
             const map = new google.maps.Map(document.getElementById("map"), {
@@ -136,9 +135,9 @@ async function initMap() {
            alert("marker position"+ marker.getPosition())
 
             directionsRenderer.setMap(map);
-            calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition());
+            calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition.lat(),marker.getPosition.lng());
             document.getElementById("mode").addEventListener("change", () => {
-                calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition());
+                calculateAndDisplayRoute(directionsService, directionsRenderer, marker);
             });})
         marker.setMap(map);
     }
@@ -160,7 +159,7 @@ async function initMap() {
 }
 
 
-async function calculateAndDisplayRoute(directionsService, directionsRenderer, end) {
+async function calculateAndDisplayRoute(directionsService, directionsRenderer, lat,long) {
 
     var user1 = await getUserDa()
     alert(" travel mode   "+document.getElementById("mode").value)
@@ -174,7 +173,7 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer, e
         .route({
 
             origin: { lat: user1[0].st_x, lng: user1[0].st_y },
-            destination: end,
+            destination: { lat:lat,lng:long },
             travelMode: google.maps.TravelMode[selectedMode],
         })
         .then((response) => {
