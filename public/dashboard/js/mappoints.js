@@ -125,6 +125,7 @@ async function initMap() {
             title:b.store_name
         });
         marker.addListener("click",() =>{
+            alert("clicked ndns dsa dsan dskaj sdamn dsan")
 
             const directionsRenderer = new google.maps.DirectionsRenderer();
             const directionsService = new google.maps.DirectionsService();
