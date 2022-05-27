@@ -104,6 +104,8 @@ window.onload = async function() {
     document.getElementById("name1").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("email1").innerText=removehash(sessionStorage.getItem("user_email"))
+    document.getElementById("name").innerText=removehash(sessionStorage.getItem("user_name"))
+    document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
 
 
     await namemail()
