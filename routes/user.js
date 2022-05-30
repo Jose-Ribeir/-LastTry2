@@ -155,7 +155,7 @@ const search = (request, response) => {
 
       }
     }
-    response.status(201).json(all)
+    response.status(201).json(all.rows)
   })
 
 }
