@@ -177,7 +177,7 @@ const search = (request, response) => {
       for (let i = 0; i < Object.keys(cfg).length; i++) {
 
         obj['all'].push(cfg[i]);
-        console.log(JSON.stringify(obj))
+        console.log("sdvgahjikshvgabjdnainhvgfajhbknsldahvgfbjkndslkhvgfa vjbkhbjdavgscfvjhbkjhdgjv fb     "+cfg[i])
 
 
 
