@@ -120,7 +120,7 @@ const deleteUser = (request, response) => {
 const search = (request, response) => {
   const search = (request.params.text)
 
-  const cars = [];
+  var cars = [];
 
   var jsonStr = '{"all":[]}';
   var obj = JSON.parse(jsonStr);
@@ -168,7 +168,7 @@ const search = (request, response) => {
       for (let i = 0; i < Object.keys(person).length; i++) {
 
 
-        obj['all'].push(person[i]);
+        cars.push(person[i]);
         console.log(JSON.stringify(obj))
       }
     }
@@ -176,7 +176,7 @@ const search = (request, response) => {
     if (cfgrows>0){
       for (let i = 0; i < Object.keys(cfg).length; i++) {
 
-        obj['all'].push(cfg[i]);
+        cars.push(cfg[i]);
         console.log("sdvgahjikshvgabjdnainhvgfajhbknsldahvgfbjkndslkhvgfa vjbkhbjdavgscfvjhbkjhdgjv fb     "+cfg[i])
 
 
@@ -187,7 +187,7 @@ const search = (request, response) => {
     if (softwarerows>0){
       for (let i = 0; i < Object.keys(software).length; i++) {
 
-        obj['all'].push(software[i]);
+        cars.push(software[i]);
       }
     }
 
@@ -199,7 +199,7 @@ const search = (request, response) => {
     console.log(JSON.stringify(jsonStr))
 
 
-    response.status(201).json(jsonStr)
+    response.status(201).json(cars)
   })
 
 }
