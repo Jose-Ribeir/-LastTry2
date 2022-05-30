@@ -9,7 +9,7 @@ async function getData(){
 
 
 
-    var targetUrl = linkApi+'/software/'+type
+    var targetUrl = linkApi+'software/'+type
     const response = await fetch(
         targetUrl)
     const data = await response.json()
