@@ -167,10 +167,7 @@ const search = (request, response) => {
 
     if (!(personrows===null)){
       for (let i = 0; i < Object.keys(person).length; i++) {
-
-
         cars.push(person[i]);
-        console.log(JSON.stringify(obj))
       }
     }
 
