@@ -122,6 +122,10 @@ const search = (request, response) => {
 
   const cars = [];
 
+  var jsonStr = '{"all":[]}';
+  var obj = JSON.parse(jsonStr);
+
+
   let all
   let cfg
   let person
@@ -135,7 +139,7 @@ const search = (request, response) => {
       throw error
     }
     personrows=results.rowCount
-    person=results
+    person=results.rows
 
   })
   client.query('SELECT * FROM software WHERE software_name = $1', [search], (error, results) => {
@@ -143,15 +147,16 @@ const search = (request, response) => {
       throw error
     }
     softwarerows=results.rowCount
-    software=results
+    software=results.rows
   })
+
   client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
     if (error) {
       throw error
     }
 
     cfgrows=results.rowCount
-    cfg=results
+    cfg=results.rows
     console.log("CFG                                            "+JSON.stringify(cfg))
 
 
@@ -162,29 +167,39 @@ const search = (request, response) => {
     if (personrows>0){
       for (let i = 0; i < Object.keys(person).length; i++) {
 
-        all.add(person[i])
+
+        obj['all'].push(person[i]);
+        console.log(JSON.stringify(obj))
       }
     }
 
     if (cfgrows>0){
       for (let i = 0; i < Object.keys(cfg).length; i++) {
-        all.add(cfg[i])
-        console.log(cfg[i])
+
+        obj['all'].push(cfg[i]);
+        console.log(JSON.stringify(obj))
+
+
 
       }
     }
 
     if (softwarerows>0){
       for (let i = 0; i < Object.keys(software).length; i++) {
-        all.add(software[i])
+
+        obj['all'].push(software[i]);
       }
     }
 
 
+
+
+    jsonStr = JSON.stringify(obj);
+
     console.log(all.toString())
 
 
-    response.status(201).json(all)
+    response.status(201).json(jsonStr)
   })
 
 }
