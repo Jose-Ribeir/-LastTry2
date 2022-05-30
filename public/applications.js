@@ -1,5 +1,15 @@
-async function getData(type){
-    var targetUrl = linkApi+'software/'+type
+async function getData(){
+    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
+    //
+    //
+    // const response = await fetch(targetUrl)
+    // const data = await response.json()
+    // console.log(data)
+    // return data
+
+
+
+    var targetUrl = linkApi+'/software/'+type
     const response = await fetch(
         targetUrl)
     const data = await response.json()
@@ -7,16 +17,22 @@ async function getData(type){
     return data
 }
 
+function teste(a) {
+    alert(a)
+    window.location.href='software.html?'+a
+}
 
-
-
-
+var queryString
+var type
 window.onload = async function() {
-    let queryString
     queryString = window.location.search;
-
-    let type=queryString.substring(1,queryString.length)
-    const json = await getData(type)
+    console.log(queryString);
+    type=queryString.substring(1,queryString.length)
+    if(type==="games")
+        document.getElementById("title").innerText="Gaming"
+    else
+        document.getElementById("title").innerText="Working"
+    const json = await getData()
     alert(""+json[0])
     let lista=document.getElementById("list")
     for (let i = 0; i < json.length; i++) {
