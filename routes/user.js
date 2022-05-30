@@ -119,24 +119,38 @@ const deleteUser = (request, response) => {
 
 const search = (request, response) => {
   const search = (request.params.text)
-  var all
+  var all=null
   client.query('SELECT * FROM person WHERE person_name = $1', [search], (error, results) => {
     if (error) {
       throw error
     }
-    all=results
+    for (let i = 0; i < results.length; i++) {
+      all[i]=results[i]
+
+    }
+
   })
   client.query('SELECT * FROM software WHERE software_name = $1', [search], (error, results) => {
     if (error) {
       throw error
     }
-    all+=results
+    for (let k = all.length; k < all.length+results.length; k++) {
+      for (let i = 0; i < results.length; i++) {
+        all[k]=results[i]
+
+      }
+    }
   })
   client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
     if (error) {
       throw error
     }
-    all+=results
+    for (let k = all.length; k < all.length+results.length; k++) {
+      for (let i = 0; i < results.length; i++) {
+        all[k]=results[i]
+
+      }
+    }
     response.status(201).json(all)
   })
 
