@@ -165,7 +165,7 @@ const search = (request, response) => {
 
 
 
-    if (personrows>0){
+    if (!(personrows===null)){
       for (let i = 0; i < Object.keys(person).length; i++) {
 
 
@@ -174,7 +174,7 @@ const search = (request, response) => {
       }
     }
 
-    if (cfgrows>0){
+    if (!(cfgrows===null)){
       for (let i = 0; i < Object.keys(cfg).length; i++) {
 
         cars.push(cfg[i]);
@@ -185,7 +185,7 @@ const search = (request, response) => {
       }
     }
 
-    if (softwarerows>0){
+    if (!(softwarerows===null)){
       for (let i = 0; i < Object.keys(software).length; i++) {
 
         cars.push(software[i]);
