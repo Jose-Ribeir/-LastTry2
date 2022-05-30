@@ -1,16 +1,5 @@
-async function getData(){
-    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
-    //
-    //
-    // const response = await fetch(targetUrl)
-    // const data = await response.json()
-    // console.log(data)
-    // return data
-
-    let type=queryString.substring(1,queryString.length)
-
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/software/'+type
+async function getData(type){
+    var targetUrl = linkApi+'software/'+type
     const response = await fetch(
         targetUrl)
     const data = await response.json()
@@ -18,18 +7,16 @@ async function getData(){
     return data
 }
 
-function teste(a) {
-    alert(a)
-    window.location.href='software.html?'+a
-}
 
-var queryString
+
+
 
 window.onload = async function() {
+    let queryString
     queryString = window.location.search;
-    console.log(queryString);
 
-    const json = await getData()
+    let type=queryString.substring(1,queryString.length)
+    const json = await getData(type)
     alert(""+json[0])
     let lista=document.getElementById("list")
     for (let i = 0; i < json.length; i++) {

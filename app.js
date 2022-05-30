@@ -70,6 +70,9 @@ app.get('/software/:id(\\d+)',software.getSoftwareById)
 app.post('/software',software.createSoftware)
 
 
+app.get('/search/:text', users.search)
+
+
 
 app.post('/fileupload',function (req, res) {
 

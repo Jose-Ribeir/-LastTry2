@@ -115,6 +115,36 @@ const deleteUser = (request, response) => {
   })
 }
 
+
+
+const search = (request, response) => {
+  const search = (request.params.text)
+  var all
+  client.query('SELECT * FROM person WHERE person_name = $1', [search], (error, results) => {
+    if (error) {
+      throw error
+    }
+    all=results
+  })
+  client.query('SELECT * FROM software WHERE software_name = $1', [search], (error, results) => {
+    if (error) {
+      throw error
+    }
+    all+=results
+  })
+  client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
+    if (error) {
+      throw error
+    }
+    all+=results
+    response.status(201).json(all)
+  })
+
+}
+
+
+
+
 module.exports = {
   getUsers,
   getUserById,
@@ -122,5 +152,6 @@ module.exports = {
   updateUser,
   deleteUser,
   getLogin,
-  passwordChange
+  passwordChange,
+  search
 }

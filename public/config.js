@@ -173,7 +173,7 @@ window.onload = async function() {
     document.getElementById("views").innerHTML=""+json[0].cfg_view
     document.getElementById("gameName").innerHTML=""+json[0].software_name
     document.getElementById("softwareImg").src="images/"+json[0].software_image
-    document.getElementById("dowloadfile").innerHTML='<a href="Cfg/'+json[0].cfg_cfg+'" download="'+json[0].cfg_cfg+'"><button type="button" class="button11" down >Download Now<button></a>'
+    document.getElementById("dowloadfile").innerHTML='<a href="Cfg/'+json[0].cfg_cfg+'" download="'+json[0].cfg_cfg+'"><button type="button" class="button11">Download Now<button></a>'
 
     // document.getElementById("keyact").value=json.cfg_
 }
