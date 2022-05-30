@@ -126,12 +126,15 @@ const search = (request, response) => {
   let cfg
   let person
   let software
+  let cfgrows
+  let personrows
+  let softwarerows
 
   client.query('SELECT * FROM person WHERE person_name = $1', [search], (error, results) => {
     if (error) {
       throw error
     }
-
+    personrows=results.rowCount
     person=results
 
   })
@@ -139,7 +142,7 @@ const search = (request, response) => {
     if (error) {
       throw error
     }
-
+    softwarerows=results.rowCount
     software=results
   })
   client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
@@ -147,21 +150,36 @@ const search = (request, response) => {
       throw error
     }
 
+    cfgrows=results.rowCount
     cfg=results
     console.log("CFG                                            "+JSON.stringify(cfg))
 
-    for (let i = 0; i < Object.keys(person).length; i++) {
 
-      all.add(person[i])
+
+
+
+
+    if (personrows>0){
+      for (let i = 0; i < Object.keys(person).length; i++) {
+
+        all.add(person[i])
+      }
     }
-    for (let i = 0; i < Object.keys(cfg).length; i++) {
-      all.add(cfg[i])
-      console.log(cfg[i])
 
-    }for (let i = 0; i < Object.keys(software).length; i++) {
-      all.add(software[i])
+    if (cfgrows>0){
+      for (let i = 0; i < Object.keys(cfg).length; i++) {
+        all.add(cfg[i])
+        console.log(cfg[i])
 
+      }
     }
+
+    if (softwarerows>0){
+      for (let i = 0; i < Object.keys(software).length; i++) {
+        all.add(software[i])
+      }
+    }
+
 
     console.log(all.toString())
 
