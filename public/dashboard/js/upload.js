@@ -109,6 +109,8 @@ async function uploadCFG() {
     }
     if (temp)
     alert("Please select a game or software from the drop down")
+    else
+        window.location.reload()
 }
 
 

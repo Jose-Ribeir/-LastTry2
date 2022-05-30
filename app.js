@@ -3,7 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
-const corsOpts = { origin: '*', methods: ['GET', 'POST'], allowedHeaders: ['Content-Type']};
+const corsOpts = { origin: '*', methods: ['GET', 'POST','DELETE'], allowedHeaders: ['Content-Type']};
 // import public from './public'
 
 

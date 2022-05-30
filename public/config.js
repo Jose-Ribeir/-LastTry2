@@ -173,6 +173,8 @@ window.onload = async function() {
     document.getElementById("views").innerHTML=""+json[0].cfg_view
     document.getElementById("gameName").innerHTML=""+json[0].software_name
     document.getElementById("softwareImg").src="images/"+json[0].software_image
+    document.getElementById("dowloadfile").innerHTML='<a href="'+json[0].cfg_cfg+'" download="'+json[0].cfg_cfg+'"><button type="button" class="button11" down >Download Now<button></a><h3 class="m-5">Upload location</h3><div id="mapcfg"></div>'
+
     // document.getElementById("keyact").value=json.cfg_
 }
 
