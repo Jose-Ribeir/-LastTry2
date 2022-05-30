@@ -148,6 +148,7 @@ const search = (request, response) => {
     }
     softwarerows=results.rowCount
     software=results.rows
+    console.log("    software rowsssssss"+ results.rows)
   })
 
   client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
