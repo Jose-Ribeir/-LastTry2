@@ -164,7 +164,7 @@ window.onload = async function() {
     const json = await getcfg()
     window.initMap = initMap(json[0]);
     const d = new Date(json[0].cfg_date);
-
+    alert("key action "+json[0].cfg_key_action)
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
     document.getElementById("date").innerHTML="" + d.toDateString();
     document.getElementById("cfgName").innerHTML=""+json[0].cfg_name
