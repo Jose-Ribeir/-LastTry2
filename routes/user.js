@@ -132,7 +132,7 @@ const search = (request, response) => {
       throw error
     }
 
-    person=results.rows
+    person=results
 
   })
   client.query('SELECT * FROM software WHERE software_name = $1', [search], (error, results) => {
@@ -140,20 +140,22 @@ const search = (request, response) => {
       throw error
     }
 
-    software=results.rows
+    software=results
   })
   client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
     if (error) {
       throw error
     }
 
-    cfg=results.rows
+    cfg=results
 
     for (let i = 0; i < Object.keys(person).length; i++) {
+
       all.push(person[i])
     }
     for (let i = 0; i < Object.keys(cfg).length; i++) {
       all.push(cfg[i])
+      console.log(cfg[i])
 
     }for (let i = 0; i < Object.keys(software).length; i++) {
       all.push(software[i])
@@ -161,6 +163,7 @@ const search = (request, response) => {
     }
 
     console.log(all.toString())
+
 
     response.status(201).json(all)
   })
