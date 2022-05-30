@@ -123,6 +123,9 @@ const search = (request, response) => {
   const cars = [];
 
   let all=[]
+  let cfg
+  let person
+  let software
 
   client.query('SELECT * FROM person WHERE person_name = $1', [search], (error, results) => {
     if (error) {
@@ -132,6 +135,7 @@ const search = (request, response) => {
       all[i]=results[i]
 
     }
+    person=results
 
   })
   client.query('SELECT * FROM software WHERE software_name = $1', [search], (error, results) => {
@@ -144,6 +148,7 @@ const search = (request, response) => {
 
       }
     }
+    software=results
   })
   client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
     if (error) {
@@ -152,10 +157,10 @@ const search = (request, response) => {
     for (let k = all.length; k < all.length+results.length; k++) {
       for (let i = 0; i < results.length; i++) {
         all[k]=results[i]
-
       }
     }
-    response.status(201).json(all.rows)
+    cfg=results
+    response.status(201).json(person.rows,cfg.rows,software.rows)
   })
 
 }
