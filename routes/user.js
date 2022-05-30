@@ -122,7 +122,7 @@ const search = (request, response) => {
 
   const cars = [];
 
-  let all=[]
+  let all
   let cfg
   let person
   let software
@@ -160,7 +160,8 @@ const search = (request, response) => {
       }
     }
     cfg=results.rows
-    response.status(201).json(person,cfg,software)
+    all=person+cfg+software
+    response.status(201).json(all)
   })
 
 }
