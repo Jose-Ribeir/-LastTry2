@@ -119,7 +119,11 @@ const deleteUser = (request, response) => {
 
 const search = (request, response) => {
   const search = (request.params.text)
-  var all
+
+  const cars = [];
+
+  let all=[]
+
   client.query('SELECT * FROM person WHERE person_name = $1', [search], (error, results) => {
     if (error) {
       throw error
