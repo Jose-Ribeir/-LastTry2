@@ -69,10 +69,12 @@ async function iconChange() {
 
 async function uploadCFG() {
     const d = new Date();
+    let temp=true
     let field = document.getElementById("dropDown")
     for (let i = 0; i < json.length; i++) {
         if (json[i].software_name === field.value)
         {
+            temp=false
 
             let data = {"cfg_name":  document.getElementById('name').value,
                 "cfg_cfg":  document.getElementById('cfgfile').value,
@@ -104,12 +106,9 @@ async function uploadCFG() {
                 }
             }
         }
-        else{
-            alert("Select a Game or Software")
-        }
-
     }
-
+    if (temp)
+    alert("Please select a game or software from the drop down")
 }
 
 
