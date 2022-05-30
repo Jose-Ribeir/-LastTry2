@@ -131,10 +131,7 @@ const search = (request, response) => {
     if (error) {
       throw error
     }
-    for (let i = 0; i < results.length; i++) {
-      all[i]=results[i]
 
-    }
     person=results.rows
 
   })
@@ -142,23 +139,14 @@ const search = (request, response) => {
     if (error) {
       throw error
     }
-    for (let k = all.length; k < all.length+results.length; k++) {
-      for (let i = 0; i < results.length; i++) {
-        all[k]=results[i]
 
-      }
-    }
     software=results.rows
   })
   client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
     if (error) {
       throw error
     }
-    for (let k = all.length; k < all.length+results.length; k++) {
-      for (let i = 0; i < results.length; i++) {
-        all[k]=results[i]
-      }
-    }
+
     cfg=results.rows
     all=person+cfg+software
     response.status(201).json(all)
