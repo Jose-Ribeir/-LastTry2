@@ -135,7 +135,7 @@ const search = (request, response) => {
       all[i]=results[i]
 
     }
-    person=results
+    person=results.rows
 
   })
   client.query('SELECT * FROM software WHERE software_name = $1', [search], (error, results) => {
@@ -148,7 +148,7 @@ const search = (request, response) => {
 
       }
     }
-    software=results
+    software=results.rows
   })
   client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
     if (error) {
@@ -159,8 +159,8 @@ const search = (request, response) => {
         all[k]=results[i]
       }
     }
-    cfg=results
-    response.status(201).json(person.rows,cfg.rows,software.rows)
+    cfg=results.rows
+    response.status(201).json(person,cfg,software)
   })
 
 }
