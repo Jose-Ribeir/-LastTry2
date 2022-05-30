@@ -148,10 +148,21 @@ const search = (request, response) => {
     }
 
     cfg=results.rows
-    all=person+cfg+software
+
+    for (let i = 0; i < Object.keys(person).length; i++) {
+      all.add(person[i])
+    }
+    for (let i = 0; i < Object.keys(cfg).length; i++) {
+      all.add(cfg[i])
+
+    }for (let i = 0; i < Object.keys(software).length; i++) {
+      all.add(software[i])
+
+    }
+
     console.log(all.toString())
 
-    response.status(201).json(person+cfg+software)
+    response.status(201).json(all)
   })
 
 }
