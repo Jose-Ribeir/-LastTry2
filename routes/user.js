@@ -196,7 +196,7 @@ const search = (request, response) => {
 
     jsonStr = JSON.stringify(obj);
 
-    console.log(all.toString())
+    console.log(JSON.stringify(jsonStr))
 
 
     response.status(201).json(jsonStr)
