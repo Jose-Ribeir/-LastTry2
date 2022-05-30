@@ -150,7 +150,8 @@ const search = (request, response) => {
     cfg=results.rows
     all=person+cfg+software
     console.log(all.toString())
-    response.status(201).json(person,cfg,software)
+
+    response.status(201).json(person+cfg+software)
   })
 
 }
