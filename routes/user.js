@@ -148,7 +148,7 @@ const search = (request, response) => {
     }
 
     cfg=results
-    console.log("CFG                                            "+cfg.toString())
+    console.log("CFG                                            "+JSON.stringify(cfg))
 
     for (let i = 0; i < Object.keys(person).length; i++) {
 
