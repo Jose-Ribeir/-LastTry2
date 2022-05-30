@@ -148,6 +148,7 @@ const search = (request, response) => {
     }
 
     cfg=results
+    console.log("CFG                                            "+cfg)
 
     for (let i = 0; i < Object.keys(person).length; i++) {
 
