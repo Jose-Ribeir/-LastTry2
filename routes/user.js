@@ -148,18 +148,18 @@ const search = (request, response) => {
     }
 
     cfg=results
-    console.log("CFG                                            "+cfg)
+    console.log("CFG                                            "+cfg.toString())
 
     for (let i = 0; i < Object.keys(person).length; i++) {
 
-      all.push(person[i])
+      all.add(person[i])
     }
     for (let i = 0; i < Object.keys(cfg).length; i++) {
-      all.push(cfg[i])
+      all.add(cfg[i])
       console.log(cfg[i])
 
     }for (let i = 0; i < Object.keys(software).length; i++) {
-      all.push(software[i])
+      all.add(software[i])
 
     }
 
