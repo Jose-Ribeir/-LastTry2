@@ -150,13 +150,13 @@ const search = (request, response) => {
     cfg=results.rows
 
     for (let i = 0; i < Object.keys(person).length; i++) {
-      all.add(person[i])
+      all.push(person[i])
     }
     for (let i = 0; i < Object.keys(cfg).length; i++) {
-      all.add(cfg[i])
+      all.push(cfg[i])
 
     }for (let i = 0; i < Object.keys(software).length; i++) {
-      all.add(software[i])
+      all.push(software[i])
 
     }
 
