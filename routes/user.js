@@ -149,8 +149,8 @@ const search = (request, response) => {
 
     cfg=results.rows
     all=person.toString()+""+cfg.toString()+""+software.toString()
-    console.log(all)
-    response.status(201).json(all)
+    console.log(all.toString())
+    response.status(201).json(all.toString())
   })
 
 }
