@@ -146,5 +146,6 @@
  }
 
  .items {
+   cursor: pointer;
    border: 10px solid #a1a1a1;
  }
