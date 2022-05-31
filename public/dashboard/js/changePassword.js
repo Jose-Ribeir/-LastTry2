@@ -6,8 +6,6 @@ async function changePass1() {
 
     if (document.getElementById('newpass2').value === document.getElementById('newpass1').value){
         if (jsno.person_password === document.getElementById('newpass1').value){
-
-
             let data = {"person_id": id,
                 "person_password": document.getElementById('oldpass').value,
                 "person_passwordnew":  document.getElementById('newpass1').value};
@@ -15,7 +13,7 @@ async function changePass1() {
 
                 //get json here
                 let newProduct = await $.ajax({
-                    url: "https://cfg-api-ultimate.herokuapp.com/changepass",
+                    url: linkApi+"changepass",
                     method: "PUT",
                     data: JSON.stringify(data),
                     contentType: "application/json",
@@ -45,5 +43,4 @@ async function getData(a){
     const response = await fetch(targetUrl)
     const data = await response.json()
     return data
-
 }
