@@ -144,3 +144,7 @@
    height: 173px;
    margin: 20px auto 20px;
  }
+
+ .items {
+   border: 10px solid #a1a1a1;
+ }

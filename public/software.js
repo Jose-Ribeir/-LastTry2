@@ -49,7 +49,7 @@ window.onload = async function() {
 
     let lista=document.getElementById("list")
     for (let i = 0; i < json.length; i++) {
-        lista.innerHTML+= '<div class="u-align-left u-container-style u-layout-cell u-size-20 u-layout-cell-1"><div onclick="teste(this.id)" id="'+json[i].cfg_id+'&'+json[i].cfg_name+'" class="u-container-layout u-valign-top u-container-layout-1"><h4 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3">'+json[i].cfg_name+'</h4><p class="u-custom-font u-font-ubuntu u-text u-text-4">'+json[i].cfg_description+'</p></div></div>'
+        lista.innerHTML+= '<div class="u-align-left u-container-style u-layout-cell items u-size-20 u-layout-cell-1"><div onclick="teste(this.id)" id="'+json[i].cfg_id+'&'+json[i].cfg_name+'" class="u-container-layout u-valign-top u-container-layout-1"><h4 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3">'+json[i].cfg_name+'</h4><p class="u-custom-font u-font-ubuntu u-text u-text-4">'+json[i].cfg_description+'</p></div></div>'
     }
 
    let software= await getSoftware(type)
