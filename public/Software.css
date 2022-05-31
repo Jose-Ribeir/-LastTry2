@@ -150,3 +150,10 @@
    border: 10px solid #a1a1a1;
    background-color: #d0d0d0;
  }
+
+ .marginl {
+   margin-left: 15px;
+ }
+ .marginl2 {
+   margin-left: 20px;
+ }
