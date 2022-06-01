@@ -66,7 +66,7 @@ const getSoftwareById = (request, response) => {
 }
 
 const search = (request, response) => {
-    const search = (request.params.text)
+    const search = "%"+(request.params.text)+"%"
 
 
     client.query('SELECT * FROM software WHERE software_name like $1', [search], (error, results) => {

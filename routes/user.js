@@ -118,8 +118,8 @@ const deleteUser = (request, response) => {
 
 
 const search = (request, response) => {
-  var search = (request.params.text)
-  search+="%"
+  const search = "%"+(request.params.text)+"%"
+
 
   client.query('SELECT * FROM person WHERE person_name like  $1 ', [search], (error, results) => {
     if (error) {

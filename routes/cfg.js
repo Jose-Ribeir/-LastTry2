@@ -110,7 +110,7 @@ const deleteCfg = (request, response) => {
 }
 
 const search = (request, response) => {
-    const search = (request.params.text)
+    const search = "%"+(request.params.text)+"%"
 
 
     client.query('SELECT * FROM cfg WHERE cfg_name like $1', [search], (error, results) => {
