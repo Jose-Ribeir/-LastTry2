@@ -70,7 +70,10 @@ app.get('/software/:id(\\d+)',software.getSoftwareById)
 app.post('/software',software.createSoftware)
 
 
-app.get('/search/:text', users.search)
+app.get('users/search/:text', users.search)
+app.get('software/search/:text', software.search)
+app.get('cfg/search/:text', cfg.search)
+
 
 
 

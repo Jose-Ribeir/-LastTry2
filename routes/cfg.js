@@ -109,11 +109,25 @@ const deleteCfg = (request, response) => {
     })
 }
 
+const search = (request, response) => {
+    const search = (request.params.text)
+
+
+    client.query('SELECT * FROM cfg WHERE cfg_name like $1', [search], (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+
+}
+
 module.exports = {
     getCfg,
     getCfgById,
     createCfg,
     deleteCfg,
     getCfgBySoftwareId,
-    getCfgByName
+    getCfgByName,
+    search
 }

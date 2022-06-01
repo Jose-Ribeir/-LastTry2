@@ -65,4 +65,19 @@ const getSoftwareById = (request, response) => {
     })
 }
 
-module.exports={getApps,getGames,getSoftwareById,createSoftware}
+const search = (request, response) => {
+    const search = (request.params.text)
+
+
+    client.query('SELECT * FROM software WHERE software_name like $1', [search], (error, results) => {
+        if (error) {
+            throw error
+        }
+        response.status(200).json(results.rows)
+    })
+
+}
+
+
+module.exports={getApps,getGames,getSoftwareById,createSoftware,search}
+

@@ -120,88 +120,15 @@ const deleteUser = (request, response) => {
 const search = (request, response) => {
   const search = (request.params.text)
 
-  var cars = [];
 
-  var jsonStr = '{"all":[]}';
-  var obj = JSON.parse(jsonStr);
-
-
-  let all
-  let cfg
-  let person
-  let software
-  let cfgrows
-  let personrows
-  let softwarerows
-
-  client.query('SELECT * FROM person WHERE person_name = $1', [search], (error, results) => {
+  client.query('SELECT * FROM person WHERE person_name like $1', [search], (error, results) => {
     if (error) {
       throw error
     }
-    personrows=results.rowCount
-    person=results.rows
-
-  })
-  client.query('SELECT * FROM software WHERE software_name = $1', [search], (error, results) => {
-    if (error) {
-      throw error
-    }
-    softwarerows=results.rowCount
-    software=results.rows
-    console.log("    software rowsssssss"+ results.rows)
-  })
-
-  client.query('SELECT * FROM cfg WHERE cfg_name = $1', [search], (error, results) => {
-    if (error) {
-      throw error
-    }
-
-    cfgrows=results.rowCount
-    cfg=results.rows
-    console.log("CFG                                            "+JSON.stringify(cfg))
-
-
-
-
-
-
-    if (!(personrows===null)){
-      for (let i = 0; i < Object.keys(person).length; i++) {
-        cars.push(person[i]);
-      }
-    }
-
-    if (!(cfgrows===null)){
-      for (let i = 0; i < Object.keys(cfg).length; i++) {
-
-        cars.push(cfg[i]);
-        console.log("sdvgahjikshvgabjdnainhvgfajhbknsldahvgfbjkndslkhvgfa vjbkhbjdavgscfvjhbkjhdgjv fb     "+cfg[i])
-
-
-
-      }
-    }
-
-    if (!(softwarerows===null)){
-      for (let i = 0; i < Object.keys(software).length; i++) {
-
-        cars.push(software[i]);
-      }
-    }
-
-
-
-
-    jsonStr = JSON.stringify(obj);
-
-    console.log(JSON.stringify(jsonStr))
-
-
-    response.status(201).json(cars)
+    response.status(200).json(results.rows)
   })
 
 }
-
 
 
 
