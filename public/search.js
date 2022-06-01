@@ -78,6 +78,8 @@ window.onload = async function() {
     const cfgs = await searchCFG(type)
     alert("after awaaitsssss")
     // const users = await searchUsers(type)
+    alert("cfgs jsonnn  "+JSON.stringify(cfgs))
+    alert("softwaresss jsonnn  "+JSON.stringify(softwares))
 
     let lista=document.getElementById("itemSearch")
 
