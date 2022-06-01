@@ -74,8 +74,9 @@ window.onload = async function() {
     queryString = window.location.search;
 
     let type=queryString.substring(1,queryString.length)
+    alert("a ssasa       "+type)
     type=type.substring(0,type.indexOf("&"))
-
+    alert("2222222222222      "+type)
     const softwares = await searchSoftware(type)
     const cfgs = await searchCFG(type)
     // const users = await searchUsers(type)
