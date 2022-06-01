@@ -74,6 +74,7 @@ window.onload = async function() {
     queryString = window.location.search;
 
     let type=queryString.substring(1,queryString.length)
+    alert("type    "+type)
     const softwares = await searchSoftware(type)
     const cfgs = await searchCFG(type)
     alert("after awaaitsssss")
