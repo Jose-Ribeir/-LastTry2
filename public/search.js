@@ -56,6 +56,13 @@ function refCfg(a) {
 
 
 
+function refSoftware(a) {
+    window.location.href="config.html?"+a
+
+}
+
+
+
 
 
 
@@ -71,12 +78,18 @@ window.onload = async function() {
 
     const softwares = await searchSoftware(type)
     const cfgs = await searchCFG(type)
-    const users = await searchUsers(type)
+    // const users = await searchUsers(type)
 
     let lista=document.getElementById("itemSearch")
     for (let i = 0; i < cfgs.length; i++) {
-        lista.innerHTML+= ' <div  class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"><div class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"> <div class="u-gutter-0 u-layout"> <div class="u-layout-col" id="list"> <div class="two-col u-layout-cell-4"> <div class="col1 align-content-center align-items-center"> <img src="images/272f78_2c07cd0124b549faa6a64b4fcb7ad492_mv2.jpg" class="imagesearch "> </div> <div class="col2"> <div class="u-align-left u-container-style u-layout-cell u-size-20 "> <div onclick="refCfg(this.id)" id="'+cfgs.cfg_id+'&'+cfgs.cfg_name+'" class="u-container-layout u-valign-top u-container-layout-1"><h4 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3 textColor mt-4">'+cfgs.cfg_name+'</h4> <p class="u-custom-font u-font-ubuntu u-text u-text-4 textColor">'+cfgs.cfg_description+'</p></div></div></div></div></div></div></div></div>'
+        lista.innerHTML+= ' <div  class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"><div class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"> <div class="u-gutter-0 u-layout"> <div class="u-layout-col" > <div class="two-col u-layout-cell-4"> <div class="col1 align-content-center align-items-center"> <img src="'+cfgs[i].software_image+'" class="imagesearch "> </div> <div class="col2"> <div class="u-align-left u-container-style u-layout-cell u-size-20 "> <div onclick="refCfg(this.id)" id="'+cfgs[i].cfg_id+'&'+cfgs[i].cfg_name+'" class="u-container-layout u-valign-top u-container-layout-1"><h4 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3 textColor mt-4">'+cfgs[i].cfg_name+'</h4> <p class="u-custom-font u-font-ubuntu u-text u-text-4 textColor">'+cfgs[i].cfg_description+'</p></div></div></div></div></div></div></div></div>'
     }
+    for (let i = 0; i < softwares.length; i++) {
+        lista.innerHTML+= ' <div  class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"><div class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"> <div class="u-gutter-0 u-layout"> <div class="u-layout-col" > <div class="two-col u-layout-cell-4"> <div class="col1 align-content-center align-items-center"> <img src="'+softwares[i].software_image+'" class="imagesearch "> </div> <div class="col2"> <div class="u-align-left u-container-style u-layout-cell u-size-20 "> <div onclick="refSoftware(this.id)" id="'+softwares[i].software_id+'&'+softwares[i].software_name+'" class="u-container-layout u-valign-top u-container-layout-1"><h3 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3 textColor mt-5">'+softwares[i].software_name+'</h3></div></div></div></div></div></div></div></div>'
+    }
+    // for (let i = 0; i < users.length; i++) {
+    //     lista.innerHTML+= ' <div  class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"><div class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"> <div class="u-gutter-0 u-layout"> <div class="u-layout-col" > <div class="two-col u-layout-cell-4"> <div class="col1 align-content-center align-items-center"> <img src="'+cfgs[i].software_image+'" class="imagesearch "> </div> <div class="col2"> <div class="u-align-left u-container-style u-layout-cell u-size-20 "> <div onclick="refCfg(this.id)" id="'+cfgs[i].cfg_id+'&'+cfgs[i].cfg_name+'" class="u-container-layout u-valign-top u-container-layout-1"><h4 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3 textColor mt-4">'+cfgs[i].cfg_name+'</h4> <p class="u-custom-font u-font-ubuntu u-text u-text-4 textColor">'+cfgs[i].cfg_description+'</p></div></div></div></div></div></div></div></div>'
+    // }
 
 
 
