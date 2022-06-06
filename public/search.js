@@ -57,7 +57,7 @@ function refCfg(a) {
 
 
 function refSoftware(a) {
-    window.location.href="applications.html?"+a
+    window.location.href="software.html?"+a
 
 }
 
