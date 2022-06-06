@@ -36,11 +36,11 @@ async function add() {
             contentType: "application/json",
             dataType: "json"
         });
-        alert(JSON.stringify(logedUser))
+
 
         sessionStorage.setItem("user_id",JSON.stringify(logedUser.person_id))
         sessionStorage.setItem("user_name",JSON.stringify(logedUser.person_name))
-        alert(""+JSON.stringify(logedUser.person_email))
+
         sessionStorage.setItem("user_email",JSON.stringify(logedUser.person_email))
         sessionStorage.setItem("user_is_admin",JSON.stringify(logedUser.person_is_admin))
         window.location.href='../dashboard/profile.html'
