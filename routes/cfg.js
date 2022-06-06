@@ -113,7 +113,7 @@ const search = (request, response) => {
     const search = "%"+(request.params.text)+"%"
 
 
-    client.query('SELECT * FROM cfg inner join software s on cfg.cfg_software_id = s.software_id WHERE cfg_name like $1', [search], (error, results) => {
+    client.query('SELECT * FROM cfg inner join software s on cfg.cfg_software_id = s.software_id WHERE upper(cfg_name) like $1', [search.toUpperCase()], (error, results) => {
         if (error) {
             throw error
         }

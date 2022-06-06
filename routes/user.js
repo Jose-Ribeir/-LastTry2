@@ -121,7 +121,7 @@ const search = (request, response) => {
   const search = "%"+(request.params.text)+"%"
 
 
-  client.query('SELECT * FROM person WHERE person_name like  $1 ', [search], (error, results) => {
+  client.query('SELECT * FROM person WHERE upper(person_name) like  $1  or upper(person_surname) like $1', [search.toUpperCase()], (error, results) => {
     if (error) {
       throw error
     }
