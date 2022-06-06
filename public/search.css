@@ -33,6 +33,7 @@
     width: 69%;
 }
 
+
 .two-col .col1 {
     float: left;
 }
@@ -44,6 +45,36 @@
 .two-col label {
     display: block;
 }
+
+
+.two-coll {
+    overflow: hidden;/* Makes this div contain its floats */
+}
+
+.two-coll .coll1{
+    width:49% ;
+    text-align: right;
+}
+.two-coll .coll2 {
+    width: 50%;
+    text-align: left;
+}
+
+
+.two-coll .coll1 {
+    float: left;
+}
+
+.two-coll .coll2 {
+    float: right;
+}
+
+.two-coll labell {
+    display: block;
+}
+
+
+
 .imagesearch{
     height: 100px;
     text-align: center;
@@ -61,4 +92,28 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+
+.textcards{
+    color: white;
+}
+.buttonS{
+
+    background-color: #ffffff;
+    border: grey;
+    border-radius: 3px;
+    color: #020101;
+    width: 100px;
+    height: 40px;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.mtop{
+    margin-top: -40px;
+}
+
 
