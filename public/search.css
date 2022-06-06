@@ -118,5 +118,6 @@
 
 html {
     -ms-scroll-limit-x-min: 10px;
+    scroll-margin-top: 200px;
     scroll-behavior: smooth;
 }
