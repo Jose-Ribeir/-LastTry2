@@ -117,5 +117,6 @@
 }
 
 html {
+    -ms-scroll-limit-x-min: 10px;
     scroll-behavior: smooth;
 }
