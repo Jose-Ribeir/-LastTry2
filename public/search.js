@@ -57,7 +57,7 @@ function refCfg(a) {
 
 
 function refSoftware(a) {
-    window.location.href="config.html?"+a
+    window.location.href="applications.html?"+a
 
 }
 
@@ -95,8 +95,6 @@ window.onload = async function() {
     // for (let i = 0; i < users.length; i++) {
     //     lista.innerHTML+= ' <div  class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"><div class="u-clearfix u-gutter-10 u-layout-wrap u-layout-wrap-1"> <div class="u-gutter-0 u-layout"> <div class="u-layout-col" > <div class="two-col u-layout-cell-4"> <div class="col1 align-content-center align-items-center"> <img src="'+cfgs[i].software_image+'" class="imagesearch "> </div> <div class="col2"> <div class="u-align-left u-container-style u-layout-cell u-size-20 "> <div onclick="refCfg(this.id)" id="'+cfgs[i].cfg_id+'&'+cfgs[i].cfg_name+'" class="u-container-layout u-valign-top u-container-layout-1"><h4 class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3 textColor mt-4">'+cfgs[i].cfg_name+'</h4> <p class="u-custom-font u-font-ubuntu u-text u-text-4 textColor">'+cfgs[i].cfg_description+'</p></div></div></div></div></div></div></div></div>'
     // }
-
-
 
 
 
