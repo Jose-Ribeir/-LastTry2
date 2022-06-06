@@ -391,4 +391,93 @@
   .u-section-2 .u-btn-2 {
     margin-left: 48px;
   }
+
+
+  .form-control-borderless {
+    border: none;
+  }
+
+  .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .backgroundblack{
+    background-color: black;
+  }
+
+  .textColor{
+    color: black;
+    margin-left: 20px;
+  }
+
+  .u-section-2 .u-layout-cell-4 {
+    min-height: 200px;
+    background-color: #cbcbcb;
+    border-radius: 20px;
+  }
+
+  .two-col {
+    overflow: hidden;/* Makes this div contain its floats */
+  }
+
+  .two-col .col1{
+    width:30% ;
+  }
+  .two-col .col2 {
+    width: 69%;
+  }
+
+  .two-col .col1 {
+    float: left;
+  }
+
+  .two-col .col2 {
+    float: right;
+  }
+
+  .two-col label {
+    display: block;
+  }
+  .imagesearch{
+    height: 100px;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .textvert{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .btn-group-lg>.btn, .btn-lg1 {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+  }
+
+  .card-body1 {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+  }
+
+
+  form-control-lg1, .input-group-lg>.form-control, .input-group-lg>.input-group-append>.btn, .input-group-lg>.input-group-append>.input-group-text, .input-group-lg>.input-group-prepend>.btn, .input-group-lg>.input-group-prepend>.input-group-text {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+  }
+
+
+
 }
