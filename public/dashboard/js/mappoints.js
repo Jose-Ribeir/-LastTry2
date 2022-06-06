@@ -139,15 +139,12 @@ async function initMap() {
             let lat =marker.getPosition().lat()
             let long= marker.getPosition().lng()
             directionsRenderer.setMap(map);
-            directionsRenderer
             calculateAndDisplayRoute(directionsService, directionsRenderer, lat,long);
             document.getElementById("mode").addEventListener("change", () => {
                 calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition.lat,marker.getPosition.lng);
             });})
         marker.setMap(map);
     }
-
-
 
 
     for (let i = 0; i < user.length; i++) {
