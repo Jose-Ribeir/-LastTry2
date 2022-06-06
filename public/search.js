@@ -62,6 +62,16 @@ function refSoftware(a) {
 }
 
 
+function searchNewItem() {
+    window.location.href="search.html?"+document.getElementById("searchData").value
+
+}
+
+
+
+
+
+
 
 
 
