@@ -181,7 +181,7 @@ window.onload = async function() {
         let a = sessionStorage.getItem("user_name")
         let b=a.substring(a.indexOf('"')+1,a.length)
         b=b.substring(0,b.indexOf('"'))
-        button.innerHTML= '<a>Loged in as <br>'+b+'</a>'
+        button.innerHTML= '<a style="color: white">Loged in as <br>'+b+'</a>'
         button.href='./dashboard/profile.html'
     }
 
