@@ -27,7 +27,6 @@
 
 .u-section-1 .u-image-1 {
   width: 78px;
-  height: 78px;
   transition-duration: 0.5s;
   transform: translateX(0px) translateY(0px) scale(1) rotate(0deg);
   margin: 44px auto 0;
@@ -299,3 +298,35 @@
 .u-container-layout.hover .u-section-1 .u-image-6 {
   transform: rotate(0deg) scale(1) translateX(0px) translateY(0px) !important;
 }
+
+
+
+ .form-control-borderless {
+   border: none;
+ }
+
+ .form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+   border: none;
+   outline: none;
+   box-shadow: none;
+ }
+ .backgroundblack{
+   background-color: black;
+ }
+
+ .textColor{
+   color: black;
+   margin-left: 20px;
+ }
+
+.u-layout-cell-41 {
+  max-width: 250px;
+  background-color: #cbcbcb;
+  border-radius: 20px;
+  color: black;
+  text-transform: capitalize;
+
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 10px;
+ }

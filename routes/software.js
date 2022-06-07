@@ -36,7 +36,7 @@ const createSoftware = (request, response) => {
 
 
 const getGames = (request, response) => {
-    client.query('SELECT * FROM software where software_is_game=true', (error, results) => {
+    client.query('SELECT * FROM software where software_is_game=true order by software_id', (error, results) => {
         if (error) {
             throw error
         }
@@ -46,7 +46,7 @@ const getGames = (request, response) => {
 }
 
 const getApps = (request, response) => {
-    client.query('SELECT * FROM software where software_is_game=false', (error, results) => {
+    client.query('SELECT * FROM software where software_is_game=false order by software_id', (error, results) => {
         if (error) {
             throw error
         }

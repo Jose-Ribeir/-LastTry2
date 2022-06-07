@@ -113,12 +113,8 @@ window.onload = async function() {
     document.getElementById("inputSurname").value= ""+json[0].person_surname;
     document.getElementById("inputRegion").value= ""+json[0].person_region;
     document.getElementById("inputBio").value= ""+json[0].person_bio;
-
-
-
 }
 
 async function changePass(){
    window.location.href="../dashboard/changePass.html"
-
 }
