@@ -23,16 +23,20 @@ async function initMap() {
             { elementType: "geometry", stylers: [{ color: "#242f3e" }] },
             { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
             { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+
             {
-                featureType: "administrative.locality",
-                elementType: "labels.text.fill",
-                stylers: [{ color: "#d59563" }],
+                featureType: "administrative",
+                stylers: [{ visibility: "off" }],
             },
             {
                 featureType: "poi",
-                elementType: "labels.text.fill",
-                stylers: [{ color: "#d59563" }],
+                stylers: [{ visibility: "off" }],
             },
+            {
+                featureType: "transit.station.airport",
+                stylers: [{ visibility: "off" }],
+            },
+
             {
                 featureType: "poi.park",
                 elementType: "geometry",
@@ -53,11 +57,7 @@ async function initMap() {
                 elementType: "geometry.stroke",
                 stylers: [{ color: "#212a37" }],
             },
-            {
-                featureType: "road",
-                elementType: "labels.text.fill",
-                stylers: [{ color: "#9ca5b3" }],
-            },
+
             {
                 featureType: "road.highway",
                 elementType: "geometry",
@@ -78,11 +78,7 @@ async function initMap() {
                 elementType: "geometry",
                 stylers: [{ color: "#2f3948" }],
             },
-            {
-                featureType: "transit.station",
-                elementType: "labels.text.fill",
-                stylers: [{ color: "#d59563" }],
-            },
+
             {
                 featureType: "water",
                 elementType: "geometry",
@@ -100,6 +96,8 @@ async function initMap() {
             },
         ],
     });
+
+
 
     // Construct the circle for each value in citymap.
     // Note: We scale the area of the circle based on the population.
@@ -143,6 +141,7 @@ async function initMap() {
             document.getElementById("mode").addEventListener("change", () => {
                 calculateAndDisplayRoute(directionsService, directionsRenderer, marker.getPosition.lat,marker.getPosition.lng);
             });})
+
         marker.setMap(map);
     }
 
