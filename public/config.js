@@ -147,7 +147,7 @@ async function getcfg(){
     type=type.substring(0,type.indexOf("&"))
 
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg/'+type
+        targetUrl = linkApi+'cfg/'+type
     const response = await fetch(
         targetUrl)
     const data = await response.json()

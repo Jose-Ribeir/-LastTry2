@@ -22,7 +22,7 @@ async function uploadApp() {
     try {
         //get json here
         let newProduct = await $.ajax({
-            url: "https://cfg-api-ultimate.herokuapp.com/software",
+            url: linkApi+"software",
             method: "post",
             data: JSON.stringify(data),
             contentType: "application/json",

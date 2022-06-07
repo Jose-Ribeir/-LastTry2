@@ -1,7 +1,7 @@
 async function uploadFile() {
     let formData = new FormData();
     formData.append("fileupload", fileupload.files[0]);
-    await fetch('https://cfg-api-ultimate.herokuapp.com/fileupload', {
+    await fetch(linkApi+'fileupload', {
         method: "POST",
         body: formData
     });
@@ -12,7 +12,7 @@ $(document).ready(function (e) {
         e.preventDefault();
 
         $.ajax({
-            url: "https://cfg-api-ultimate.herokuapp.com/fileupload",
+            url: linkApi+"fileupload",
             type: "POST",
             data: new FormData(this),
             dataType: 'json',

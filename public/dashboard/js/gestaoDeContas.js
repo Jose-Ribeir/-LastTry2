@@ -32,7 +32,7 @@ async function refresh(id){
     const json = await getData()
 
     $.ajax({
-        url: "https://cfg-api-ultimate.herokuapp.com/users/"+json[id].person_id,
+        url: linkApi+"users/"+json[id].person_id,
         type: "Delete",
         dataType: 'json',
         success: function(response) {

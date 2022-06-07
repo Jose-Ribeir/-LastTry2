@@ -9,7 +9,7 @@ async function getCfgs(a){
 
 
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg/software/'+a
+        targetUrl = linkApi+'cfg/software/'+a
 
     const response = await fetch(
         targetUrl)
