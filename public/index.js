@@ -16,8 +16,10 @@ function searchRef() {
 }
 
 window.onload = async function() {
+    let button = document.getElementById("logged")
     if(!(sessionStorage.getItem("user_id")==="null")) {
-        document.getElementById("logged").innerHTML= ""
+       button.innerHTML= '<a>'+sessionStorage.getItem("user_name")+'</a>'
+        button.href='./dashboard/profile.html'
     }
 
 
