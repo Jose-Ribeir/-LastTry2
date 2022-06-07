@@ -1,7 +1,7 @@
 async function uploadFile() {
     let formData = new FormData();
     formData.append("fileupload", fileupload.files[0]);
-    await fetch(linkApi+'fileupload', {
+    await fetch("http://localhost:3000/"+'fileupload', {
         method: "POST",
         body: formData
     });
@@ -12,7 +12,7 @@ $(document).ready(function (e) {
         e.preventDefault();
 
         $.ajax({
-            url: linkApi+"fileupload",
+            url: "http://localhost:3000/"+"fileupload",
             type: "POST",
             data: new FormData(this),
             dataType: 'json',

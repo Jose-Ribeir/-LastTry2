@@ -89,16 +89,17 @@ app.post('/fileupload',function (req, res) {
     //Process the file upload in Node
     form.parse(req, function (error, fields, file) {
         let filepath = file.fileupload.filepath;
-        let newpath = "/public"
+        console.log("file path "+ filepath)
+        let newpath = "/public/test"
         newpath=newpath+"/"
         newpath += file.fileupload.originalFilename;
         console.log(""+newpath)
         //Copy the uploaded file to a custom folder
-        var mv = require('mv');
+        // var mv = require('mv');
 
-        mv(filepath, newpath, {mkdirp: true}, function(err) {
-            fs.rename(filepath, newpath, function (err) {
-                if (err) throw err;
+
+            fs.rename(filepath, newpath, function () {
+
 
                 //Send a NodeJS file upload confirmation message
                 res.write('NodeJS File Upload Success!');
@@ -106,7 +107,6 @@ app.post('/fileupload',function (req, res) {
 
                 res.end();
             });
-        });
 
 
     });
