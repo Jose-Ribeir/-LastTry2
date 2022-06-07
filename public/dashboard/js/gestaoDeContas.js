@@ -44,9 +44,7 @@ async function refresh(id){
     // await table()
 }
 
-// function myDeleteFunction() {
-//     document.getElementById("myTable").deleteRow(0);
-// }
+
 
 async function table(){
     if(sessionStorage.getItem("user_id")===null)

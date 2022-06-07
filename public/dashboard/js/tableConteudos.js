@@ -1,15 +1,6 @@
 
-async function getData(){
-    // var targetUrl = 'https://cfg-api-ultimate.herokuapp.com/users'
-    //
-    //
-    // const response = await fetch(targetUrl)
-    // const data = await response.json()
-    // console.log(data)
-    // return data
-
-    var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = linkApi+'cfg'
+async function getContent(){
+    var targetUrl = linkApi+'cfg'
 
     const response = await fetch(
          targetUrl)
@@ -17,7 +8,29 @@ async function getData(){
     return data
 }
 
+async function deletee(id){
+    await refreshe(id)
+    alert("Cfg Deleted")
+    window.location.reload()
+}
 
+
+async function refreshe(id){
+    const json = await getContent()
+
+
+    $.ajax({
+        url: linkApi+"cfg/"+json[id].cfg_id,
+        type: "Delete",
+        dataType: 'json',
+        success: function(response) {
+            console.log(response);
+            // window.location.replace("https//www.google.com")
+
+        }
+    });
+    // await table()
+}
 
 
 
@@ -42,7 +55,7 @@ window.onload = async function() {
     document.getElementById("name2").innerText=removehash(sessionStorage.getItem("user_name"))
     document.getElementById("email").innerText=removehash(sessionStorage.getItem("user_email"))
 
-    const json = await getData()
+    const json = await getContent()
     console.log(json[0])
     var table = document.getElementById("ContentTable");
     for (let i = 0; i < json.length; i++) {
@@ -62,7 +75,7 @@ window.onload = async function() {
         cell5.innerHTML = "" + json[i].cfg_person_id
         cell6.innerHTML = "" + json[i].cfg_software_id
 
-        cell7.innerHTML +="<td class=\"text-right\"><button type=\"button\" class=\"btn btn-danger\">Delete</button></td>"
+        cell7.innerHTML +='<td class=\"text-right\"><button id='+i+' type=\"button\" onclick="deletee(this.id)" class=\"btn btn-danger\">Delete</button></td>'
 
     }
 }
