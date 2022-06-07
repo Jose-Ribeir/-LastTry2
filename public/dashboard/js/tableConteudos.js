@@ -9,7 +9,7 @@ async function getData(){
     // return data
 
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/cfg'
+        targetUrl = linkApi+'cfg'
 
     const response = await fetch(
          targetUrl)

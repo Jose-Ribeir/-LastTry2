@@ -24,7 +24,7 @@ async function getData(id){
 
 
     var proxyUrl = 'https://cors-anywhere.herokuapp.com/',
-        targetUrl = 'https://cfg-api-ultimate.herokuapp.com/software/'+software1
+        targetUrl = linkApi+'software/'+software1
 
     const response = await fetch(
         targetUrl)
@@ -87,7 +87,7 @@ async function uploadCFG() {
             try {
                 //get json here
                 let newProduct = await $.ajax({
-                    url: "https://cfg-api-ultimate.herokuapp.com/cfg",
+                    url: linkApi+"cfg",
                     method: "post",
                     data: JSON.stringify(data),
                     contentType: "application/json",

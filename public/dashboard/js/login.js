@@ -30,7 +30,7 @@ async function add() {
 
         //get json here
         let logedUser = await $.ajax({
-            url: "https://cfg-api-ultimate.herokuapp.com/login",
+            url: linkApi+"login",
             method: "post",
             data: JSON.stringify(data),
             contentType: "application/json",
