@@ -43,8 +43,8 @@ technique, ​Forest wildlifeand hunting, ​Caring for forest to benefit nature
 <header class="u-clearfix u-header" id="sec-3764" data-animation-name="" data-animation-duration="0"
         data-animation-delay="0" data-animation-direction="">
     <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="dashboard/index.html"><img class="u-image u-image-default u-image-1" src="images/logooficial.png"
-                                            alt="" data-image-width="1772" data-image-height="1772"></a>
+        <div><a><img class="u-image u-image-default u-image-1" src="images/logooficial.png" alt="" data-image-width="1772" data-image-height="1772" ></a></div>
+
 
         <nav class="u-align-left u-menu u-menu-dropdown u-offcanvas u-menu-1">
             <div class="menu-collapse">
@@ -76,21 +76,21 @@ technique, ​Forest wildlifeand hunting, ​Caring for forest to benefit nature
             </div>
             <div class="u-custom-menu u-nav-container">
                 <ul class="u-nav u-spacing-2 u-unstyled u-nav-1">
-                    <li class="u-nav-item"><a
+                    <li href="index.html" class="u-nav-item"><a
                             class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
                             href="index.html" style="padding: 10px 24px;">Home</a>
                     </li>
-                    <li class="u-nav-item"><a
+                    <li href="About.html" class="u-nav-item"><a
                             class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
                             href="About.html" style="padding: 10px 24px;">About</a>
                     </li>
-                    <li class="u-nav-item"><a
+                    <li href="applications.html?games" class="u-nav-item"><a
                             class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
-                            href="applications.html?games" style="padding: 10px 24px;">Gaming</a>
+                            href="applications.html?games" onclick="clickGaming()" style="padding: 10px 24px;">Gaming</a>
                     </li>
-                    <li class="u-nav-item"><a
-                            class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
-                            href="applications.html?apps" style="padding: 10px 24px;">Working</a>
+                    <li href="applications.html?apps" class="u-nav-item"><a
+                            class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90 "
+                            href="applications.html?apps" onclick="clickSoftware()" style="padding: 10px 24px;">Working</a>
                     </li>
                 </ul>
 
@@ -104,9 +104,9 @@ technique, ​Forest wildlifeand hunting, ​Caring for forest to benefit nature
                             </li>
                             <li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">About</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link">Gaming</a>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" href="applications.html?games" onclick="clickGaming()">Gaming</a>
                             </li>
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link">Working</a>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link"  href="applications.html?apps" onclick="clickSoftware()">Working</a>
                             </li>
                         </ul>
                     </div>
@@ -116,18 +116,15 @@ technique, ​Forest wildlifeand hunting, ​Caring for forest to benefit nature
             </div>
 
         </nav>
-        <div>
-            <a href="dashboard/login.html"
-               class="u-black u-border-none u-btn u-button-style u-hover-grey-50 u-radius-5 u-text-body-alt-color u-text-hover-white u-btn-1"><span
-                    class="u-icon u-text-white u-icon-1"><svg class="u-svg-content" viewBox="0 0 490.667 490.667"
-                                                              x="0px" y="0px" style="width: 1em; height: 1em;"><circle
-                    cx="245.333" cy="160" r="74.667"></circle><circle cx="394.667" cy="224" r="53.333"></circle><circle
-                    cx="97.515" cy="224" r="53.333"></circle><path
-                    d="M245.333,256c-76.459,0-138.667,62.208-138.667,138.667c0,5.888,4.779,10.667,10.667,10.667h256    c5.888,0,10.667-4.779,10.667-10.667C384,318.208,321.792,256,245.333,256z"></path><path
-                    d="M115.904,300.971c-6.528-1.387-13.163-2.304-19.904-2.304c-52.928,0-96,43.072-96,96c0,5.888,4.779,10.667,10.667,10.667    h76.629c-1.195-3.349-1.963-6.912-1.963-10.667C85.333,359.659,96.768,327.339,115.904,300.971z"></path><path
-                    d="M394.667,298.667c-6.741,0-13.376,0.917-19.904,2.304c19.136,26.368,30.571,58.688,30.571,93.696    c0,3.755-0.768,7.317-1.963,10.667H480c5.888,0,10.667-4.779,10.667-10.667C490.667,341.739,447.595,298.667,394.667,298.667z"></path></svg><img></span>&nbsp;Login/Register</a>
 
-        </div>
+        <a id="logged" href="dashboard/login.html"
+           class="u-black u-border-none u-btn u-button-style u-hover-grey-50 u-radius-5 u-text-body-alt-color u-text-hover-white u-btn-1"><span
+                class="u-icon u-text-white u-icon-1"><svg class="u-svg-content" viewBox="0 0 490.667 490.667" x="0px" y="0px" style="width: 1em; height: 1em;"><circle cx="245.333" cy="160" r="74.667"></circle><circle cx="394.667" cy="224" r="53.333"></circle><circle cx="97.515" cy="224" r="53.333"></circle><path
+                d="M245.333,256c-76.459,0-138.667,62.208-138.667,138.667c0,5.888,4.779,10.667,10.667,10.667h256    c5.888,0,10.667-4.779,10.667-10.667C384,318.208,321.792,256,245.333,256z"></path><path
+                d="M115.904,300.971c-6.528-1.387-13.163-2.304-19.904-2.304c-52.928,0-96,43.072-96,96c0,5.888,4.779,10.667,10.667,10.667    h76.629c-1.195-3.349-1.963-6.912-1.963-10.667C85.333,359.659,96.768,327.339,115.904,300.971z"></path><path
+                d="M394.667,298.667c-6.741,0-13.376,0.917-19.904,2.304c19.136,26.368,30.571,58.688,30.571,93.696    c0,3.755-0.768,7.317-1.963,10.667H480c5.888,0,10.667-4.779,10.667-10.667C490.667,341.739,447.595,298.667,394.667,298.667z"></path></svg><img></span>&nbsp;Login/Register</a>
+
+
     </div>
 
 

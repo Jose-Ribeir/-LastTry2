@@ -23,6 +23,7 @@
 }
 
 .two-col {
+    cursor: pointer;
     overflow: hidden;/* Makes this div contain its floats */
 }
 
@@ -97,7 +98,7 @@
     color: white;
 }
 .buttonS{
-
+    cursor: pointer;
     background-color: #ffffff;
     border: grey;
     border-radius: 3px;
