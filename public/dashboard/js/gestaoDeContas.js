@@ -82,6 +82,8 @@ function removehash(a){
 }
 
 window.onload = async function() {
+    if(sessionStorage.getItem("user_id")===null)
+        window.location.href="../dashboard/login.html"
     if(sessionStorage.getItem("user_is_admin")==="true"){
         await table()
 
