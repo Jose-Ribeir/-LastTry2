@@ -164,7 +164,6 @@ window.onload = async function() {
     const json = await getcfg()
     window.initMap = initMap(json[0]);
     const d = new Date(json[0].cfg_date);
-    alert("key action "+json[0].cfg_key_action)
     document.getElementById("descri").innerHTML=""+json[0].cfg_description
     document.getElementById("date").innerHTML="" + d.toDateString();
     document.getElementById("cfgName").innerHTML=""+json[0].cfg_name
@@ -174,6 +173,17 @@ window.onload = async function() {
     document.getElementById("gameName").innerHTML=""+json[0].software_name
     document.getElementById("softwareImg").src="images/"+json[0].software_image
     document.getElementById("dowloadfile").innerHTML='<a href="Cfg/'+json[0].cfg_cfg+'" download="'+json[0].cfg_cfg+'"><button type="button" class="button11">Download Now<button></a>'
+
+    let button = document.getElementById("logged")
+
+    if((sessionStorage.getItem("user_id")>=0 && sessionStorage.getItem("user_id") != null)) {
+
+        let a = sessionStorage.getItem("user_name")
+        let b=a.substring(a.indexOf('"')+1,a.length)
+        b=b.substring(0,b.indexOf('"'))
+        button.innerHTML= '<a>Loged in as <br>'+b+'</a>'
+        button.href='./dashboard/profile.html'
+    }
 
 
 }
