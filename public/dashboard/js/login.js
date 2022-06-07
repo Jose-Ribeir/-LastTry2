@@ -56,7 +56,11 @@ async function add() {
 }
 
     window.onload =function() {
-    //    sessionStorage.clear();
+        sessionStorage.clear();
+        sessionStorage.removeItem("user_id")
+        sessionStorage.removeItem("user_name")
+        sessionStorage.removeItem("user_email")
+        sessionStorage.removeItem("user_is_admin")
     }
 
 
