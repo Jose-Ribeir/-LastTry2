@@ -39,7 +39,7 @@ window.onload = async function() {
         lista.innerHTML+= '<div class="u-container-style u-align-center u-list-item u-repeater-item"> ' +
             '<div onclick="teste(this.id)" id="'+json[i].software_id+'&'+json[i].software_name+'" class="u-container-layout u-align-center u-similar-container u-container-layout-1"> ' +
             '<p class="u-text u-text-1">'+json[i].software_name+'</p> ' +
-            '<img  class="u-hover-feature u-image u-image-default u-preserve-proportions u-image-1" src="images/'+json[i].software_image+'" alt="" data-image-width="78" data-image-height="78"> </div> ' +
+            '<img  class="u-hover-feature u-image u-image-default u-preserve-proportions u-image-1" src="images/'+json[i].software_image+'" alt="" data-image-width="78" > </div> ' +
             '</div>'
     }
 }
